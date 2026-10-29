@@ -31,7 +31,7 @@
   "binaryFiles" : [ {
     "filePath" : "attachment/weighted average standard cost (1).json",
     "size" : 63416,
-    "url" : "/api/editor/v1/attachment/MzIvZGV2L2F0dGFjaG1lbnQvd2VpZ2h0ZWQgYXZlcmFnZSBzdGFuZGFyZCBjb3N0ICgxKS5qc29u",
+    "url" : "/api/editor/v1/attachment/MzIvZGV2X25hdGhhbi9hdHRhY2htZW50L3dlaWdodGVkIGF2ZXJhZ2Ugc3RhbmRhcmQgY29zdCAoMSkuanNvbg",
     "codec" : "gzip",
     "contentType" : "application/json",
     "encoding" : "raw",
@@ -39,7 +39,7 @@
   }, {
     "filePath" : "attachment/Book1.xlsx",
     "size" : 101650,
-    "url" : "/api/editor/v1/attachment/MzIvZGV2L2F0dGFjaG1lbnQvQm9vazEueGxzeA",
+    "url" : "/api/editor/v1/attachment/MzIvZGV2X25hdGhhbi9hdHRhY2htZW50L0Jvb2sxLnhsc3g",
     "codec" : "none",
     "contentType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     "encoding" : "raw",
@@ -47,7 +47,7 @@
   }, {
     "filePath" : "attachment/BASELINE FULL NETWORK MODEL MT - Part 1.json",
     "size" : 445343,
-    "url" : "/api/editor/v1/attachment/MzIvZGV2L2F0dGFjaG1lbnQvQkFTRUxJTkUgRlVMTCBORVRXT1JLIE1PREVMIE1UIC0gUGFydCAxLmpzb24",
+    "url" : "/api/editor/v1/attachment/MzIvZGV2X25hdGhhbi9hdHRhY2htZW50L0JBU0VMSU5FIEZVTEwgTkVUV09SSyBNT0RFTCBNVCAtIFBhcnQgMS5qc29u",
     "codec" : "gzip",
     "contentType" : "application/json",
     "encoding" : "raw",
@@ -55,7 +55,7 @@
   }, {
     "filePath" : "attachment/Foresta_Sites_1139_25-10-2026_0-43-43_084.csv",
     "size" : 437114,
-    "url" : "/api/editor/v1/attachment/MzIvZGV2L2F0dGFjaG1lbnQvRm9yZXN0YV9TaXRlc18xMTM5XzI1LTEwLTIwMjZfMC00My00M18wODQuY3N2",
+    "url" : "/api/editor/v1/attachment/MzIvZGV2X25hdGhhbi9hdHRhY2htZW50L0ZvcmVzdGFfU2l0ZXNfMTEzOV8yNS0xMC0yMDI2XzAtNDMtNDNfMDg0LmNzdg",
     "codec" : "gzip",
     "contentType" : "text/csv",
     "encoding" : "raw",
