@@ -1,7 +1,7 @@
 name: AlteryxMigration_and_PerformancePOC
 description: POC for AI-assisted Alteryx migration, SharePoint ingestion, and ETL
   performance benchmarking.
-version: '2'
+version: '1'
 author: harjot.singh@decisionspot.com
 language: sql
 buildSystem: ''
