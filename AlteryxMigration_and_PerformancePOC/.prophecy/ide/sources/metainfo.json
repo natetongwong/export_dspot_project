@@ -1,0 +1,64 @@
+{
+  "name" : "AlteryxMigration_and_PerformancePOC",
+  "fileSystem" : {
+    "type" : "Folder",
+    "name" : "",
+    "children" : { },
+    "path" : "",
+    "editable" : true
+  },
+  "providerType" : "ProphecyManaged",
+  "prophecyIDEFolder" : {
+    "name" : "",
+    "children" : { },
+    "path" : "",
+    "editable" : true
+  },
+  "dependenciesContainer" : {
+    "dependencies" : { },
+    "prophecyProjectDependencies" : {
+      "https://github.com/prophecy-io/prophecy-basics" : "16"
+    },
+    "dependenciesMetadata" : {
+      "https://github.com/prophecy-io/prophecy-basics" : {
+        "autoUpgrade" : true
+      }
+    }
+  },
+  "entitiesToSync" : [ ],
+  "frontEndLanguage" : "sql",
+  "backEndLanguage" : "sql",
+  "binaryFiles" : [ {
+    "filePath" : "attachment/weighted average standard cost (1).json",
+    "size" : 63416,
+    "url" : "/api/editor/v1/attachment/MzIvZGV2L2F0dGFjaG1lbnQvd2VpZ2h0ZWQgYXZlcmFnZSBzdGFuZGFyZCBjb3N0ICgxKS5qc29u",
+    "codec" : "gzip",
+    "contentType" : "application/json",
+    "encoding" : "raw",
+    "sha256" : "aebc7862703fa5fa18f4095743816d4f3b3bdf6e643ee36685727a052d4f327e"
+  }, {
+    "filePath" : "attachment/Book1.xlsx",
+    "size" : 101650,
+    "url" : "/api/editor/v1/attachment/MzIvZGV2L2F0dGFjaG1lbnQvQm9vazEueGxzeA",
+    "codec" : "none",
+    "contentType" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "encoding" : "raw",
+    "sha256" : "7302b2149eb9c5734c6d56988e2f275c498d1f9d7ff809df7b89c26c8fb55072"
+  }, {
+    "filePath" : "attachment/BASELINE FULL NETWORK MODEL MT - Part 1.json",
+    "size" : 445343,
+    "url" : "/api/editor/v1/attachment/MzIvZGV2L2F0dGFjaG1lbnQvQkFTRUxJTkUgRlVMTCBORVRXT1JLIE1PREVMIE1UIC0gUGFydCAxLmpzb24",
+    "codec" : "gzip",
+    "contentType" : "application/json",
+    "encoding" : "raw",
+    "sha256" : "fd57572bc90d8fc852dc3e7bb428f3de85aca093947dc5753891888e61be8a96"
+  }, {
+    "filePath" : "attachment/Foresta_Sites_1139_25-10-2026_0-43-43_084.csv",
+    "size" : 437114,
+    "url" : "/api/editor/v1/attachment/MzIvZGV2L2F0dGFjaG1lbnQvRm9yZXN0YV9TaXRlc18xMTM5XzI1LTEwLTIwMjZfMC00My00M18wODQuY3N2",
+    "codec" : "gzip",
+    "contentType" : "text/csv",
+    "encoding" : "raw",
+    "sha256" : "aed9cebef0c6444faffb25be7d5b7e47d1113033747a4bb3796231f076059ec3"
+  } ]
+}

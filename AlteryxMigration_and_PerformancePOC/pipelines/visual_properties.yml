@@ -1,0 +1,77 @@
+pipelines:
+  full_network_model_ai_migration:
+    visualGroups:
+      data_sources_group:
+        isCollapsed: false
+        height: 1680
+        width: 280
+        nodes:
+        - "country_continent_mapping_xlsx"
+        - "customer_site_locations_csv"
+        - "organization_facilities_locations_csv"
+        - "product_master_csv"
+        - "purchase_order_supply_chain_csv"
+        - "supplier_locations_csv"
+        - "supply_chain_parameters_xlsx"
+        - "transfer_order_logistics_csv"
+      production_container:
+        isCollapsed: false
+        height: 280
+        width: 400
+        nodes:
+        - "supply_cost_analysis"
+        - "viz_production_output"
+      products_container:
+        isCollapsed: false
+        height: 280
+        width: 400
+        nodes:
+        - "product_inventory_logistics"
+        - "products_output_viz"
+      sites_container:
+        isCollapsed: false
+        height: 315
+        width: 400
+        nodes:
+        - "facility_operations_inventory"
+        - "visualize_sites_output"
+    annotations:
+      Comment_1:
+        comment: ""
+      pipeline_description:
+        comment: "Milwaukee Tool Full Network Model - Part 1 Migration from Alteryx.\
+          \ Contains 319 transformation tools across 3 containers (Sites, Production,\
+          \ Products). Each container produces one output table."
+        connectedNodes:
+        - "facility_operations_inventory"
+        - "supply_cost_analysis"
+        - "product_inventory_logistics"
+  test_group_activate_deactivate_run:
+    visualGroups:
+      VisualGroup_1:
+        height: 400
+        width: 520
+        nodes:
+        - "filter_high_sales_2"
+        - "filter_low_sales_2"
+        - "filter_test_data_2"
+        - "viz_high_sales_2"
+        - "viz_low_sales_2"
+      VisualGroup_2:
+        height: 400
+        width: 520
+        nodes:
+        - "filter_high_sales_1"
+        - "filter_low_sales_1"
+        - "filter_test_data_1"
+        - "viz_high_sales_1"
+        - "viz_low_sales_1"
+      VisualGroup_3:
+        height: 400
+        width: 520
+        nodes:
+        - "filter_high_sales"
+        - "filter_low_sales"
+        - "filter_test_data"
+        - "viz_high_sales"
+        - "viz_low_sales"

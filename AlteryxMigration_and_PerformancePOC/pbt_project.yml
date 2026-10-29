@@ -1,0 +1,1078 @@
+name: AlteryxMigration_and_PerformancePOC
+description: POC for AI-assisted Alteryx migration, SharePoint ingestion, and ETL
+  performance benchmarking.
+version: '2'
+author: harjot.singh@decisionspot.com
+language: sql
+buildSystem: ''
+buildSystemDetails: null
+pipelines: {}
+datasets: {}
+templates: {}
+jobs: {}
+gemContainer:
+  languageVersion: ''
+  gemLibsVersion: ''
+  gems: {}
+  dependencies: null
+functions:
+  author: null
+  createdAt: '2026-10-22 13:17:09'
+  udfs: {}
+  udafs: {}
+  expressions: {}
+  airflowFunctions: {}
+  businessRules: {}
+subgraphs: {}
+sqlModels: {}
+sqlSnapshots: {}
+sqlTests: {}
+sqlMacros:
+  .prophecy/metadata/sqlmacros/generate_schema_name:
+    name: generate_schema_name
+    macroType: expression
+    description: null
+    author: harjot.singh@decisionspot.com
+    files:
+    - macros/generate_schema_name.sql
+    - .prophecy/ide/macros/generate_schema_name.json
+    createdAt: '2026-10-22 13:17:15'
+  .prophecy/metadata/sqlmacros/prophecy_tmp_source:
+    name: prophecy_tmp_source
+    macroType: expression
+    description: null
+    author: harjot.singh@decisionspot.com
+    files:
+    - macros/prophecy_tmp_source.sql
+    - .prophecy/ide/macros/prophecy_tmp_source.json
+    createdAt: '2026-10-22 13:17:42'
+sqlSeeds:
+  .prophecy/metadata/sqlseeds/test_drag_and_drop:
+    name: test_drag_and_drop
+    schema:
+      entityType: ''
+      providerType: ProphecyManaged
+      fields:
+      - name: Name
+        dataType:
+          type: String
+      - name: ' Class'
+        dataType:
+          type: String
+    description: null
+    author: harjot.singh@decisionspot.com
+    files:
+    - seeds/test_drag_and_drop.csv
+    createdAt: '2026-10-24 17:35:30'
+  .prophecy/metadata/sqlseeds/filter_test_data:
+    name: filter_test_data
+    schema:
+      entityType: ''
+      providerType: ProphecyManaged
+      fields:
+      - name: ID
+        dataType:
+          type: Integer
+      - name: Name
+        dataType:
+          type: String
+      - name: Sales
+        dataType:
+          type: Integer
+    description: null
+    author: harjot.singh@decisionspot.com
+    files:
+    - seeds/filter_test_data.csv
+    createdAt: '2026-10-24 22:20:08'
+  .prophecy/metadata/sqlseeds/sample_records:
+    name: sample_records
+    schema:
+      entityType: ''
+      providerType: ProphecyManaged
+      fields:
+      - name: ID
+        dataType:
+          type: Integer
+      - name: Name
+        dataType:
+          type: String
+      - name: Amount
+        dataType:
+          type: Integer
+      - name: Category
+        dataType:
+          type: String
+    description: null
+    author: harjot.singh@decisionspot.com
+    files:
+    - seeds/sample_records.csv
+    createdAt: '2026-10-24 22:42:24'
+  .prophecy/metadata/sqlseeds/sales_idempotency_test:
+    name: sales_idempotency_test
+    schema:
+      entityType: ''
+      providerType: ProphecyManaged
+      fields:
+      - name: SaleID
+        dataType:
+          type: Integer
+      - name: CustomerName
+        dataType:
+          type: String
+      - name: Product
+        dataType:
+          type: String
+      - name: Amount
+        dataType:
+          type: Decimal(38, 5)
+      - name: SaleDate
+        dataType:
+          type: Date
+    description: null
+    author: harjot.singh@decisionspot.com
+    files:
+    - seeds/sales_idempotency_test.csv
+    createdAt: '2026-10-24 22:53:06'
+  .prophecy/metadata/sqlseeds/schema_drift_test:
+    name: schema_drift_test
+    schema:
+      entityType: ''
+      providerType: ProphecyManaged
+      fields:
+      - name: Product
+        dataType:
+          type: String
+      - name: Quantity
+        dataType:
+          type: Integer
+      - name: Unit_Price
+        dataType:
+          type: Decimal(38, 5)
+    description: null
+    author: harjot.singh@decisionspot.com
+    files:
+    - seeds/schema_drift_test.csv
+    createdAt: '2026-10-24 23:00:20'
+  .prophecy/metadata/sqlseeds/sales_with_dates:
+    name: sales_with_dates
+    schema:
+      entityType: ''
+      providerType: ProphecyManaged
+      fields:
+      - name: SaleID
+        dataType:
+          type: Integer
+      - name: CustomerName
+        dataType:
+          type: String
+      - name: Amount
+        dataType:
+          type: Decimal(38, 5)
+      - name: TransactionDate
+        dataType:
+          type: Date
+    description: null
+    author: harjot.singh@decisionspot.com
+    files:
+    - seeds/sales_with_dates.csv
+    createdAt: '2026-10-24 23:05:32'
+sqlSources:
+  .prophecy/metadata/sqlsources/ProphecyCompute_main:
+    name: ProphecyCompute_main
+    description: null
+    author: harjot.singh@decisionspot.com
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2026-10-22 13:24:37'
+    tables:
+    - name: inbound_shipments
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: order_line_bigint_key
+          dataType:
+            type: String
+        - name: purchase_order_number
+          dataType:
+            type: String
+        - name: purchase_order_line_number
+          dataType:
+            type: String
+        - name: order_date
+          dataType:
+            type: String
+        - name: delivery_date
+          dataType:
+            type: String
+        - name: first_delivery_date
+          dataType:
+            type: String
+        - name: partner_item_number
+          dataType:
+            type: String
+        - name: origin_supplier_name
+          dataType:
+            type: String
+        - name: origin_supplier_number
+          dataType:
+            type: String
+        - name: origin_supplier_site_code
+          dataType:
+            type: String
+        - name: origin_supplier_mfg
+          dataType:
+            type: String
+        - name: supplier_name
+          dataType:
+            type: String
+        - name: supplier_number
+          dataType:
+            type: String
+        - name: supplier_country
+          dataType:
+            type: String
+        - name: origin_supplier_loading_port_actual
+          dataType:
+            type: String
+        - name: origin_supplier_loading_port
+          dataType:
+            type: String
+        - name: origin_supplier_country
+          dataType:
+            type: String
+        - name: item_country_of_origin
+          dataType:
+            type: String
+        - name: transport_mode
+          dataType:
+            type: String
+        - name: port_source
+          dataType:
+            type: String
+        - name: inventory_organization_bigint_key
+          dataType:
+            type: String
+        - name: receiving_org_code
+          dataType:
+            type: String
+        - name: receiving_org_name
+          dataType:
+            type: String
+        - name: item_bigint_key
+          dataType:
+            type: String
+        - name: item_id
+          dataType:
+            type: String
+        - name: item_type
+          dataType:
+            type: String
+        - name: quantity_units
+          dataType:
+            type: String
+        - name: quantity_weight
+          dataType:
+            type: String
+        - name: quantity_pallets
+          dataType:
+            type: String
+        - name: quantity_containers
+          dataType:
+            type: String
+        - name: mfg_cost
+          dataType:
+            type: String
+        - name: receipt_cost
+          dataType:
+            type: String
+      description: Inbound shipments data containing purchase orders, delivery dates,
+        item keys, and quantities
+      author: harjot.singh@decisionspot.com
+      createdAt: '2026-10-22 13:24:37'
+    - name: product_master
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: item_bigint_key
+          dataType:
+            type: String
+        - name: item_id
+          dataType:
+            type: String
+        - name: selling_item_number
+          dataType:
+            type: String
+        - name: country_of_origin
+          dataType:
+            type: String
+        - name: item_class
+          dataType:
+            type: String
+        - name: item_description
+          dataType:
+            type: String
+        - name: unit_volume
+          dataType:
+            type: String
+        - name: unit_weight
+          dataType:
+            type: String
+        - name: units_per_case
+          dataType:
+            type: String
+        - name: units_per_pallet
+          dataType:
+            type: String
+        - name: units_per_container
+          dataType:
+            type: String
+        - name: active_estimated_cost
+          dataType:
+            type: String
+        - name: applied_standard_cost
+          dataType:
+            type: String
+        - name: direct_labor_cost
+          dataType:
+            type: String
+        - name: direct_material_cost
+          dataType:
+            type: String
+        - name: duty_cost
+          dataType:
+            type: String
+        - name: fixed_overhead_cost
+          dataType:
+            type: String
+        - name: freight_cost
+          dataType:
+            type: String
+        - name: import_fee_cost
+          dataType:
+            type: String
+        - name: purchase_burden_cost
+          dataType:
+            type: String
+        - name: standard_cost
+          dataType:
+            type: String
+        - name: variable_overhead_cost
+          dataType:
+            type: String
+      description: Product master data with item attributes, weights, units per pallet/container,
+        and costs
+      author: harjot.singh@decisionspot.com
+      createdAt: '2026-10-22 13:24:37'
+    - name: products_catalog
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: Name
+          dataType:
+            type: String
+        - name: Active
+          dataType:
+            type: String
+        - name: Weight
+          dataType:
+            type: String
+        - name: Shipment Volume
+          dataType:
+            type: String
+        - name: Warehouse Volume
+          dataType:
+            type: String
+        - name: Adjusted Volume
+          dataType:
+            type: String
+        - name: Freight Class
+          dataType:
+            type: String
+        - name: Value
+          dataType:
+            type: String
+        - name: Max Shelf Life
+          dataType:
+            type: String
+        - name: Grouping 1
+          dataType:
+            type: String
+        - name: Grouping 2
+          dataType:
+            type: String
+        - name: Grouping 3
+          dataType:
+            type: String
+        - name: Grouping 4
+          dataType:
+            type: String
+        - name: Grouping 5
+          dataType:
+            type: String
+        - name: Grouping 6
+          dataType:
+            type: String
+        - name: Grouping 7
+          dataType:
+            type: String
+        - name: Grouping 8
+          dataType:
+            type: String
+        - name: Grouping 9
+          dataType:
+            type: String
+        - name: Grouping 10
+          dataType:
+            type: String
+        - name: Notes
+          dataType:
+            type: String
+      description: Product catalog with product names, weights, volumes, values, and
+        grouping attributes
+      author: harjot.singh@decisionspot.com
+      createdAt: '2026-10-22 13:24:37'
+    - name: site_product_inv_info
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: Site
+          dataType:
+            type: String
+        - name: Product
+          dataType:
+            type: String
+        - name: Itor
+          dataType:
+            type: String
+        - name: Holding Cost
+          dataType:
+            type: String
+        - name: Starting Inventory
+          dataType:
+            type: String
+        - name: Ending Inventory
+          dataType:
+            type: String
+      description: Site-level product inventory information with holding costs and
+        inventory levels
+      author: harjot.singh@decisionspot.com
+      createdAt: '2026-10-22 13:24:37'
+    - name: products_holding_cost
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: Name
+          dataType:
+            type: String
+        - name: Active
+          dataType:
+            type: String
+        - name: Weight
+          dataType:
+            type: String
+        - name: Shipment Volume
+          dataType:
+            type: String
+        - name: Warehouse Volume
+          dataType:
+            type: String
+        - name: Adjusted Volume
+          dataType:
+            type: String
+        - name: Freight Class
+          dataType:
+            type: String
+        - name: Value
+          dataType:
+            type: String
+        - name: Max Shelf Life
+          dataType:
+            type: String
+        - name: Grouping 1
+          dataType:
+            type: String
+        - name: Grouping 2
+          dataType:
+            type: String
+        - name: Grouping 3
+          dataType:
+            type: String
+        - name: Grouping 4
+          dataType:
+            type: String
+        - name: Grouping 5
+          dataType:
+            type: String
+        - name: Grouping 6
+          dataType:
+            type: String
+        - name: Grouping 7
+          dataType:
+            type: String
+        - name: Grouping 8
+          dataType:
+            type: String
+        - name: Grouping 9
+          dataType:
+            type: String
+        - name: Grouping 10
+          dataType:
+            type: String
+        - name: Notes
+          dataType:
+            type: String
+      description: Product values used for holding cost calculation (Holding Cost
+        = 0.14 * Value)
+      author: harjot.singh@decisionspot.com
+      createdAt: '2026-10-22 13:24:37'
+    - name: production_data
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: Site
+          dataType:
+            type: String
+        - name: Product
+          dataType:
+            type: String
+        - name: Time Period
+          dataType:
+            type: String
+        - name: Min Supply
+          dataType:
+            type: String
+        - name: Max Supply
+          dataType:
+            type: String
+        - name: Cost
+          dataType:
+            type: String
+        - name: Rate
+          dataType:
+            type: String
+        - name: Tiered Cost
+          dataType:
+            type: String
+      description: Production data with supply constraints, costs, and rates
+      author: harjot.singh@decisionspot.com
+      createdAt: '2026-10-22 13:24:37'
+    - name: sites_output
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: Name
+          dataType:
+            type: String
+        - name: Active
+          dataType:
+            type: String
+        - name: Latitude
+          dataType:
+            type: String
+        - name: Longitude
+          dataType:
+            type: String
+        - name: Sourcing Status
+          dataType:
+            type: String
+        - name: Open Close Status
+          dataType:
+            type: String
+        - name: Inventory Status
+          dataType:
+            type: String
+        - name: Opening Cost
+          dataType:
+            type: String
+        - name: Operating Cost
+          dataType:
+            type: String
+        - name: Closing Cost
+          dataType:
+            type: String
+        - name: Postal Code
+          dataType:
+            type: String
+        - name: Country
+          dataType:
+            type: String
+        - name: Site Type
+          dataType:
+            type: String
+        - name: Zone 1
+          dataType:
+            type: String
+        - name: Zone 2
+          dataType:
+            type: String
+        - name: Zone 3
+          dataType:
+            type: String
+        - name: Zone 4
+          dataType:
+            type: String
+        - name: Zone 5
+          dataType:
+            type: String
+        - name: Zone 6
+          dataType:
+            type: String
+        - name: Zone 7
+          dataType:
+            type: String
+        - name: Zone 8
+          dataType:
+            type: String
+        - name: Notes
+          dataType:
+            type: String
+      description: Unified site master output from Sites container
+      author: harjot.singh@decisionspot.com
+      createdAt: '2026-10-24 15:48:25'
+    - name: production_output
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: Site
+          dataType:
+            type: String
+        - name: Product
+          dataType:
+            type: String
+        - name: Time_Period
+          dataType:
+            type: String
+        - name: Min_Supply
+          dataType:
+            type: Integer
+        - name: Max_Supply
+          dataType:
+            type: Integer
+        - name: Cost
+          dataType:
+            type: Double
+        - name: Rate
+          dataType:
+            type: Integer
+        - name: Tiered_Cost
+          dataType:
+            type: Integer
+      description: Production capacity output from Production container
+      author: harjot.singh@decisionspot.com
+      createdAt: '2026-10-24 15:48:25'
+    - name: products_output
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: Name
+          dataType:
+            type: String
+        - name: Active
+          dataType:
+            type: String
+        - name: Weight
+          dataType:
+            type: Double
+        - name: Shipment Volume
+          dataType:
+            type: Double
+        - name: Warehouse Volume
+          dataType:
+            type: Double
+        - name: Adjusted Volume
+          dataType:
+            type: Double
+        - name: Freight Class
+          dataType:
+            type: String
+        - name: Value
+          dataType:
+            type: Double
+        - name: Max Shelf Life
+          dataType:
+            type: Integer
+        - name: Grouping 1
+          dataType:
+            type: String
+        - name: Grouping 2
+          dataType:
+            type: String
+        - name: Grouping 3
+          dataType:
+            type: String
+        - name: Grouping 4
+          dataType:
+            type: String
+        - name: Grouping 5
+          dataType:
+            type: String
+        - name: Grouping 6
+          dataType:
+            type: String
+        - name: Grouping 7
+          dataType:
+            type: String
+        - name: Grouping 8
+          dataType:
+            type: String
+        - name: Grouping 9
+          dataType:
+            type: String
+        - name: Grouping 10
+          dataType:
+            type: String
+        - name: Notes
+          dataType:
+            type: String
+      description: Products output from Products container
+      author: harjot.singh@decisionspot.com
+      createdAt: '2026-10-24 15:48:25'
+    - name: scenario_a_minmax_v4
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: Name
+          dataType:
+            type: String
+        - name: Active
+          dataType:
+            type: Boolean
+        - name: Latitude
+          dataType:
+            type: Double
+        - name: Longitude
+          dataType:
+            type: Double
+        - name: Sourcing Status
+          dataType:
+            type: String
+        - name: Open Close Status
+          dataType:
+            type: String
+        - name: Inventory Status
+          dataType:
+            type: String
+        - name: Opening Cost
+          dataType:
+            type: Boolean
+        - name: Operating Cost
+          dataType:
+            type: Boolean
+        - name: Closing Cost
+          dataType:
+            type: Boolean
+        - name: Postal Code
+          dataType:
+            type: String
+        - name: Country
+          dataType:
+            type: String
+        - name: Site Type
+          dataType:
+            type: String
+        - name: Zone 1
+          dataType:
+            type: String
+        - name: Zone 2
+          dataType:
+            type: String
+        - name: Zone 3
+          dataType:
+            type: String
+        - name: Zone 4
+          dataType:
+            type: String
+        - name: Zone 5
+          dataType:
+            type: String
+        - name: Zone 6
+          dataType:
+            type: String
+        - name: Zone 7
+          dataType:
+            type: String
+        - name: Zone 8
+          dataType:
+            type: String
+        - name: Notes
+          dataType:
+            type: String
+      description: null
+      author: harjot.singh@decisionspot.com
+      createdAt: '2026-10-24 17:37:24'
+      tableType: table
+    - name: solution_2026_aug_22_9_2026_8_21_33_175
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: Site
+          dataType:
+            type: String
+        - name: Product
+          dataType:
+            type: String
+        - name: Average Historical Demand
+          dataType:
+            type: Double
+        - name: Average Historical Forecast
+          dataType:
+            type: Double
+        - name: Total Historical Demand
+          dataType:
+            type: BigInt
+        - name: Total Historical Forecast
+          dataType:
+            type: BigInt
+        - name: Median Historical Demand
+          dataType:
+            type: BigInt
+        - name: Median Historical Forecast
+          dataType:
+            type: BigInt
+        - name: Mode Historical Demand
+          dataType:
+            type: Double
+        - name: Mode Historical Forecast
+          dataType:
+            type: Double
+        - name: RMSE
+          dataType:
+            type: Boolean
+        - name: MAPE
+          dataType:
+            type: Boolean
+        - name: MAE
+          dataType:
+            type: Boolean
+        - name: SD
+          dataType:
+            type: Boolean
+      description: null
+      author: harjot.singh@decisionspot.com
+      createdAt: '2026-10-24 17:43:01'
+      tableType: table
+    - name: foresta_products_1039_26_10_2026_20_14_34_932
+      schema:
+        entityType: ''
+        providerType: ProphecyManaged
+        fields:
+        - name: Name
+          dataType:
+            type: String
+        - name: Active
+          dataType:
+            type: Boolean
+        - name: Weight
+          dataType:
+            type: BigInt
+        - name: Shipment Volume
+          dataType:
+            type: BigInt
+        - name: Warehouse Volume
+          dataType:
+            type: BigInt
+        - name: Adjusted Volume
+          dataType:
+            type: BigInt
+        - name: Freight Class
+          dataType:
+            type: BigInt
+        - name: Value
+          dataType:
+            type: BigInt
+        - name: Min Shelf Life
+          dataType:
+            type: BigInt
+        - name: Max Shelf Life
+          dataType:
+            type: BigInt
+        - name: Grouping 1
+          dataType:
+            type: String
+        - name: Grouping 2
+          dataType:
+            type: String
+        - name: Grouping 3
+          dataType:
+            type: String
+        - name: Grouping 4
+          dataType:
+            type: String
+        - name: Grouping 5
+          dataType:
+            type: String
+        - name: Grouping 6
+          dataType:
+            type: String
+        - name: Grouping 7
+          dataType:
+            type: String
+        - name: Grouping 8
+          dataType:
+            type: String
+        - name: Grouping 9
+          dataType:
+            type: String
+        - name: Grouping 10
+          dataType:
+            type: String
+        - name: Notes
+          dataType:
+            type: String
+      description: null
+      author: harjot.singh@decisionspot.com
+      createdAt: '2026-10-26 14:45:22'
+      tableType: table
+sqlUnreferencedSources: {}
+sqlPipeline:
+  name: sqlPipeline
+  description: null
+  author: harjot.singh@decisionspot.com
+  createdAt: '2026-10-22 13:17:09'
+dependencies: []
+projectDependencies:
+  '16':
+    projectUID: 16
+    projectName: prophecy_basics
+    repositoryPath: gitUri=https://github.com/prophecy-io/prophecy-basics&subPath=
+    version: 1.0.20
+    isDefault: true
+    author: null
+    createdAt: '2026-10-22 13:17:08'
+flags:
+  shouldAddDefaultDependenciesIfAbsent: true
+pipelineConfigurations: {}
+projectConfigurations: {}
+sqlOrchestratorPipelines:
+  .prophecy/metadata/sqlorchestratorpipeline/weighted_average_standard_cost_poc:
+    name: weighted_average_standard_cost_poc
+    schema: null
+    description: null
+    author: harjot.singh@decisionspot.com
+    files:
+    - .prophecy/ide/pipelines/weighted_average_standard_cost_poc.json
+    - pipelines/weighted_average_standard_cost_poc.py
+    - models/weighted_average_standard_cost_poc/schema.yml
+    - models/weighted_average_standard_cost_poc/weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002.sql
+    createdAt: '2026-10-22 13:17:42'
+  .prophecy/metadata/sqlorchestratorpipeline/full_network_model_ai_migration:
+    name: full_network_model_ai_migration
+    schema: null
+    description: null
+    author: harjot.singh@decisionspot.com
+    files:
+    - .prophecy/ide/pipelines/full_network_model_ai_migration.json
+    - pipelines/full_network_model_ai_migration.py
+    - models/full_network_model_ai_migration/schema.yml
+    - models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql
+    - models/full_network_model_ai_migration/full_network_model_ai_migration__origin_loading_ports.sql
+    - models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql
+    - models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql
+    createdAt: '2026-10-24 15:12:14'
+  .prophecy/metadata/sqlorchestratorpipeline/sites_gem_demo:
+    name: sites_gem_demo
+    schema: null
+    description: null
+    author: harjot.singh@decisionspot.com
+    files:
+    - models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql
+    - models/sites_gem_demo/schema.yml
+    - .prophecy/ide/pipelines/sites_gem_demo.json
+    - pipelines/sites_gem_demo.py
+    createdAt: '2026-10-24 16:52:38'
+  .prophecy/metadata/sqlorchestratorpipeline/test_drag_and_drop:
+    name: test_drag_and_drop
+    schema: null
+    description: null
+    author: harjot.singh@decisionspot.com
+    files:
+    - .prophecy/ide/pipelines/test_drag_and_drop.json
+    - pipelines/test_drag_and_drop.py
+    - models/test_drag_and_drop/test_drag_and_drop__avg_demand.sql
+    - models/test_drag_and_drop/schema.yml
+    createdAt: '2026-10-24 17:26:35'
+  .prophecy/metadata/sqlorchestratorpipeline/test_filter_in_out:
+    name: test_filter_in_out
+    schema: null
+    description: null
+    author: harjot.singh@decisionspot.com
+    files:
+    - .prophecy/ide/pipelines/test_filter_in_out.json
+    - pipelines/test_filter_in_out.py
+    - models/test_filter_in_out/test_filter_in_out__filter_high_sales.sql
+    - models/test_filter_in_out/test_filter_in_out__filter_low_sales.sql
+    - models/test_filter_in_out/schema.yml
+    createdAt: '2026-10-24 22:18:38'
+  .prophecy/metadata/sqlorchestratorpipeline/test_group_activate_deactivate_run:
+    name: test_group_activate_deactivate_run
+    schema: null
+    description: null
+    author: harjot.singh@decisionspot.com
+    files:
+    - .prophecy/ide/pipelines/test_group_activate_deactivate_run.json
+    - pipelines/test_group_activate_deactivate_run.py
+    - models/test_group_activate_deactivate_run/test_group_activate_deactivate_run__filter_low_sales.sql
+    - models/test_group_activate_deactivate_run/test_group_activate_deactivate_run__filter_high_sales.sql
+    - models/test_group_activate_deactivate_run/schema.yml
+    - models/test_group_activate_deactivate_run/test_group_activate_deactivate_run__filter_low_sales_1.sql
+    - models/test_group_activate_deactivate_run/test_group_activate_deactivate_run__filter_high_sales_1.sql
+    - models/test_group_activate_deactivate_run/test_group_activate_deactivate_run__filter_high_sales_2.sql
+    - models/test_group_activate_deactivate_run/test_group_activate_deactivate_run__filter_low_sales_2.sql
+    createdAt: '2026-10-24 22:36:38'
+  .prophecy/metadata/sqlorchestratorpipeline/test_partial_execution:
+    name: test_partial_execution
+    schema: null
+    description: null
+    author: harjot.singh@decisionspot.com
+    files:
+    - .prophecy/ide/pipelines/test_partial_execution.json
+    - pipelines/test_partial_execution.py
+    - models/test_partial_execution/test_partial_execution__aggregate_step.sql
+    - models/test_partial_execution/schema.yml
+    createdAt: '2026-10-24 22:41:10'
+  .prophecy/metadata/sqlorchestratorpipeline/test_rerun_idempotency:
+    name: test_rerun_idempotency
+    schema: null
+    description: null
+    author: harjot.singh@decisionspot.com
+    files:
+    - .prophecy/ide/pipelines/test_rerun_idempotency.json
+    - pipelines/test_rerun_idempotency.py
+    - models/test_rerun_idempotency/test_rerun_idempotency__sales_output.sql
+    - models/test_rerun_idempotency/schema.yml
+    createdAt: '2026-10-24 22:52:21'
+  .prophecy/metadata/sqlorchestratorpipeline/test_schema_drift:
+    name: test_schema_drift
+    schema: null
+    description: null
+    author: harjot.singh@decisionspot.com
+    files:
+    - .prophecy/ide/pipelines/test_schema_drift.json
+    - pipelines/test_schema_drift.py
+    - models/test_schema_drift/test_schema_drift__aggregate_sales.sql
+    - models/test_schema_drift/schema.yml
+    createdAt: '2026-10-24 22:59:42'
+  .prophecy/metadata/sqlorchestratorpipeline/test_shared_parameters:
+    name: test_shared_parameters
+    schema: null
+    description: null
+    author: harjot.singh@decisionspot.com
+    files:
+    - .prophecy/ide/pipelines/test_shared_parameters.json
+    - pipelines/test_shared_parameters.py
+    - models/test_shared_parameters/test_shared_parameters__filter_after_cutoff.sql
+    - models/test_shared_parameters/test_shared_parameters__filter_before_cutoff.sql
+    - models/test_shared_parameters/schema.yml
+    createdAt: '2026-10-24 23:04:50'
+sqlBusinessApps: {}

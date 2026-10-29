@@ -1,0 +1,86 @@
+providerType: "Arrow"
+fields:
+- name: "parameter_key"
+  dataType:
+    type: "utf8"
+  description: "Unique identifier for the parameter"
+- name: "parameter_name"
+  dataType:
+    type: "utf8"
+  description: "Name of the parameter"
+- name: "value"
+  dataType:
+    type: "utf8"
+  description: "Parameter value (text)"
+- name: "value_numeric"
+  dataType:
+    type: "utf8"
+  description: "Parameter value (numeric)"
+- name: "units"
+  dataType:
+    type: "utf8"
+  description: "Units of measurement"
+- name: "category"
+  dataType:
+    type: "utf8"
+  description: "Parameter category"
+- name: "supplier_key"
+  dataType:
+    type: "utf8"
+  description: "Associated supplier key"
+- name: "supplier_type"
+  dataType:
+    type: "utf8"
+  description: "Type of supplier"
+- name: "site_type"
+  dataType:
+    type: "utf8"
+  description: "Type of site this parameter applies to"
+- name: "product_group"
+  dataType:
+    type: "utf8"
+  description: "Product group this parameter applies to"
+- name: "source_zone"
+  dataType:
+    type: "utf8"
+  description: "Source zone for the parameter"
+- name: "destination_zone"
+  dataType:
+    type: "utf8"
+  description: "Destination zone for the parameter"
+- name: "time_period_start"
+  dataType:
+    type: "utf8"
+  description: "Start of time period when parameter is effective"
+- name: "time_period_end"
+  dataType:
+    type: "utf8"
+  description: "End of time period when parameter is effective"
+- name: "effective_date"
+  dataType:
+    type: "utf8"
+  description: "Date when parameter becomes effective"
+- name: "expiration_date"
+  dataType:
+    type: "utf8"
+  description: "Date when parameter expires"
+- name: "priority"
+  dataType:
+    type: "utf8"
+  description: "Priority level of the parameter"
+- name: "source"
+  dataType:
+    type: "utf8"
+  description: "Data source for this parameter"
+- name: "business_sme"
+  dataType:
+    type: "utf8"
+  description: "Business subject matter expert owner"
+- name: "last_reviewed"
+  dataType:
+    type: "utf8"
+  description: "Date of last review"
+- name: "notes"
+  dataType:
+    type: "utf8"
+  description: "Additional notes"

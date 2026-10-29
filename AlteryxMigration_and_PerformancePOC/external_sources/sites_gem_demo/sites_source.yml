@@ -1,0 +1,90 @@
+providerType: "Arrow"
+fields:
+- name: "Customer Key"
+  dataType:
+    type: "utf8"
+  description: "Unique identifier for the site/customer"
+- name: "Active"
+  dataType:
+    type: "utf8"
+  description: "Site active status flag"
+- name: "Latitude"
+  dataType:
+    type: "utf8"
+  description: "Site latitude coordinate"
+- name: "Longitude"
+  dataType:
+    type: "utf8"
+  description: "Site longitude coordinate"
+- name: "Sourcing Status"
+  dataType:
+    type: "utf8"
+  description: "Sourcing status for the site"
+- name: "Open Close Status"
+  dataType:
+    type: "utf8"
+  description: "Whether site can be opened/closed in optimization"
+- name: "Inventory Status"
+  dataType:
+    type: "utf8"
+  description: "Inventory management status"
+- name: "Opening Cost"
+  dataType:
+    type: "utf8"
+  description: "Cost to open the site"
+- name: "Operating Cost"
+  dataType:
+    type: "utf8"
+  description: "Operating cost per period"
+- name: "Closing  Cost"
+  dataType:
+    type: "utf8"
+  description: "Cost to close the site"
+- name: "postal_code"
+  dataType:
+    type: "utf8"
+  description: "Site postal code"
+- name: "country"
+  dataType:
+    type: "utf8"
+  description: "Site country"
+- name: "Site Type"
+  dataType:
+    type: "utf8"
+  description: "Type of site (warehouse, DC, etc.)"
+- name: "Zone 1"
+  dataType:
+    type: "utf8"
+  description: "Zone assignment level 1"
+- name: "Zone 2"
+  dataType:
+    type: "utf8"
+  description: "Zone assignment level 2"
+- name: "Zone 3"
+  dataType:
+    type: "utf8"
+  description: "Zone assignment level 3"
+- name: "Zone 4"
+  dataType:
+    type: "utf8"
+  description: "Zone assignment level 4"
+- name: "Zone _5"
+  dataType:
+    type: "utf8"
+  description: "Zone assignment level 5"
+- name: "Zone  6"
+  dataType:
+    type: "utf8"
+  description: "Zone assignment level 6"
+- name: "Zone  7"
+  dataType:
+    type: "utf8"
+  description: "Zone assignment level 7"
+- name: "Zone 8"
+  dataType:
+    type: "utf8"
+  description: "Zone assignment level 8"
+- name: "Notes"
+  dataType:
+    type: "utf8"
+  description: "Additional site notes"

@@ -1,0 +1,1340 @@
+{
+  "id" : "sites_gem_demo",
+  "metainfo" : {
+    "label" : "sites_gem_demo",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "isTranspiledPipeline" : false,
+    "processesVsModelFiles" : {
+      "sites_filter_2##bThL47G7" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "sites_dedupe_1##HCXk3TZP" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "sites_union_all##a0xi4Pcp" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "sites_join_1##T35W2ePC" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "customer_dedupe_##Lpp8qvwZ" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "customer_reforma##TGdVJdgH" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "sites_source_f5OoAkTaEz" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "final##gp1uxjWi" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "sites_filter_1##oolat98l" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "supplier_dedupe_##Dsmiv6Ku" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "customer_sites_source_SF0tUfuD4H" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "sites_final_dedu##T87ZcV1K" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "sites_reformat_1##bEEdB2UP" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "suppliers_source_pRpx0DuvDV" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "supplier_reforma##YVRgdWtc" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql"
+    }
+  },
+  "processes" : {
+    "sites_filter_2##bThL47G7" : {
+      "id" : "sites_filter_2##bThL47G7",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "sites_filter_2",
+        "x" : 220,
+        "y" : 20,
+        "phase" : 0,
+        "leadingComment" : " FILTER GEM: Prophecy equivalent of Alteryx Filter tool "
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "org_name IS NOT NULL AND country IS NOT NULL"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "i6WPX6ea",
+          "slug" : "customer_sites_source"
+        } ],
+        "outputs" : [ {
+          "id" : "q5YhUOTt",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "sites_dedupe_1##HCXk3TZP" : {
+      "id" : "sites_dedupe_1##HCXk3TZP",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "sites_dedupe_1",
+        "x" : 420,
+        "y" : 220,
+        "phase" : 0,
+        "leadingComment" : " DEDUPLICATE GEM: Prophecy equivalent of Alteryx Unique tool "
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "country"
+          },
+          "_row_id" : "1710943240"
+        }, {
+          "expression" : {
+            "expression" : "\"Customer Key\""
+          },
+          "_row_id" : "1460164090"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "\"Customer Key\""
+            },
+            "_row_id" : "830435981"
+          }
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "L4etkIHn",
+          "slug" : "sites_filter_1"
+        } ],
+        "outputs" : [ {
+          "id" : "lnSFizyP",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "sites_union_all##a0xi4Pcp" : {
+      "id" : "sites_union_all##a0xi4Pcp",
+      "component" : "Union",
+      "metadata" : {
+        "label" : "sites_union_all",
+        "x" : 1140,
+        "y" : 200,
+        "phase" : 0,
+        "leadingComment" : " UNION GEM: Prophecy equivalent of Alteryx Union tool "
+      },
+      "properties" : {
+        "operationType" : "union",
+        "preserveDuplicates" : true,
+        "useMinus" : false,
+        "inputAliases" : [ "sites_join_1", "supplier_reformat_1", "sites_reformat_1" ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "LIKJLeQW",
+          "slug" : "sites_join_1"
+        }, {
+          "id" : "V60XrrD6",
+          "slug" : "supplier_reformat_1"
+        }, {
+          "id" : "MZhu5Uv2",
+          "slug" : "sites_reformat_1"
+        } ],
+        "outputs" : [ {
+          "id" : "DGGcfpOc",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "sites_join_1##T35W2ePC" : {
+      "id" : "sites_join_1##T35W2ePC",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "sites_join_1",
+        "x" : 880,
+        "y" : 20,
+        "phase" : 0,
+        "leadingComment" : " JOIN GEM: Prophecy equivalent of Alteryx Join tool "
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "c",
+          "expression" : {
+            "expression" : "s.country = c.country AND s.\"Postal Code\" = c.\"Postal Code\""
+          },
+          "joinType" : "LEFT"
+        } ],
+        "allowSelection" : false,
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "s.\"Name\""
+          },
+          "_row_id" : "1182702011"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Active\""
+          },
+          "_row_id" : "1758270964"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Latitude\""
+          },
+          "_row_id" : "1369390751"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Longitude\""
+          },
+          "_row_id" : "458707405"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Sourcing Status\""
+          },
+          "_row_id" : "869868259"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Open Close Status\""
+          },
+          "_row_id" : "258291417"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Inventory Status\""
+          },
+          "_row_id" : "1549311589"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Opening Cost\""
+          },
+          "_row_id" : "1443365866"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Operating Cost\""
+          },
+          "_row_id" : "2063953527"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Closing  Cost\""
+          },
+          "_row_id" : "1393110249"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Postal Code\""
+          },
+          "_row_id" : "590528014"
+        }, {
+          "expression" : {
+            "expression" : "s.country"
+          },
+          "_row_id" : "743482808"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Site Type\""
+          },
+          "_row_id" : "1374540361"
+        }, {
+          "expression" : {
+            "expression" : "s.source_type"
+          },
+          "_row_id" : "652021519"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ ],
+        "headAlias" : "s"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "iwLFfekI",
+          "slug" : "s"
+        }, {
+          "id" : "q8bfZ1V2",
+          "slug" : "c"
+        } ],
+        "outputs" : [ {
+          "id" : "dZRNYdOb",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "MRtB0dbs6K" : {
+      "id" : "MRtB0dbs6K",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "customer_sites_source",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0,
+        "comment" : "Alteryx Tool: UniversalInput"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "includeFileNameColumn" : false,
+            "includeSheetNameColumn" : true,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/DS customer_site_v2.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : "Customer sites",
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "Arrow",
+              "fields" : [ {
+                "name" : "customer_site_key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Unique identifier for customer site"
+              }, {
+                "name" : "customer_name",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Customer company name"
+              }, {
+                "name" : "country",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Customer country"
+              }, {
+                "name" : "postal_code",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Customer postal code"
+              }, {
+                "name" : "latitude",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Customer site latitude"
+              }, {
+                "name" : "longitude",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Customer site longitude"
+              }, {
+                "name" : "org_name",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Organization name"
+              }, {
+                "name" : "lat",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Alternate latitude field"
+              }, {
+                "name" : "lon",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Alternate longitude field"
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "SF0tUfuD4H",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "customer_dedupe_##Lpp8qvwZ" : {
+      "id" : "customer_dedupe_##Lpp8qvwZ",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "customer_dedupe_1",
+        "x" : 420,
+        "y" : 20,
+        "phase" : 0,
+        "leadingComment" : " DEDUPLICATE GEM: Prophecy equivalent of Alteryx Unique tool "
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "org_name"
+          },
+          "_row_id" : "1578864006"
+        }, {
+          "expression" : {
+            "expression" : "country"
+          },
+          "_row_id" : "1248302573"
+        }, {
+          "expression" : {
+            "expression" : "postal_code"
+          },
+          "_row_id" : "998424698"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "customer_site_key"
+            },
+            "_row_id" : "638069645"
+          }
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "BQdqgIlI",
+          "slug" : "sites_filter_2"
+        } ],
+        "outputs" : [ {
+          "id" : "xwFKcCc4",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "customer_reforma##TGdVJdgH" : {
+      "id" : "customer_reforma##TGdVJdgH",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "customer_reformat_1",
+        "x" : 620,
+        "y" : 20,
+        "phase" : 0,
+        "leadingComment" : " REFORMAT GEM: Prophecy equivalent of Alteryx Formula tool "
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "org_name"
+          },
+          "alias" : "\"Name\"",
+          "_row_id" : "120169986"
+        }, {
+          "expression" : {
+            "expression" : "'Y'"
+          },
+          "alias" : "\"Active\"",
+          "_row_id" : "2102305708"
+        }, {
+          "expression" : {
+            "expression" : "lat"
+          },
+          "alias" : "\"Latitude\"",
+          "_row_id" : "1273637772"
+        }, {
+          "expression" : {
+            "expression" : "lon"
+          },
+          "alias" : "\"Longitude\"",
+          "_row_id" : "71126279"
+        }, {
+          "expression" : {
+            "expression" : "'Can Source'"
+          },
+          "alias" : "\"Sourcing Status\"",
+          "_row_id" : "59171652"
+        }, {
+          "expression" : {
+            "expression" : "'Cannot Open'"
+          },
+          "alias" : "\"Open Close Status\"",
+          "_row_id" : "161702027"
+        }, {
+          "expression" : {
+            "expression" : "'Do Not Include'"
+          },
+          "alias" : "\"Inventory Status\"",
+          "_row_id" : "3214565"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Opening Cost\"",
+          "_row_id" : "1482749142"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Operating Cost\"",
+          "_row_id" : "612024561"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Closing  Cost\"",
+          "_row_id" : "1951857189"
+        }, {
+          "expression" : {
+            "expression" : "postal_code"
+          },
+          "alias" : "\"Postal Code\"",
+          "_row_id" : "602387809"
+        }, {
+          "expression" : {
+            "expression" : "country"
+          },
+          "_row_id" : "1456534784"
+        }, {
+          "expression" : {
+            "expression" : "'Customer'"
+          },
+          "alias" : "\"Site Type\"",
+          "_row_id" : "2115841043"
+        }, {
+          "expression" : {
+            "expression" : "'Customer'"
+          },
+          "alias" : "source_type",
+          "_row_id" : "824186564"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "prGnTYxm",
+          "slug" : "customer_dedupe_1"
+        } ],
+        "outputs" : [ {
+          "id" : "Ag4jb34i",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "final##gp1uxjWi" : {
+      "id" : "final##gp1uxjWi",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "sites_final_dedupe",
+        "x" : 1540,
+        "y" : 200,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "database" : "ProphecyCompute",
+          "name" : "sites_demo_output",
+          "sourceType" : "Table",
+          "alias" : "",
+          "schema" : "main"
+        },
+        "materialization" : { },
+        "writeOptions" : {
+          "entityConfig" : {
+            "database" : "\"ProphecyCompute\"",
+            "alias" : "\"sites_demo_output\"",
+            "schema" : "\"main\"",
+            "type" : "ModelConfig",
+            "materialized" : "table"
+          },
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "YR5dhxX3",
+          "slug" : "sites_final_dedupe"
+        } ],
+        "outputs" : [ {
+          "id" : "UtmfsFeP",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "index" : 2
+    },
+    "sites_filter_1##oolat98l" : {
+      "id" : "sites_filter_1##oolat98l",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "sites_filter_1",
+        "x" : 220,
+        "y" : 220,
+        "phase" : 0,
+        "leadingComment" : " FILTER GEM: Prophecy equivalent of Alteryx Filter tool "
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "country IS NOT NULL"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "EvpZpF3i",
+          "slug" : "sites_source"
+        } ],
+        "outputs" : [ {
+          "id" : "XSOVYX9z",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "supplier_dedupe_##Dsmiv6Ku" : {
+      "id" : "supplier_dedupe_##Dsmiv6Ku",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "supplier_dedupe_1",
+        "x" : 620,
+        "y" : 420,
+        "phase" : 0,
+        "leadingComment" : " DEDUPLICATE GEM: Prophecy equivalent of Alteryx Unique tool "
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "supplier_name"
+          },
+          "_row_id" : "1996295657"
+        }, {
+          "expression" : {
+            "expression" : "supplier_number"
+          },
+          "_row_id" : "2055327946"
+        }, {
+          "expression" : {
+            "expression" : "country"
+          },
+          "_row_id" : "526034202"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "\"Supplier Key\""
+            },
+            "_row_id" : "1723123121"
+          }
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "GvWvxthY",
+          "slug" : "suppliers_source"
+        } ],
+        "outputs" : [ {
+          "id" : "fe6TOJyw",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "sites_final_dedu##T87ZcV1K" : {
+      "id" : "sites_final_dedu##T87ZcV1K",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "sites_final_dedupe_final",
+        "x" : 1340,
+        "y" : 200,
+        "phase" : 0,
+        "leadingComment" : " DEDUPLICATE GEM: Prophecy equivalent of Alteryx Unique tool (final) "
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "\"Name\""
+          },
+          "_row_id" : "1494000229"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "\"Name\""
+            },
+            "_row_id" : "1580552351"
+          }
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SEf74JVl",
+          "slug" : "sites_union_all"
+        } ],
+        "outputs" : [ {
+          "id" : "Nzy3dA4S",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "uM05sOp83p" : {
+      "id" : "uM05sOp83p",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "suppliers_source",
+        "x" : 420,
+        "y" : 420,
+        "phase" : 0,
+        "comment" : "Alteryx Tool: UniversalInput"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "includeFileNameColumn" : false,
+            "includeSheetNameColumn" : true,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/new_DS__Suppliers.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : "Suppliers master",
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "Arrow",
+              "fields" : [ {
+                "name" : "Supplier Key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Unique identifier for supplier"
+              }, {
+                "name" : "supplier_name",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Supplier company name"
+              }, {
+                "name" : "supplier_number",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Supplier account number"
+              }, {
+                "name" : "supplier_site_code",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Supplier facility site code"
+              }, {
+                "name" : "country",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Supplier country location"
+              }, {
+                "name" : "postal_code",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Supplier postal code"
+              }, {
+                "name" : "latitude",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Supplier latitude coordinate"
+              }, {
+                "name" : "longitude",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Supplier longitude coordinate"
+              }, {
+                "name" : "supplier_type",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Type/category of supplier"
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "pRpx0DuvDV",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "sites_reformat_1##bEEdB2UP" : {
+      "id" : "sites_reformat_1##bEEdB2UP",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "sites_reformat_1",
+        "x" : 620,
+        "y" : 220,
+        "phase" : 0,
+        "leadingComment" : " REFORMAT GEM: Prophecy equivalent of Alteryx Select/Formula tool "
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "\"Customer Key\""
+          },
+          "alias" : "\"Name\"",
+          "_row_id" : "919177011"
+        }, {
+          "expression" : {
+            "expression" : "\"Active\""
+          },
+          "_row_id" : "408091729"
+        }, {
+          "expression" : {
+            "expression" : "\"Latitude\""
+          },
+          "_row_id" : "833197755"
+        }, {
+          "expression" : {
+            "expression" : "\"Longitude\""
+          },
+          "_row_id" : "315523831"
+        }, {
+          "expression" : {
+            "expression" : "\"Sourcing Status\""
+          },
+          "_row_id" : "644305937"
+        }, {
+          "expression" : {
+            "expression" : "\"Open Close Status\""
+          },
+          "_row_id" : "822821119"
+        }, {
+          "expression" : {
+            "expression" : "\"Inventory Status\""
+          },
+          "_row_id" : "117139787"
+        }, {
+          "expression" : {
+            "expression" : "\"Opening Cost\""
+          },
+          "_row_id" : "999222154"
+        }, {
+          "expression" : {
+            "expression" : "\"Operating Cost\""
+          },
+          "_row_id" : "1395957088"
+        }, {
+          "expression" : {
+            "expression" : "\"Closing  Cost\""
+          },
+          "_row_id" : "491216069"
+        }, {
+          "expression" : {
+            "expression" : "postal_code"
+          },
+          "alias" : "\"Postal Code\"",
+          "_row_id" : "2030626814"
+        }, {
+          "expression" : {
+            "expression" : "country"
+          },
+          "_row_id" : "1954038108"
+        }, {
+          "expression" : {
+            "expression" : "\"Site Type\""
+          },
+          "_row_id" : "445841174"
+        }, {
+          "expression" : {
+            "expression" : "'Site'"
+          },
+          "alias" : "source_type",
+          "_row_id" : "1684085647"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "KnOfVzzQ",
+          "slug" : "sites_dedupe_1"
+        } ],
+        "outputs" : [ {
+          "id" : "fZfnGQcL",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "qcbi5W4MFA" : {
+      "id" : "qcbi5W4MFA",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "sites_source",
+        "x" : 20,
+        "y" : 220,
+        "phase" : 0,
+        "comment" : "Alteryx Tool: UniversalInput"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "includeFileNameColumn" : false,
+            "includeSheetNameColumn" : true,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/DS__Sites.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : "Sites master data",
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "Arrow",
+              "fields" : [ {
+                "name" : "Customer Key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Unique identifier for the site/customer"
+              }, {
+                "name" : "Active",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Site active status flag"
+              }, {
+                "name" : "Latitude",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Site latitude coordinate"
+              }, {
+                "name" : "Longitude",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Site longitude coordinate"
+              }, {
+                "name" : "Sourcing Status",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Sourcing status for the site"
+              }, {
+                "name" : "Open Close Status",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Whether site can be opened/closed in optimization"
+              }, {
+                "name" : "Inventory Status",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Inventory management status"
+              }, {
+                "name" : "Opening Cost",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Cost to open the site"
+              }, {
+                "name" : "Operating Cost",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Operating cost per period"
+              }, {
+                "name" : "Closing  Cost",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Cost to close the site"
+              }, {
+                "name" : "postal_code",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Site postal code"
+              }, {
+                "name" : "country",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Site country"
+              }, {
+                "name" : "Site Type",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Type of site (warehouse, DC, etc.)"
+              }, {
+                "name" : "Zone 1",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Zone assignment level 1"
+              }, {
+                "name" : "Zone 2",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Zone assignment level 2"
+              }, {
+                "name" : "Zone 3",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Zone assignment level 3"
+              }, {
+                "name" : "Zone 4",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Zone assignment level 4"
+              }, {
+                "name" : "Zone _5",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Zone assignment level 5"
+              }, {
+                "name" : "Zone  6",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Zone assignment level 6"
+              }, {
+                "name" : "Zone  7",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Zone assignment level 7"
+              }, {
+                "name" : "Zone 8",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Zone assignment level 8"
+              }, {
+                "name" : "Notes",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Additional site notes"
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "f5OoAkTaEz",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "QyXfNWhRk0" : {
+      "id" : "QyXfNWhRk0",
+      "component" : "Visualize",
+      "metadata" : {
+        "label" : "sites_output_viz",
+        "x" : 1740,
+        "y" : 200,
+        "phase" : 0,
+        "comment" : "Final Sites output"
+      },
+      "properties" : { },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "xe2d5yZ8bJ",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ]
+      }
+    },
+    "supplier_reforma##YVRgdWtc" : {
+      "id" : "supplier_reforma##YVRgdWtc",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "supplier_reformat_1",
+        "x" : 880,
+        "y" : 420,
+        "phase" : 0,
+        "leadingComment" : " REFORMAT GEM: Prophecy equivalent of Alteryx Formula tool "
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "\"Supplier Key\""
+          },
+          "alias" : "\"Name\"",
+          "_row_id" : "1598566702"
+        }, {
+          "expression" : {
+            "expression" : "'Y'"
+          },
+          "alias" : "\"Active\"",
+          "_row_id" : "158617213"
+        }, {
+          "expression" : {
+            "expression" : "latitude"
+          },
+          "alias" : "\"Latitude\"",
+          "_row_id" : "2064344065"
+        }, {
+          "expression" : {
+            "expression" : "longitude"
+          },
+          "alias" : "\"Longitude\"",
+          "_row_id" : "1724928707"
+        }, {
+          "expression" : {
+            "expression" : "'Can Source'"
+          },
+          "alias" : "\"Sourcing Status\"",
+          "_row_id" : "1230751049"
+        }, {
+          "expression" : {
+            "expression" : "'Cannot Open'"
+          },
+          "alias" : "\"Open Close Status\"",
+          "_row_id" : "812072142"
+        }, {
+          "expression" : {
+            "expression" : "'Do Not Include'"
+          },
+          "alias" : "\"Inventory Status\"",
+          "_row_id" : "2067992616"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Opening Cost\"",
+          "_row_id" : "797414510"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Operating Cost\"",
+          "_row_id" : "483126162"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Closing  Cost\"",
+          "_row_id" : "1386923437"
+        }, {
+          "expression" : {
+            "expression" : "postal_code"
+          },
+          "alias" : "\"Postal Code\"",
+          "_row_id" : "948151808"
+        }, {
+          "expression" : {
+            "expression" : "country"
+          },
+          "_row_id" : "1210586904"
+        }, {
+          "expression" : {
+            "expression" : "'Supplier'"
+          },
+          "alias" : "\"Site Type\"",
+          "_row_id" : "1958952364"
+        }, {
+          "expression" : {
+            "expression" : "'Supplier'"
+          },
+          "alias" : "source_type",
+          "_row_id" : "939182839"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "marfYBYv",
+          "slug" : "supplier_dedupe_1"
+        } ],
+        "outputs" : [ {
+          "id" : "jmVrQG7B",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "e8A4nnxR",
+    "source" : "sites_final_dedu##T87ZcV1K",
+    "sourcePort" : "Nzy3dA4S",
+    "target" : "final##gp1uxjWi",
+    "targetPort" : "YR5dhxX3",
+    "isWireless" : false
+  }, {
+    "id" : "JdeGoy0ZmH_to_xe2d5yZ8bJ",
+    "source" : "final##gp1uxjWi",
+    "sourcePort" : "UtmfsFeP",
+    "target" : "QyXfNWhRk0",
+    "targetPort" : "xe2d5yZ8bJ"
+  }, {
+    "id" : "MTeedDr0TI_to_IZeMFNSjoC##LziSDTiD",
+    "source" : "sites_union_all##a0xi4Pcp",
+    "sourcePort" : "DGGcfpOc",
+    "target" : "sites_final_dedu##T87ZcV1K",
+    "targetPort" : "SEf74JVl"
+  }, {
+    "id" : "ABJCYQEqIl_to_03KdA3WFdM##jWBcU1a7",
+    "source" : "supplier_reforma##YVRgdWtc",
+    "sourcePort" : "jmVrQG7B",
+    "target" : "sites_union_all##a0xi4Pcp",
+    "targetPort" : "V60XrrD6"
+  }, {
+    "id" : "4jcm1TDPXX_to_ubK9JP8CHh##kxM8dj7a",
+    "source" : "sites_join_1##T35W2ePC",
+    "sourcePort" : "dZRNYdOb",
+    "target" : "sites_union_all##a0xi4Pcp",
+    "targetPort" : "LIKJLeQW"
+  }, {
+    "id" : "6LyPtKcWNH_to_ZBNzvKPxHk##UCvDxine",
+    "source" : "sites_reformat_1##bEEdB2UP",
+    "sourcePort" : "fZfnGQcL",
+    "target" : "sites_union_all##a0xi4Pcp",
+    "targetPort" : "MZhu5Uv2"
+  }, {
+    "id" : "6LyPtKcWNH_to_yvBXaCUbwu##fIzVe1zz",
+    "source" : "sites_reformat_1##bEEdB2UP",
+    "sourcePort" : "fZfnGQcL",
+    "target" : "sites_join_1##T35W2ePC",
+    "targetPort" : "iwLFfekI"
+  }, {
+    "id" : "pRpx0DuvDV_to_ugs12rnQoi##NuIcMQic",
+    "source" : "uM05sOp83p",
+    "sourcePort" : "pRpx0DuvDV",
+    "target" : "supplier_dedupe_##Dsmiv6Ku",
+    "targetPort" : "GvWvxthY"
+  }, {
+    "id" : "exOYfNJsq2_to_7kFY9BJVid##DIaiVSmi",
+    "source" : "supplier_dedupe_##Dsmiv6Ku",
+    "sourcePort" : "fe6TOJyw",
+    "target" : "supplier_reforma##YVRgdWtc",
+    "targetPort" : "marfYBYv"
+  }, {
+    "id" : "g0Iqrc3Jdn_to_98C8482MGl##O6syDiaI",
+    "source" : "customer_reforma##TGdVJdgH",
+    "sourcePort" : "Ag4jb34i",
+    "target" : "sites_join_1##T35W2ePC",
+    "targetPort" : "q8bfZ1V2"
+  }, {
+    "id" : "ZzzjRi7STC_to_BDfqaUvMkS##NNmcOtUs",
+    "source" : "customer_dedupe_##Lpp8qvwZ",
+    "sourcePort" : "xwFKcCc4",
+    "target" : "customer_reforma##TGdVJdgH",
+    "targetPort" : "prGnTYxm"
+  }, {
+    "id" : "SF0tUfuD4H_to_EG5dAAVlHa##uVbM188T",
+    "source" : "MRtB0dbs6K",
+    "sourcePort" : "SF0tUfuD4H",
+    "target" : "sites_filter_2##bThL47G7",
+    "targetPort" : "i6WPX6ea"
+  }, {
+    "id" : "aukes60q2i_to_dZ89eZVOqE##NVlANBtY",
+    "source" : "sites_filter_2##bThL47G7",
+    "sourcePort" : "q5YhUOTt",
+    "target" : "customer_dedupe_##Lpp8qvwZ",
+    "targetPort" : "BQdqgIlI"
+  }, {
+    "id" : "nHT8rwV9zl_to_Xoi8gkUaTv##brYEU0YX",
+    "source" : "sites_dedupe_1##HCXk3TZP",
+    "sourcePort" : "lnSFizyP",
+    "target" : "sites_reformat_1##bEEdB2UP",
+    "targetPort" : "KnOfVzzQ"
+  }, {
+    "id" : "f5OoAkTaEz_to_EHfUqKNPeO##x5TWg4p2",
+    "source" : "qcbi5W4MFA",
+    "sourcePort" : "f5OoAkTaEz",
+    "target" : "sites_filter_1##oolat98l",
+    "targetPort" : "EvpZpF3i"
+  }, {
+    "id" : "4uDrNwhKeD_to_DLDOGmcotA##d3jSgPHM",
+    "source" : "sites_filter_1##oolat98l",
+    "sourcePort" : "XSOVYX9z",
+    "target" : "sites_dedupe_1##HCXk3TZP",
+    "targetPort" : "L4etkIHn"
+  } ],
+  "component" : "Pipeline"
+}

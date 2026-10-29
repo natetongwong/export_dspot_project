@@ -1,0 +1,6545 @@
+{
+  "id" : "full_network_model_ai_migration",
+  "metainfo" : {
+    "label" : "full_network_model_ai_migration",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "holding_cost_rate",
+          "kind" : {
+            "type" : "double",
+            "value" : "0.14"
+          }
+        }, {
+          "name" : "max_supply_default",
+          "kind" : {
+            "type" : "int",
+            "value" : "999999999"
+          }
+        }, {
+          "name" : "max_shelf_life",
+          "kind" : {
+            "type" : "int",
+            "value" : "999999999"
+          }
+        }, {
+          "name" : "rate_default",
+          "kind" : {
+            "type" : "int",
+            "value" : "99999999"
+          }
+        } ]
+      }
+    },
+    "isTranspiledPipeline" : false,
+    "processesVsModelFiles" : {
+      "supplier_product##jpMuOJmw" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "st_sites_with_co##HtKZRyHt" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "products_transfo##lXdEX4kJ" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "products_unique_##iEco4XDz" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "transfer_volumes##WJmc0xTi" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "outbound_custome##lzQBm2Rx" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "production_activ##kb4YzZEf" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "inbound_ports_se##p9nbXD4f" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "outbound_volumes##CqhXgx6h" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "site_product_bas##MlDgFqhq" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "inbound_weighted##zjoH9IO5" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "outbound_custome##BHVss4fa" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "final##shbIkNKR" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "inbound_ports_se##pEK3bq9H" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "sites_with_param##eG0GdLWa" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "st_sites_formatt##NjElAoyj" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "purchase_order_supply_chain_csv_VbeurFRoe2" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "production_final##Bee8XaFW" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "products_unique_##uwIpBWaz" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "customer_sites_f##JMQ87g6u" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "supplier_sites_f##gawDD70y" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "product_base_pro##ejECciKN" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "supplier_product##Lh6RqupW" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "supplier_ports_f##y924ok2l" : "models/full_network_model_ai_migration/full_network_model_ai_migration__origin_loading_ports.sql",
+      "production_combi##cPCizYv0" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "inbound_volumes_##Z2cSVaHX" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "inbound_ports_se##aW4JbahH" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "st_sites_deduped##CyNyeWbG" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "customer_sites_d##EfZNSgLq" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "ports_formatted##dCJxNaHg" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "outbound_freight##pD8xiYlp" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "customer_site_locations_csv_1CtAVN87XI" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "sites_formatted##R1ulFpYd" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "production_trans##PkYpqTU2" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "inbound_volumes_##JjX4SRhU" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "sites_transform##FlwU5m2S" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "sites_mt_only##WpNA5ZbZ" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "supplier_ports_p##qf0M2SGY" : "models/full_network_model_ai_migration/full_network_model_ai_migration__origin_loading_ports.sql",
+      "product_base_fil##eIpht17u" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "products_with_co##sJMgPCeO" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "organization_facilities_locations_csv_z7riMF6jUQ" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "country_continent_mapping_xlsx_Z4EYHre0EH" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "final##L2wOuRdp" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "inbound_weighted##vLrNDK2h" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "outbound_freight##bFkyQl4P" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "outbound_custome##qKFwliWs" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "transfer_order_logistics_csv_QD80kIxPYZ" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "products_with_gr##GagCpDIM" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "inbound_volumes_##t0Osrg2q" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "outbound_custome##hR52I4Tg" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "products_deduped##OX9mDVAh" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "transfer_volumes##nbGmEzYE" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "production_with_##PFWf8Yk8" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "products_unique_##TZgg7j5Z" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "outbound_volumes##ilvusjmH" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "supplier_locations_csv_PN02QySItD" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "all_sites_union##xfl5hxrG" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "supply_chain_parameters_xlsx_bLrWfJquw8" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "sites_final_dedu##OmtuJBX7" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "sales_fulfillment_csv_gkme3DmJ0D" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "suppliers_dedupe##Cxm0IGqp" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "supplier_ports_f##GDX0iW81" : "models/full_network_model_ai_migration/full_network_model_ai_migration__origin_loading_ports.sql",
+      "outbound_volumes##vVz8KenV" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "supplier_product##HZRjW3K5" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "warehouse_produc##x9s95NJF" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "inbound_ports_de##yVQF8K4p" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "supplier_product##Z64u4meO" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "final##hwasYXVe" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "origin_loading_ports_IH8agfp6" : "models/full_network_model_ai_migration/full_network_model_ai_migration__origin_loading_ports.sql",
+      "supplier_product##EH0nXbkR" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "product_master_csv_8xgBYxz8gH" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "transfer_volumes##MBrSe2dT" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "outbound_freight##f1Xxw4VD" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "product_base##ysdZRXG5" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "inbound_weighted##WiRWh5oN" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "outbound_custome##Nx2Pqwv1" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "sites_deduped##QcQe9G3K" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql"
+    }
+  },
+  "processes" : {
+    "supplier_product##jpMuOJmw" : {
+      "id" : "supplier_product##jpMuOJmw",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "supplier_product_supply_config",
+        "x" : 1560,
+        "y" : 2340,
+        "phase" : 0,
+        "leadingComment" : "Step 2: Join with suppliers to get Supplier Key (keyed join, not CROSS JOIN)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "sup",
+          "expression" : {
+            "expression" : "spp.supplier_key = sup.supplier_number || '_' || sup.supplier_site_code"
+          },
+          "joinType" : "INNER"
+        }, {
+          "alias" : "pm",
+          "expression" : {
+            "expression" : "spp.\"Product\" = pm.item_id"
+          },
+          "joinType" : "LEFT"
+        } ],
+        "allowSelection" : false,
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "sup.supplier_site_bigint_key"
+          },
+          "alias" : "\"Site\"",
+          "_row_id" : "1897411591"
+        }, {
+          "expression" : {
+            "expression" : "spp.\"Product\""
+          },
+          "_row_id" : "1190183025"
+        }, {
+          "expression" : {
+            "expression" : "'*all*'"
+          },
+          "alias" : "\"Time_Period\"",
+          "_row_id" : "1387483218"
+        }, {
+          "expression" : {
+            "expression" : "0"
+          },
+          "alias" : "\"Min_Supply\"",
+          "_row_id" : "149112061"
+        }, {
+          "expression" : {
+            "expression" : "{{ var('max_supply_default') }}"
+          },
+          "alias" : "\"Max_Supply\"",
+          "_row_id" : "814718262"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(spp.\"Cost\", TRY_CAST(pm.standard_cost AS DOUBLE), 0)"
+          },
+          "alias" : "\"Cost\"",
+          "_row_id" : "933803292"
+        }, {
+          "expression" : {
+            "expression" : "{{ var('rate_default') }}"
+          },
+          "alias" : "\"Rate\"",
+          "_row_id" : "1102133985"
+        }, {
+          "expression" : {
+            "expression" : "0"
+          },
+          "alias" : "\"Tiered_Cost\"",
+          "_row_id" : "229130289"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ ],
+        "headAlias" : "spp"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "MF0hqZ5y",
+          "slug" : "spp"
+        }, {
+          "id" : "F3ufgvuT",
+          "slug" : "sup"
+        }, {
+          "id" : "b4eOptMJ",
+          "slug" : "pm"
+        } ],
+        "outputs" : [ {
+          "id" : "JODufTe4",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "st_sites_with_co##HtKZRyHt" : {
+      "id" : "st_sites_with_co##HtKZRyHt",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "sites_with_continent",
+        "x" : 1300,
+        "y" : 200,
+        "phase" : 0,
+        "leadingComment" : "Step 3: Join with country-continent mapping for geographic grouping (Alteryx Join tool 47)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "cc",
+          "expression" : {
+            "expression" : "s.\"Country\" = cc.\"Country Code\""
+          },
+          "joinType" : "LEFT"
+        } ],
+        "allowSelection" : false,
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "s.*"
+          },
+          "_row_id" : "1758024624"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(cc.\"Continent\", 'Unknown')"
+          },
+          "alias" : "\"Continent\"",
+          "_row_id" : "24965448"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ ],
+        "headAlias" : "s"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Yw8UHfLQ",
+          "slug" : "s"
+        }, {
+          "id" : "uV3tphQQ",
+          "slug" : "cc"
+        } ],
+        "outputs" : [ {
+          "id" : "rJetafn6",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "products_transfo##lXdEX4kJ" : {
+      "id" : "products_transfo##lXdEX4kJ",
+      "component" : "OrderBy",
+      "metadata" : {
+        "label" : "sorted_products",
+        "x" : 2400,
+        "y" : 2780,
+        "phase" : 0,
+        "leadingComment" : "Step 9: Final ordering",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : "\"Name\""
+          },
+          "sortType" : "asc"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "iATAPEhi",
+          "slug" : "products_deduped"
+        } ],
+        "outputs" : [ {
+          "id" : "bQpc5Plr",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "products_unique_##iEco4XDz" : {
+      "id" : "products_unique_##iEco4XDz",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "product_cost_data",
+        "x" : 900,
+        "y" : 1480,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "selling_item_number"
+          },
+          "alias" : "\"Product\"",
+          "_row_id" : "1925191881"
+        }, {
+          "expression" : {
+            "expression" : "standard_cost"
+          },
+          "_row_id" : "2069567118"
+        }, {
+          "expression" : {
+            "expression" : "selling_item_number"
+          },
+          "_row_id" : "819772235"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(TRY_CAST(standard_cost AS DOUBLE), 0)"
+          },
+          "alias" : "\"Cost\"",
+          "_row_id" : "859082536"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "oG7rysrN",
+          "slug" : "product_master_source"
+        } ],
+        "outputs" : [ {
+          "id" : "QIqOXAd1",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "U2ac1r4Xcv" : {
+      "id" : "U2ac1r4Xcv",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "organization_facilities_locations_csv",
+        "x" : 100,
+        "y" : 320,
+        "phase" : 0,
+        "comment" : "Sites master data - locations, zones, costs"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "includeFileNameColumn" : false,
+            "includeSheetNameColumn" : true,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/DS__Sites.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : null,
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "ProphecyManaged",
+              "fields" : [ {
+                "name" : "org_id",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "org_code",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "org_name",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "business_unit",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "facility_type_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "facility_type_name",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address_line_1",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address_line_2",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address_line_3",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address_line_4",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "city",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "state",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "province",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "country",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "postal_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "lat",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "lon",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "FileName",
+                "dataType" : {
+                  "type" : "String"
+                }
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "z7riMF6jUQ",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "4df38d5c0f60"
+    },
+    "transfer_volumes##WJmc0xTi" : {
+      "id" : "transfer_volumes##WJmc0xTi",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "valid_transfers",
+        "x" : 1300,
+        "y" : 2080,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "source_site IS NOT NULL AND item_id IS NOT NULL"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "co33texA",
+          "slug" : "transfer_volumes_from_000"
+        } ],
+        "outputs" : [ {
+          "id" : "ZMWaDR13",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "outbound_custome##lzQBm2Rx" : {
+      "id" : "outbound_custome##lzQBm2Rx",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "latest_customer_sites",
+        "x" : 1300,
+        "y" : 800,
+        "phase" : 0,
+        "leadingComment" : "Step 8b: DEDUPE outbound by customer_site_bigint_key BEFORE join to avoid cartesian expansion",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "customer_site_bigint_key"
+          },
+          "_row_id" : "1949340132"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "ship_date"
+            },
+            "_row_id" : "2054318469"
+          },
+          "sortType" : "desc"
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "c57dWTKj",
+          "slug" : "outbound_customer_sites_select_filter_001"
+        } ],
+        "outputs" : [ {
+          "id" : "uxVvq76g",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "production_activ##kb4YzZEf" : {
+      "id" : "production_activ##kb4YzZEf",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "active_production_volumes",
+        "x" : 2180,
+        "y" : 1800,
+        "phase" : 0,
+        "leadingComment" : "Step 12: Filter to active site-product combos (has any activity)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "\"Inbound_Quantity\" > 0 OR \"Outbound_Quantity\" > 0 OR \"Transfer_Quantity\" > 0"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "VDfmwGnZ",
+          "slug" : "production_with_volumes"
+        } ],
+        "outputs" : [ {
+          "id" : "Ja4m1z2q",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "inbound_ports_se##p9nbXD4f" : {
+      "id" : "inbound_ports_se##p9nbXD4f",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "ports_with_loading_location",
+        "x" : 1100,
+        "y" : 1040,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "origin_supplier_loading_port IS NOT NULL AND origin_supplier_loading_port != ''"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Rpcb9mYQ",
+          "slug" : "inbound_ports_select_from_000"
+        } ],
+        "outputs" : [ {
+          "id" : "AD1ZII7i",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "outbound_volumes##CqhXgx6h" : {
+      "id" : "outbound_volumes##CqhXgx6h",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "outbound_volumes_validated",
+        "x" : 1100,
+        "y" : 1880,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "inventory_organization_bigint_key IS NOT NULL AND item_bigint_key IS NOT NULL"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "jMWn8QyF",
+          "slug" : "outbound_volumes_from_000"
+        } ],
+        "outputs" : [ {
+          "id" : "qJQXZ6Zj",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "site_product_bas##MlDgFqhq" : {
+      "id" : "site_product_bas##MlDgFqhq",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "site_product_cost_matrix",
+        "x" : 1560,
+        "y" : 1380,
+        "phase" : 0,
+        "leadingComment" : "Step 7: Cross join MT Sites with unique Products (Alteryx Join 534 on Key=1)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "p",
+          "joinType" : "CROSS"
+        } ],
+        "allowSelection" : false,
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "s.\"Site\""
+          },
+          "_row_id" : "482504566"
+        }, {
+          "expression" : {
+            "expression" : "p.\"Product\""
+          },
+          "_row_id" : "1884006334"
+        }, {
+          "expression" : {
+            "expression" : "p.\"Cost\""
+          },
+          "_row_id" : "1377913840"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ ],
+        "headAlias" : "s"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "aJwDGvr4",
+          "slug" : "s"
+        }, {
+          "id" : "wWVk9pQw",
+          "slug" : "p"
+        } ],
+        "outputs" : [ {
+          "id" : "GuLdYI9x",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "inbound_weighted##zjoH9IO5" : {
+      "id" : "inbound_weighted##zjoH9IO5",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "weighted_product_costs",
+        "x" : 1300,
+        "y" : 2860,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "item_id"
+          },
+          "alias" : "\"Product\"",
+          "_row_id" : "1265077405"
+        }, {
+          "expression" : {
+            "expression" : "SUM(TRY_CAST(quantity_units AS DOUBLE) * COALESCE(TRY_CAST(mfg_cost AS DOUBLE), 0))"
+          },
+          "alias" : "total_cost_weighted",
+          "_row_id" : "877362207"
+        }, {
+          "expression" : {
+            "expression" : "SUM(TRY_CAST(quantity_units AS DOUBLE))"
+          },
+          "alias" : "total_inbound_quantity",
+          "_row_id" : "916886140"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN SUM(TRY_CAST(quantity_units AS DOUBLE)) > 0\n    THEN SUM(TRY_CAST(quantity_units AS DOUBLE) * COALESCE(TRY_CAST(mfg_cost AS DOUBLE), 0))\n    / SUM(TRY_CAST(quantity_units AS DOUBLE))\n  ELSE 0\nEND"
+          },
+          "alias" : "weighted_avg_cost",
+          "_row_id" : "1613635356"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "item_id"
+          },
+          "_row_id" : "1016498472"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "fjKbBQ5f",
+          "slug" : "inbound_weighted_costs_filter_001"
+        } ],
+        "outputs" : [ {
+          "id" : "hcHPhkLm",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "n9H90NGioM" : {
+      "id" : "n9H90NGioM",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "sales_fulfillment_csv",
+        "x" : 120,
+        "y" : 1880,
+        "phase" : 0,
+        "comment" : "Outbound shipments - replaces 10 split files"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/DS__outbound_shipments.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : "Sales order fulfillment data capturing shipment details including quantities, pricing, transportation methods, and delivery dates for order processing and logistics tracking.",
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "Arrow",
+              "fields" : [ {
+                "name" : "sales_order_bigint_key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "nativeType" : "String"
+              }, {
+                "name" : "sales_fulfillment_line_bigint_key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "nativeType" : "String"
+              }, {
+                "name" : "inventory_organization_bigint_key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "nativeType" : "String"
+              }, {
+                "name" : "customer_site_bigint_key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "nativeType" : "String"
+              }, {
+                "name" : "item_bigint_key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "nativeType" : "String"
+              }, {
+                "name" : "ship_date",
+                "dataType" : {
+                  "type" : "date32"
+                },
+                "nativeType" : "Date"
+              }, {
+                "name" : "quantity_units",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "nativeType" : "String"
+              }, {
+                "name" : "quantity_weight",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "nativeType" : "String"
+              }, {
+                "name" : "transportation_cost",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "nativeType" : "String"
+              }, {
+                "name" : "unit_selling_price",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "nativeType" : "String"
+              }, {
+                "name" : "shipment_method",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "nativeType" : "String"
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "gkme3DmJ0D",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "0AgoM5ylHc" : {
+      "id" : "0AgoM5ylHc",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "supply_chain_parameters_xlsx",
+        "x" : 100,
+        "y" : 720,
+        "phase" : 0,
+        "comment" : "Model parameters configuration"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/MT_parameters.xlsx"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "xlsx",
+          "category" : "file",
+          "properties" : {
+            "allowUndefinedRows" : true,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "FilterValue" : null,
+            "description" : "Model parameters - zones, rates, constraints",
+            "inferenceDataSamplingLimit" : null,
+            "ignoreCellFormatting" : null,
+            "enableSchemaMerging" : null,
+            "cellRange" : null,
+            "dateFormatRef" : null,
+            "allNullRowsPeekLimit" : 100,
+            "FilterOption" : null,
+            "outputSheetColumnName" : null,
+            "sheetNames" : null,
+            "skipUndefinedRows" : null,
+            "schema" : {
+              "providerType" : "Arrow",
+              "fields" : [ {
+                "name" : "parameter_key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Unique identifier for the parameter"
+              }, {
+                "name" : "parameter_name",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Name of the parameter"
+              }, {
+                "name" : "value",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Parameter value (text)"
+              }, {
+                "name" : "value_numeric",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Parameter value (numeric)"
+              }, {
+                "name" : "units",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Units of measurement"
+              }, {
+                "name" : "category",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Parameter category"
+              }, {
+                "name" : "supplier_key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Associated supplier key"
+              }, {
+                "name" : "supplier_type",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Type of supplier"
+              }, {
+                "name" : "site_type",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Type of site this parameter applies to"
+              }, {
+                "name" : "product_group",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Product group this parameter applies to"
+              }, {
+                "name" : "source_zone",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Source zone for the parameter"
+              }, {
+                "name" : "destination_zone",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Destination zone for the parameter"
+              }, {
+                "name" : "time_period_start",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Start of time period when parameter is effective"
+              }, {
+                "name" : "time_period_end",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "End of time period when parameter is effective"
+              }, {
+                "name" : "effective_date",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Date when parameter becomes effective"
+              }, {
+                "name" : "expiration_date",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Date when parameter expires"
+              }, {
+                "name" : "priority",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Priority level of the parameter"
+              }, {
+                "name" : "source",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Data source for this parameter"
+              }, {
+                "name" : "business_sme",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Business subject matter expert owner"
+              }, {
+                "name" : "last_reviewed",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Date of last review"
+              }, {
+                "name" : "notes",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Additional notes"
+              } ]
+            },
+            "ReadMethod" : "SingleSheetData",
+            "timeFormatRef" : null,
+            "allowIncompleteRows" : true,
+            "sheetName" : null,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "allowAllNullRows" : null,
+            "fileNameColumnName" : null,
+            "defaultColumnPrefix" : null,
+            "timestampFormatRef" : null,
+            "password" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "bLrWfJquw8",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "4df38d5c0f60"
+    },
+    "outbound_custome##BHVss4fa" : {
+      "id" : "outbound_custome##BHVss4fa",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "formatted_customer_sites",
+        "x" : 1560,
+        "y" : 840,
+        "phase" : 0,
+        "leadingComment" : "Step 9: Join outbound with customer sites to get site details (Alteryx Join tool 11)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "cs",
+          "expression" : {
+            "expression" : "obs.customer_site_bigint_key = cs.customer_site_id"
+          },
+          "joinType" : "INNER"
+        } ],
+        "allowSelection" : false,
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "cs.location_name"
+          },
+          "alias" : "\"Name\"",
+          "_row_id" : "1724787528"
+        }, {
+          "expression" : {
+            "expression" : "'true'"
+          },
+          "alias" : "\"Active\"",
+          "_row_id" : "941925230"
+        }, {
+          "expression" : {
+            "expression" : "cs.lat"
+          },
+          "alias" : "\"Latitude\"",
+          "_row_id" : "57083240"
+        }, {
+          "expression" : {
+            "expression" : "cs.lon"
+          },
+          "alias" : "\"Longitude\"",
+          "_row_id" : "812976374"
+        }, {
+          "expression" : {
+            "expression" : "'Multiple'"
+          },
+          "alias" : "\"Sourcing Status\"",
+          "_row_id" : "1283097375"
+        }, {
+          "expression" : {
+            "expression" : "'Fixed'"
+          },
+          "alias" : "\"Open Close Status\"",
+          "_row_id" : "1667940038"
+        }, {
+          "expression" : {
+            "expression" : "'Allows Inventory Between Periods'"
+          },
+          "alias" : "\"Inventory Status\"",
+          "_row_id" : "1505104325"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Opening Cost\"",
+          "_row_id" : "691261138"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Operating Cost\"",
+          "_row_id" : "1252913748"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Closing Cost\"",
+          "_row_id" : "1318697703"
+        }, {
+          "expression" : {
+            "expression" : "cs.postal_code"
+          },
+          "alias" : "\"Postal Code\"",
+          "_row_id" : "891214242"
+        }, {
+          "expression" : {
+            "expression" : "cs.country"
+          },
+          "alias" : "\"Country\"",
+          "_row_id" : "1763025859"
+        }, {
+          "expression" : {
+            "expression" : "'Customer'"
+          },
+          "alias" : "\"Site Type\"",
+          "_row_id" : "1352049101"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 1\"",
+          "_row_id" : "1142891276"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 2\"",
+          "_row_id" : "254214713"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 3\"",
+          "_row_id" : "634047609"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 4\"",
+          "_row_id" : "817708092"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 5\"",
+          "_row_id" : "1257649740"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 6\"",
+          "_row_id" : "1109786909"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 7\"",
+          "_row_id" : "222513329"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 8\"",
+          "_row_id" : "795200400"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Notes\"",
+          "_row_id" : "1133543949"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Continent\"",
+          "_row_id" : "143935548"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ ],
+        "headAlias" : "obs"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ecr5xGX4",
+          "slug" : "obs"
+        }, {
+          "id" : "PQW4qF5b",
+          "slug" : "cs"
+        } ],
+        "outputs" : [ {
+          "id" : "LQH7Z0Ra",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "final##shbIkNKR" : {
+      "id" : "final##shbIkNKR",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "product_inventory_logistics",
+        "x" : 60,
+        "y" : 120,
+        "phase" : 0,
+        "comment" : "Writes processed product data to the products_output table in overwrite mode.."
+      },
+      "properties" : {
+        "table" : {
+          "name" : "products_output",
+          "sourceType" : "Table",
+          "sourceName" : "ProphecyCompute_main",
+          "alias" : ""
+        },
+        "materialization" : { },
+        "writeOptions" : {
+          "entityConfig" : {
+            "database" : "\"ProphecyCompute\"",
+            "alias" : "\"products_output\"",
+            "schema" : "\"main\"",
+            "type" : "ModelConfig",
+            "materialized" : "table"
+          },
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "WztFeQ6p",
+          "slug" : "sorted_products"
+        } ],
+        "outputs" : [ {
+          "id" : "DbtLkX59",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "bbb10376d997",
+      "index" : 16
+    },
+    "inbound_ports_se##pEK3bq9H" : {
+      "id" : "inbound_ports_se##pEK3bq9H",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "origin_ports",
+        "x" : 900,
+        "y" : 1040,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "origin_supplier_loading_port"
+          },
+          "alias" : "port_name",
+          "_row_id" : "1377872212"
+        }, {
+          "expression" : {
+            "expression" : "origin_supplier_country"
+          },
+          "alias" : "port_country",
+          "_row_id" : "352370578"
+        }, {
+          "expression" : {
+            "expression" : "origin_supplier_loading_port"
+          },
+          "_row_id" : "1548809273"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "tr0L7cXr",
+          "slug" : "inbound_shipments_source"
+        } ],
+        "outputs" : [ {
+          "id" : "El7ZtjWJ",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "sites_with_param##eG0GdLWa" : {
+      "id" : "sites_with_param##eG0GdLWa",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "site_zone_details",
+        "x" : 2400,
+        "y" : 780,
+        "phase" : 0,
+        "leadingComment" : "Step 15: Join with parameters for zone assignments (Alteryx Join tool 59)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "p",
+          "expression" : {
+            "expression" : "s.\"Site Type\" = p.site_type"
+          },
+          "joinType" : "LEFT"
+        } ],
+        "allowSelection" : false,
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "s.\"Name\""
+          },
+          "_row_id" : "690383615"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Active\""
+          },
+          "_row_id" : "1851351778"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Latitude\""
+          },
+          "_row_id" : "974311986"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Longitude\""
+          },
+          "_row_id" : "1949484597"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Sourcing Status\""
+          },
+          "_row_id" : "1658829637"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Open Close Status\""
+          },
+          "_row_id" : "1418443995"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Inventory Status\""
+          },
+          "_row_id" : "859538995"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Opening Cost\""
+          },
+          "_row_id" : "173861177"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Operating Cost\""
+          },
+          "_row_id" : "1807809345"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Closing Cost\""
+          },
+          "_row_id" : "2108259591"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Postal Code\""
+          },
+          "_row_id" : "1222221332"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Country\""
+          },
+          "_row_id" : "1314923246"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Site Type\""
+          },
+          "_row_id" : "1655699622"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(CAST(p.source_zone AS VARCHAR), CAST(s.\"Zone 1\" AS VARCHAR))"
+          },
+          "alias" : "\"Zone 1\"",
+          "_row_id" : "1226469882"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(CAST(p.destination_zone AS VARCHAR), CAST(s.\"Zone 2\" AS VARCHAR))"
+          },
+          "alias" : "\"Zone 2\"",
+          "_row_id" : "42330936"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Zone 3\""
+          },
+          "_row_id" : "1881750358"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Zone 4\""
+          },
+          "_row_id" : "1368244340"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Zone 5\""
+          },
+          "_row_id" : "818768277"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Zone 6\""
+          },
+          "_row_id" : "1030084337"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Zone 7\""
+          },
+          "_row_id" : "1581514894"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Zone 8\""
+          },
+          "_row_id" : "96562932"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Notes\""
+          },
+          "_row_id" : "1177525199"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ ],
+        "headAlias" : "s"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "i9KkMRRx",
+          "slug" : "s"
+        }, {
+          "id" : "W1r5COTX",
+          "slug" : "p"
+        } ],
+        "outputs" : [ {
+          "id" : "f8vdS4B0",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "st_sites_formatt##NjElAoyj" : {
+      "id" : "st_sites_formatt##NjElAoyj",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "site_configuration_export",
+        "x" : 1100,
+        "y" : 180,
+        "phase" : 0,
+        "leadingComment" : "Step 2: Format sites with renamed columns (Alteryx Select tool 2)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "org_name"
+          },
+          "alias" : "\"Name\"",
+          "_row_id" : "1309558186"
+        }, {
+          "expression" : {
+            "expression" : "'true'"
+          },
+          "alias" : "\"Active\"",
+          "_row_id" : "1871873522"
+        }, {
+          "expression" : {
+            "expression" : "lat"
+          },
+          "alias" : "\"Latitude\"",
+          "_row_id" : "176355553"
+        }, {
+          "expression" : {
+            "expression" : "lon"
+          },
+          "alias" : "\"Longitude\"",
+          "_row_id" : "570948465"
+        }, {
+          "expression" : {
+            "expression" : "'Can Source'"
+          },
+          "alias" : "\"Sourcing Status\"",
+          "_row_id" : "1846823599"
+        }, {
+          "expression" : {
+            "expression" : "'Fixed'"
+          },
+          "alias" : "\"Open Close Status\"",
+          "_row_id" : "1198807121"
+        }, {
+          "expression" : {
+            "expression" : "'Allows Inventory Between Periods'"
+          },
+          "alias" : "\"Inventory Status\"",
+          "_row_id" : "1369174063"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Opening Cost\"",
+          "_row_id" : "502809855"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Operating Cost\"",
+          "_row_id" : "153236913"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Closing Cost\"",
+          "_row_id" : "720827654"
+        }, {
+          "expression" : {
+            "expression" : "postal_code"
+          },
+          "alias" : "\"Postal Code\"",
+          "_row_id" : "644015746"
+        }, {
+          "expression" : {
+            "expression" : "country"
+          },
+          "alias" : "\"Country\"",
+          "_row_id" : "883535406"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN business_unit = 'MET'\n    THEN 'MT Site'\n  ELSE COALESCE(facility_type_name, 'Other')\nEND"
+          },
+          "alias" : "\"Site Type\"",
+          "_row_id" : "1774341050"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 1\"",
+          "_row_id" : "530968594"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 2\"",
+          "_row_id" : "665843240"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 3\"",
+          "_row_id" : "1162882646"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 4\"",
+          "_row_id" : "1835529907"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 5\"",
+          "_row_id" : "1200755845"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 6\"",
+          "_row_id" : "884199769"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 7\"",
+          "_row_id" : "1725606199"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 8\"",
+          "_row_id" : "1608953164"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Notes\"",
+          "_row_id" : "2088657882"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "L1yRgSR0",
+          "slug" : "st_sites_deduped"
+        } ],
+        "outputs" : [ {
+          "id" : "UFUapI89",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "production_final##Bee8XaFW" : {
+      "id" : "production_final##Bee8XaFW",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "deduplicated_production_data",
+        "x" : 3120,
+        "y" : 2180,
+        "phase" : 0,
+        "leadingComment" : "Step 15: Final deduplication by Site, Product, Time_Period (Alteryx Unique tool 533)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "\"Site\""
+          },
+          "_row_id" : "1582151034"
+        }, {
+          "expression" : {
+            "expression" : "\"Product\""
+          },
+          "_row_id" : "1832962219"
+        }, {
+          "expression" : {
+            "expression" : "\"Time_Period\""
+          },
+          "_row_id" : "1467195564"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "\"Site\""
+            },
+            "_row_id" : "1294160484"
+          }
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "seMwmehh",
+          "slug" : "production_combined"
+        } ],
+        "outputs" : [ {
+          "id" : "MSkUYMRx",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "jRjgAA7ehZ" : {
+      "id" : "jRjgAA7ehZ",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "transfer_order_logistics_csv",
+        "x" : 100,
+        "y" : 1120,
+        "phase" : 0,
+        "comment" : "Transfer records between sites"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "includeFileNameColumn" : false,
+            "includeSheetNameColumn" : true,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/new_DS__new_transfers.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : null,
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "ProphecyManaged",
+              "fields" : [ {
+                "name" : "transfer_order_line_bigint_key",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "hash_diff",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "fact_date",
+                "dataType" : {
+                  "type" : "Date"
+                }
+              }, {
+                "name" : "source_organization_code",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "destination_organization_code",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "item_bigint_key",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "item_id",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "shipped_quantity",
+                "dataType" : {
+                  "type" : "Decimal"
+                }
+              }, {
+                "name" : "uom_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "mode_of_transport",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "gross_weight",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "units_per_pallet",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pallets",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "freight_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "QD80kIxPYZ",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "4df38d5c0f60"
+    },
+    "NlDMlounTz7NRopBblhLx$$uai9oNC7Pt2u8XGBKV9qG" : {
+      "id" : "NlDMlounTz7NRopBblhLx$$uai9oNC7Pt2u8XGBKV9qG",
+      "component" : "Comment",
+      "metadata" : {
+        "label" : "Comment_1",
+        "x" : 280,
+        "y" : 1120,
+        "height" : 45,
+        "width" : 220,
+        "phase" : 0
+      },
+      "properties" : {
+        "comment" : ""
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ]
+      }
+    },
+    "products_unique_##uwIpBWaz" : {
+      "id" : "products_unique_##uwIpBWaz",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "valid_products",
+        "x" : 1100,
+        "y" : 1480,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "selling_item_number IS NOT NULL"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pRyRoofq",
+          "slug" : "products_unique_from_000"
+        } ],
+        "outputs" : [ {
+          "id" : "AFXtFqjn",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "customer_sites_f##JMQ87g6u" : {
+      "id" : "customer_sites_f##JMQ87g6u",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "customer_sites_formatted",
+        "x" : 1840,
+        "y" : 640,
+        "phase" : 0,
+        "leadingComment" : "Step 5: Format customer sites (Alteryx Formula + Select tools)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "location_name"
+          },
+          "alias" : "\"Name\"",
+          "_row_id" : "1914072560"
+        }, {
+          "expression" : {
+            "expression" : "'true'"
+          },
+          "alias" : "\"Active\"",
+          "_row_id" : "2013607427"
+        }, {
+          "expression" : {
+            "expression" : "lat"
+          },
+          "alias" : "\"Latitude\"",
+          "_row_id" : "375751626"
+        }, {
+          "expression" : {
+            "expression" : "lon"
+          },
+          "alias" : "\"Longitude\"",
+          "_row_id" : "1082120011"
+        }, {
+          "expression" : {
+            "expression" : "'Can Source'"
+          },
+          "alias" : "\"Sourcing Status\"",
+          "_row_id" : "1636405123"
+        }, {
+          "expression" : {
+            "expression" : "'Cannot Open'"
+          },
+          "alias" : "\"Open Close Status\"",
+          "_row_id" : "2138459923"
+        }, {
+          "expression" : {
+            "expression" : "'Do Not Include'"
+          },
+          "alias" : "\"Inventory Status\"",
+          "_row_id" : "575911471"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Opening Cost\"",
+          "_row_id" : "1924137013"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Operating Cost\"",
+          "_row_id" : "693628064"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Closing Cost\"",
+          "_row_id" : "1581280327"
+        }, {
+          "expression" : {
+            "expression" : "postal_code"
+          },
+          "alias" : "\"Postal Code\"",
+          "_row_id" : "124162976"
+        }, {
+          "expression" : {
+            "expression" : "country"
+          },
+          "alias" : "\"Country\"",
+          "_row_id" : "622455987"
+        }, {
+          "expression" : {
+            "expression" : "'Customer'"
+          },
+          "alias" : "\"Site Type\"",
+          "_row_id" : "1952859462"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 1\"",
+          "_row_id" : "1709300833"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 2\"",
+          "_row_id" : "744313441"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 3\"",
+          "_row_id" : "1505806007"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 4\"",
+          "_row_id" : "1893806997"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 5\"",
+          "_row_id" : "141940392"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 6\"",
+          "_row_id" : "719519415"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 7\"",
+          "_row_id" : "900321542"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 8\"",
+          "_row_id" : "1925780236"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Notes\"",
+          "_row_id" : "1927103130"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Continent\"",
+          "_row_id" : "1394988711"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "RChS6gc5",
+          "slug" : "customer_sites_deduped"
+        } ],
+        "outputs" : [ {
+          "id" : "jUq1VN7f",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "supplier_sites_f##gawDD70y" : {
+      "id" : "supplier_sites_f##gawDD70y",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "supplier_site_mapping",
+        "x" : 1560,
+        "y" : 440,
+        "phase" : 0,
+        "leadingComment" : "Step 7: Format supplier sites as type 'Supplier' (Alteryx formula & select)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "supplier_name"
+          },
+          "alias" : "\"Name\"",
+          "_row_id" : "704050546"
+        }, {
+          "expression" : {
+            "expression" : "'true'"
+          },
+          "alias" : "\"Active\"",
+          "_row_id" : "381935118"
+        }, {
+          "expression" : {
+            "expression" : "latitude"
+          },
+          "alias" : "\"Latitude\"",
+          "_row_id" : "1294253938"
+        }, {
+          "expression" : {
+            "expression" : "longitude"
+          },
+          "alias" : "\"Longitude\"",
+          "_row_id" : "1262233923"
+        }, {
+          "expression" : {
+            "expression" : "'Can Source'"
+          },
+          "alias" : "\"Sourcing Status\"",
+          "_row_id" : "1945644693"
+        }, {
+          "expression" : {
+            "expression" : "'Cannot Open'"
+          },
+          "alias" : "\"Open Close Status\"",
+          "_row_id" : "515178312"
+        }, {
+          "expression" : {
+            "expression" : "'Do Not Include'"
+          },
+          "alias" : "\"Inventory Status\"",
+          "_row_id" : "1068688869"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Opening Cost\"",
+          "_row_id" : "492763571"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Operating Cost\"",
+          "_row_id" : "1873788758"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Closing Cost\"",
+          "_row_id" : "1117204623"
+        }, {
+          "expression" : {
+            "expression" : "postal_code"
+          },
+          "alias" : "\"Postal Code\"",
+          "_row_id" : "604509231"
+        }, {
+          "expression" : {
+            "expression" : "country"
+          },
+          "alias" : "\"Country\"",
+          "_row_id" : "1815243528"
+        }, {
+          "expression" : {
+            "expression" : "'Supplier'"
+          },
+          "alias" : "\"Site Type\"",
+          "_row_id" : "1323242993"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 1\"",
+          "_row_id" : "906477373"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 2\"",
+          "_row_id" : "733758095"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 3\"",
+          "_row_id" : "283273663"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 4\"",
+          "_row_id" : "819800067"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 5\"",
+          "_row_id" : "1172223693"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 6\"",
+          "_row_id" : "1649734145"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 7\"",
+          "_row_id" : "1517244785"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 8\"",
+          "_row_id" : "1150235017"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Notes\"",
+          "_row_id" : "1405942742"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Continent\"",
+          "_row_id" : "826920379"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "E0txM29e",
+          "slug" : "suppliers_deduped"
+        } ],
+        "outputs" : [ {
+          "id" : "U9ib0QNA",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "product_base_pro##ejECciKN" : {
+      "id" : "product_base_pro##ejECciKN",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "product_specifications",
+        "x" : 1300,
+        "y" : 2460,
+        "phase" : 0,
+        "leadingComment" : "Step 3: Project base product columns",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "\"Name\""
+          },
+          "_row_id" : "1412847380"
+        }, {
+          "expression" : {
+            "expression" : "'Y'"
+          },
+          "alias" : "\"Active\"",
+          "_row_id" : "1841004041"
+        }, {
+          "expression" : {
+            "expression" : "\"Weight\""
+          },
+          "_row_id" : "1535542179"
+        }, {
+          "expression" : {
+            "expression" : "\"Shipment Volume\""
+          },
+          "_row_id" : "1850044032"
+        }, {
+          "expression" : {
+            "expression" : "\"Warehouse Volume\""
+          },
+          "_row_id" : "1622285628"
+        }, {
+          "expression" : {
+            "expression" : "\"Adjusted Volume\""
+          },
+          "_row_id" : "1559542659"
+        }, {
+          "expression" : {
+            "expression" : "\"Freight Class\""
+          },
+          "_row_id" : "1487175853"
+        }, {
+          "expression" : {
+            "expression" : "\"Value\""
+          },
+          "_row_id" : "642995666"
+        }, {
+          "expression" : {
+            "expression" : "\"Max Shelf Life\""
+          },
+          "_row_id" : "1640197115"
+        }, {
+          "expression" : {
+            "expression" : "\"Grouping 1\""
+          },
+          "_row_id" : "1710298918"
+        }, {
+          "expression" : {
+            "expression" : "\"Grouping 2\""
+          },
+          "_row_id" : "955854852"
+        }, {
+          "expression" : {
+            "expression" : "\"Grouping 3\""
+          },
+          "_row_id" : "743723859"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "xK3VVFQx",
+          "slug" : "product_base_filtered"
+        } ],
+        "outputs" : [ {
+          "id" : "lu2lgb7X",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "supplier_product##Lh6RqupW" : {
+      "id" : "supplier_product##Lh6RqupW",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "valid_supplier_products",
+        "x" : 1100,
+        "y" : 2280,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "origin_supplier_number IS NOT NULL AND origin_supplier_site_code IS NOT NULL AND item_id IS NOT NULL"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "mcHpBuhm",
+          "slug" : "supplier_product_pairs_from_000"
+        } ],
+        "outputs" : [ {
+          "id" : "tuVaYK4P",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "supplier_ports_f##y924ok2l" : {
+      "id" : "supplier_ports_f##y924ok2l",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "supplier_ports",
+        "x" : 900,
+        "y" : 2660,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "origin_supplier_loading_port"
+          },
+          "_row_id" : "1083300155"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "x3k19LVU",
+          "slug" : "inbound_shipments"
+        } ],
+        "outputs" : [ {
+          "id" : "vJ4qz4na",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "production_combi##cPCizYv0" : {
+      "id" : "production_combi##cPCizYv0",
+      "component" : "Union",
+      "metadata" : {
+        "label" : "combined_production_data",
+        "x" : 2760,
+        "y" : 2180,
+        "phase" : 0,
+        "leadingComment" : "Step 14: Combine warehouse and supplier production (Alteryx Union tool 442)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "operationType" : "union",
+        "preserveDuplicates" : true,
+        "useMinus" : false,
+        "inputAliases" : [ "warehouse_production", "supplier_production_deduped" ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "R52BEje2",
+          "slug" : "warehouse_production"
+        }, {
+          "id" : "wSzHgrSD",
+          "slug" : "supplier_production_deduped"
+        } ],
+        "outputs" : [ {
+          "id" : "HJlIpVyP",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "inbound_volumes_##Z2cSVaHX" : {
+      "id" : "inbound_volumes_##Z2cSVaHX",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "inbound_shipment_details",
+        "x" : 1100,
+        "y" : 1680,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "item_id"
+          },
+          "_row_id" : "586139137"
+        }, {
+          "expression" : {
+            "expression" : "receiving_org_name"
+          },
+          "_row_id" : "321467987"
+        }, {
+          "expression" : {
+            "expression" : "quantity_units"
+          },
+          "_row_id" : "728398287"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "eKatgTAw",
+          "slug" : "inbound_shipments_source"
+        } ],
+        "outputs" : [ {
+          "id" : "sAvYfP1t",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "inbound_ports_se##aW4JbahH" : {
+      "id" : "inbound_ports_se##aW4JbahH",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "port_locations",
+        "x" : 1300,
+        "y" : 1040,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "port_name"
+          },
+          "_row_id" : "1052110363"
+        }, {
+          "expression" : {
+            "expression" : "port_country"
+          },
+          "_row_id" : "1282348284"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "veb4qvIg",
+          "slug" : "inbound_ports_select_filter_001"
+        } ],
+        "outputs" : [ {
+          "id" : "cNdcesEv",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "st_sites_deduped##CyNyeWbG" : {
+      "id" : "st_sites_deduped##CyNyeWbG",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "deduped_sites",
+        "x" : 900,
+        "y" : 180,
+        "phase" : 0,
+        "leadingComment" : "Step 1: Dedupe sites by country and org_name (Alteryx Unique tool 4)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "country"
+          },
+          "_row_id" : "1940639343"
+        }, {
+          "expression" : {
+            "expression" : "org_name"
+          },
+          "_row_id" : "619256899"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "org_name"
+            },
+            "_row_id" : "2011571394"
+          }
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "vSWx0uyp",
+          "slug" : "sites_raw"
+        } ],
+        "outputs" : [ {
+          "id" : "mvdvMdvN",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "customer_sites_d##EfZNSgLq" : {
+      "id" : "customer_sites_d##EfZNSgLq",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "unique_customer_locations",
+        "x" : 1560,
+        "y" : 640,
+        "phase" : 0,
+        "leadingComment" : "Step 4: Dedupe customer sites (Alteryx Unique tool 24)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "location_name"
+          },
+          "_row_id" : "277328065"
+        }, {
+          "expression" : {
+            "expression" : "country"
+          },
+          "_row_id" : "1661351340"
+        }, {
+          "expression" : {
+            "expression" : "postal_code"
+          },
+          "_row_id" : "1421904167"
+        }, {
+          "expression" : {
+            "expression" : "lat"
+          },
+          "_row_id" : "195973809"
+        }, {
+          "expression" : {
+            "expression" : "lon"
+          },
+          "_row_id" : "140972749"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "customer_site_id"
+            },
+            "_row_id" : "1811573499"
+          }
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "F5LQqXZV",
+          "slug" : "customer_sites"
+        } ],
+        "outputs" : [ {
+          "id" : "ViBiK1wG",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "ports_formatted##dCJxNaHg" : {
+      "id" : "ports_formatted##dCJxNaHg",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "port_site_attributes",
+        "x" : 1840,
+        "y" : 1040,
+        "phase" : 0,
+        "leadingComment" : "Step 13: Format ports as site type 'Port' (Alteryx Formula + Select)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "port_name"
+          },
+          "alias" : "\"Name\"",
+          "_row_id" : "535638471"
+        }, {
+          "expression" : {
+            "expression" : "'true'"
+          },
+          "alias" : "\"Active\"",
+          "_row_id" : "1743863866"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Latitude\"",
+          "_row_id" : "1935242864"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Longitude\"",
+          "_row_id" : "1056840671"
+        }, {
+          "expression" : {
+            "expression" : "'Can Source'"
+          },
+          "alias" : "\"Sourcing Status\"",
+          "_row_id" : "1697017097"
+        }, {
+          "expression" : {
+            "expression" : "'Cannot Open'"
+          },
+          "alias" : "\"Open Close Status\"",
+          "_row_id" : "558939042"
+        }, {
+          "expression" : {
+            "expression" : "'Flow Through Only'"
+          },
+          "alias" : "\"Inventory Status\"",
+          "_row_id" : "1737222085"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Opening Cost\"",
+          "_row_id" : "904297415"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Operating Cost\"",
+          "_row_id" : "1493368515"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Closing Cost\"",
+          "_row_id" : "52266985"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Postal Code\"",
+          "_row_id" : "167788713"
+        }, {
+          "expression" : {
+            "expression" : "port_country"
+          },
+          "alias" : "\"Country\"",
+          "_row_id" : "6099646"
+        }, {
+          "expression" : {
+            "expression" : "'Port'"
+          },
+          "alias" : "\"Site Type\"",
+          "_row_id" : "808349986"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 1\"",
+          "_row_id" : "2000425260"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 2\"",
+          "_row_id" : "410614658"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 3\"",
+          "_row_id" : "1822803999"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 4\"",
+          "_row_id" : "53486178"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 5\"",
+          "_row_id" : "242908654"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 6\"",
+          "_row_id" : "179075604"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 7\"",
+          "_row_id" : "1397999021"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Zone 8\"",
+          "_row_id" : "899654028"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Notes\"",
+          "_row_id" : "55130263"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Continent\"",
+          "_row_id" : "607474784"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "IxLiE2fs",
+          "slug" : "inbound_ports_deduped"
+        } ],
+        "outputs" : [ {
+          "id" : "oHR01B7y",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "26ba7d29ca1d" : {
+      "id" : "26ba7d29ca1d",
+      "component" : "Comment",
+      "metadata" : {
+        "label" : "pipeline_description",
+        "x" : 3500,
+        "y" : 1020,
+        "phase" : 0
+      },
+      "properties" : {
+        "comment" : "Milwaukee Tool Full Network Model - Part 1 Migration from Alteryx. Contains 319 transformation tools across 3 containers (Sites, Production, Products). Each container produces one output table.",
+        "connectedNodes" : [ "final##hwasYXVe", "final##L2wOuRdp", "final##shbIkNKR" ]
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "outbound_freight##pD8xiYlp" : {
+      "id" : "outbound_freight##pD8xiYlp",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "valid_freight_metrics",
+        "x" : 1100,
+        "y" : 3100,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "item_bigint_key IS NOT NULL AND quantity_units IS NOT NULL"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pufcHT7Q",
+          "slug" : "outbound_freight_metrics_from_000"
+        } ],
+        "outputs" : [ {
+          "id" : "s4nb5WU9",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "sites_formatted##R1ulFpYd" : {
+      "id" : "sites_formatted##R1ulFpYd",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "active_sites_summary",
+        "x" : 1300,
+        "y" : 1280,
+        "phase" : 0,
+        "leadingComment" : "Step 5: Format site names (only MT Sites for CROSS JOIN)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "org_name"
+          },
+          "alias" : "\"Site\"",
+          "_row_id" : "1482165716"
+        }, {
+          "expression" : {
+            "expression" : "'Y'"
+          },
+          "alias" : "\"Active\"",
+          "_row_id" : "808329677"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "V5PDVB0V",
+          "slug" : "sites_mt_only"
+        } ],
+        "outputs" : [ {
+          "id" : "YK6kEmnG",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "4df38d5c0f60" : {
+      "id" : "4df38d5c0f60",
+      "component" : "VisualGroup",
+      "metadata" : {
+        "label" : "data_sources_group",
+        "x" : 20,
+        "y" : 20,
+        "height" : 1680,
+        "width" : 280,
+        "phase" : 0
+      },
+      "properties" : {
+        "isCollapsed" : false,
+        "actualDimensions" : null
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "production_trans##PkYpqTU2" : {
+      "id" : "production_trans##PkYpqTU2",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "production_specs",
+        "x" : 3500,
+        "y" : 2180,
+        "phase" : 0,
+        "leadingComment" : "Step 16: Final projection",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "\"Site\""
+          },
+          "_row_id" : "1203914151"
+        }, {
+          "expression" : {
+            "expression" : "\"Product\""
+          },
+          "_row_id" : "1550049621"
+        }, {
+          "expression" : {
+            "expression" : "\"Time_Period\""
+          },
+          "_row_id" : "2022601852"
+        }, {
+          "expression" : {
+            "expression" : "\"Min_Supply\""
+          },
+          "_row_id" : "1428778416"
+        }, {
+          "expression" : {
+            "expression" : "\"Max_Supply\""
+          },
+          "_row_id" : "177117043"
+        }, {
+          "expression" : {
+            "expression" : "\"Cost\""
+          },
+          "_row_id" : "1400563064"
+        }, {
+          "expression" : {
+            "expression" : "\"Rate\""
+          },
+          "_row_id" : "1291302198"
+        }, {
+          "expression" : {
+            "expression" : "\"Tiered_Cost\""
+          },
+          "_row_id" : "1012393351"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "l1k9p2Do",
+          "slug" : "production_final_deduped"
+        } ],
+        "outputs" : [ {
+          "id" : "tD7fUbFB",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "inbound_volumes_##JjX4SRhU" : {
+      "id" : "inbound_volumes_##JjX4SRhU",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "inbound_quantity_by_site_product",
+        "x" : 1560,
+        "y" : 1680,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "receiving_org_name"
+          },
+          "alias" : "\"Site\"",
+          "_row_id" : "1155757387"
+        }, {
+          "expression" : {
+            "expression" : "item_id"
+          },
+          "alias" : "\"Product\"",
+          "_row_id" : "471017841"
+        }, {
+          "expression" : {
+            "expression" : "SUM(COALESCE(TRY_CAST(quantity_units AS DOUBLE), 0))"
+          },
+          "alias" : "inbound_quantity",
+          "_row_id" : "509169333"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "receiving_org_name"
+          },
+          "_row_id" : "2076587793"
+        }, {
+          "expression" : {
+            "expression" : "item_id"
+          },
+          "_row_id" : "667000820"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "weTYL1d4",
+          "slug" : "inbound_volumes_filter_001"
+        } ],
+        "outputs" : [ {
+          "id" : "zcJlTrIV",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "sites_transform##FlwU5m2S" : {
+      "id" : "sites_transform##FlwU5m2S",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "site_details",
+        "x" : 3120,
+        "y" : 780,
+        "phase" : 0,
+        "leadingComment" : "Step 17: Final output format matching expected schema",
+        "dataPreview" : true,
+        "showRecordsCount" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "\"Name\""
+          },
+          "_row_id" : "1641186815"
+        }, {
+          "expression" : {
+            "expression" : "\"Active\""
+          },
+          "_row_id" : "926334572"
+        }, {
+          "expression" : {
+            "expression" : "\"Latitude\""
+          },
+          "_row_id" : "960502862"
+        }, {
+          "expression" : {
+            "expression" : "\"Longitude\""
+          },
+          "_row_id" : "1149863237"
+        }, {
+          "expression" : {
+            "expression" : "\"Sourcing Status\""
+          },
+          "_row_id" : "1377359160"
+        }, {
+          "expression" : {
+            "expression" : "\"Open Close Status\""
+          },
+          "_row_id" : "493624190"
+        }, {
+          "expression" : {
+            "expression" : "\"Inventory Status\""
+          },
+          "_row_id" : "983073258"
+        }, {
+          "expression" : {
+            "expression" : "\"Opening Cost\""
+          },
+          "_row_id" : "1068823859"
+        }, {
+          "expression" : {
+            "expression" : "\"Operating Cost\""
+          },
+          "_row_id" : "194472328"
+        }, {
+          "expression" : {
+            "expression" : "\"Closing Cost\""
+          },
+          "_row_id" : "1870652195"
+        }, {
+          "expression" : {
+            "expression" : "\"Postal Code\""
+          },
+          "_row_id" : "355838502"
+        }, {
+          "expression" : {
+            "expression" : "\"Country\""
+          },
+          "_row_id" : "814416157"
+        }, {
+          "expression" : {
+            "expression" : "\"Site Type\""
+          },
+          "_row_id" : "2015128461"
+        }, {
+          "expression" : {
+            "expression" : "\"Zone 1\""
+          },
+          "_row_id" : "534636365"
+        }, {
+          "expression" : {
+            "expression" : "\"Zone 2\""
+          },
+          "_row_id" : "1229205797"
+        }, {
+          "expression" : {
+            "expression" : "CAST(\"Zone 3\" AS VARCHAR)"
+          },
+          "alias" : "\"Zone 3\"",
+          "_row_id" : "782913392"
+        }, {
+          "expression" : {
+            "expression" : "CAST(\"Zone 4\" AS VARCHAR)"
+          },
+          "alias" : "\"Zone 4\"",
+          "_row_id" : "121954285"
+        }, {
+          "expression" : {
+            "expression" : "CAST(\"Zone 5\" AS VARCHAR)"
+          },
+          "alias" : "\"Zone 5\"",
+          "_row_id" : "1542100577"
+        }, {
+          "expression" : {
+            "expression" : "CAST(\"Zone 6\" AS VARCHAR)"
+          },
+          "alias" : "\"Zone 6\"",
+          "_row_id" : "2050955063"
+        }, {
+          "expression" : {
+            "expression" : "CAST(\"Zone 7\" AS VARCHAR)"
+          },
+          "alias" : "\"Zone 7\"",
+          "_row_id" : "972817600"
+        }, {
+          "expression" : {
+            "expression" : "CAST(\"Zone 8\" AS VARCHAR)"
+          },
+          "alias" : "\"Zone 8\"",
+          "_row_id" : "1780052814"
+        }, {
+          "expression" : {
+            "expression" : "CAST(\"Notes\" AS VARCHAR)"
+          },
+          "alias" : "\"Notes\"",
+          "_row_id" : "713924141"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "OXQjWAjF",
+          "slug" : "sites_final_deduped"
+        } ],
+        "outputs" : [ {
+          "id" : "OjqLk1st",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "oMgsJcDtiZ" : {
+      "id" : "oMgsJcDtiZ",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "customer_site_locations_csv",
+        "x" : 100,
+        "y" : 520,
+        "phase" : 0,
+        "comment" : "Customer site locations"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "includeFileNameColumn" : false,
+            "includeSheetNameColumn" : true,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/DS customer_site_v2.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : null,
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "ProphecyManaged",
+              "fields" : [ {
+                "name" : "customer_site_id",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "customer_site_base_id",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "account_number",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "account_name",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "mkedg1",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "mkedg2",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "mkedg3",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "mkedg4",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "mkedg5",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "site_number",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "location_name",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address1",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address2",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address3",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address4",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "city",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "state",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "province",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "country",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "postal_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "lat",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "lon",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "latlon_source",
+                "dataType" : {
+                  "type" : "String"
+                }
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "1CtAVN87XI",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "4df38d5c0f60"
+    },
+    "mxk53CTTVJ" : {
+      "id" : "mxk53CTTVJ",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "supplier_locations_csv",
+        "x" : 100,
+        "y" : 920,
+        "phase" : 0,
+        "comment" : "Suppliers master - names, locations, site codes"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "moveFilesToDestinationFolder" : false,
+            "includeFileNameColumn" : false,
+            "includeSheetNameColumn" : true,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/new_DS__Suppliers.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : null,
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "ProphecyManaged",
+              "fields" : [ {
+                "name" : "supplier_site_bigint_key",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "supplier_name",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "supplier_number",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "supplier_site_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address1",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address2",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address3",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address4",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "city",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "state",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "province",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "country",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "postal_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "latitude",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "longitude",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "supplier_type",
+                "dataType" : {
+                  "type" : "String"
+                }
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "PN02QySItD",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "4df38d5c0f60"
+    },
+    "sites_mt_only##WpNA5ZbZ" : {
+      "id" : "sites_mt_only##WpNA5ZbZ",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "met_business_unit_sites",
+        "x" : 1100,
+        "y" : 1280,
+        "phase" : 0,
+        "leadingComment" : "Step 4b: Filter to MT Site only (business_unit = 'MET' indicates Milwaukee Tool sites)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "business_unit = 'MET'"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "kIr9441u",
+          "slug" : "sites_deduped"
+        } ],
+        "outputs" : [ {
+          "id" : "gUPvnYQU",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "TRAt0f2S1i" : {
+      "id" : "TRAt0f2S1i",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "purchase_order_supply_chain_csv",
+        "x" : 100,
+        "y" : 1320,
+        "phase" : 0,
+        "comment" : "Inbound shipments - purchase orders, suppliers, delivery metrics"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "includeFileNameColumn" : false,
+            "includeSheetNameColumn" : true,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/DS__v6_Inbound_Shipments.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : null,
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "ProphecyManaged",
+              "fields" : [ {
+                "name" : "order_line_bigint_key",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "purchase_order_number",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "purchase_order_line_number",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "order_date",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "delivery_date",
+                "dataType" : {
+                  "type" : "Date"
+                }
+              }, {
+                "name" : "first_delivery_date",
+                "dataType" : {
+                  "type" : "Date"
+                }
+              }, {
+                "name" : "partner_item_number",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "origin_supplier_name",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "origin_supplier_number",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "origin_supplier_site_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "origin_supplier_mfg",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "supplier_name",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "supplier_number",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "supplier_country",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "origin_supplier_loading_port_actual",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "origin_supplier_loading_port",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "origin_supplier_country",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "item_country_of_origin",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "transport_mode",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "port_source",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "inventory_organization_bigint_key",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "receiving_org_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "receiving_org_name",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "item_bigint_key",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "item_id",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "item_type",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "quantity_units",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "quantity_weight",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "quantity_pallets",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "quantity_containers",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "mfg_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "receipt_cost",
+                "dataType" : {
+                  "type" : "Decimal"
+                }
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "VbeurFRoe2",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "4df38d5c0f60"
+    },
+    "supplier_ports_p##qf0M2SGY" : {
+      "id" : "supplier_ports_p##qf0M2SGY",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "origin_loading_ports",
+        "x" : 1300,
+        "y" : 2660,
+        "phase" : 0
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "origin_supplier_loading_port"
+          },
+          "_row_id" : "1523606474"
+        } ],
+        "dedupType" : "distinct",
+        "columnsSelector" : [ ],
+        "orders" : [ ],
+        "useOrderBy" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "PCUyzJIL",
+          "slug" : "supplier_ports_filter_001"
+        } ],
+        "outputs" : [ {
+          "id" : "IH8agfp6",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "product_base_fil##eIpht17u" : {
+      "id" : "product_base_fil##eIpht17u",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "sellable_products",
+        "x" : 1100,
+        "y" : 2460,
+        "phase" : 0,
+        "leadingComment" : "Step 2: Filter valid products",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "selling_item_number IS NOT NULL"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "UDkfFOnA",
+          "slug" : "product_base"
+        } ],
+        "outputs" : [ {
+          "id" : "N0F31cBz",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "products_with_co##sJMgPCeO" : {
+      "id" : "products_with_co##sJMgPCeO",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "product_metrics_enriched",
+        "x" : 1560,
+        "y" : 2780,
+        "phase" : 0,
+        "leadingComment" : "Step 6: Join product base with weighted costs",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "iwc",
+          "expression" : {
+            "expression" : "pb.\"Name\" = iwc.\"Product\""
+          },
+          "joinType" : "LEFT"
+        }, {
+          "alias" : "ofm",
+          "expression" : {
+            "expression" : "pb.\"Name\" = ofm.\"Product\""
+          },
+          "joinType" : "LEFT"
+        } ],
+        "allowSelection" : false,
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "pb.\"Name\""
+          },
+          "_row_id" : "1972160201"
+        }, {
+          "expression" : {
+            "expression" : "pb.\"Active\""
+          },
+          "_row_id" : "1400121818"
+        }, {
+          "expression" : {
+            "expression" : "pb.\"Weight\""
+          },
+          "_row_id" : "52774746"
+        }, {
+          "expression" : {
+            "expression" : "pb.\"Shipment Volume\""
+          },
+          "_row_id" : "1438267130"
+        }, {
+          "expression" : {
+            "expression" : "pb.\"Warehouse Volume\""
+          },
+          "_row_id" : "347942231"
+        }, {
+          "expression" : {
+            "expression" : "pb.\"Adjusted Volume\""
+          },
+          "_row_id" : "1777525336"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(ofm.avg_freight_cost, pb.\"Freight Class\")"
+          },
+          "alias" : "\"Freight Class\"",
+          "_row_id" : "691297501"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(iwc.weighted_avg_cost, pb.\"Value\")"
+          },
+          "alias" : "\"Value\"",
+          "_row_id" : "1978075638"
+        }, {
+          "expression" : {
+            "expression" : "pb.\"Max Shelf Life\""
+          },
+          "_row_id" : "24300542"
+        }, {
+          "expression" : {
+            "expression" : "pb.\"Grouping 1\""
+          },
+          "_row_id" : "154221967"
+        }, {
+          "expression" : {
+            "expression" : "pb.\"Grouping 2\""
+          },
+          "_row_id" : "711640000"
+        }, {
+          "expression" : {
+            "expression" : "pb.\"Grouping 3\""
+          },
+          "_row_id" : "2131381124"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ ],
+        "headAlias" : "pb"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Olpk8YBI",
+          "slug" : "pb"
+        }, {
+          "id" : "g51PMzU3",
+          "slug" : "iwc"
+        }, {
+          "id" : "YmOGDFpL",
+          "slug" : "ofm"
+        } ],
+        "outputs" : [ {
+          "id" : "XoPARXcf",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "final##L2wOuRdp" : {
+      "id" : "final##L2wOuRdp",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "supply_cost_analysis",
+        "x" : 60,
+        "y" : 120,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "production_output",
+          "sourceType" : "Table",
+          "sourceName" : "ProphecyCompute_main",
+          "alias" : ""
+        },
+        "materialization" : { },
+        "writeOptions" : {
+          "entityConfig" : {
+            "database" : "\"ProphecyCompute\"",
+            "alias" : "\"production_output\"",
+            "schema" : "\"main\"",
+            "type" : "ModelConfig",
+            "materialized" : "table"
+          },
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "MnN2vxmR",
+          "slug" : "production_specs"
+        } ],
+        "outputs" : [ {
+          "id" : "AYiOs0pR",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "461fff03d12e",
+      "index" : 33
+    },
+    "s6cpU9I82A" : {
+      "id" : "s6cpU9I82A",
+      "component" : "Visualize",
+      "metadata" : {
+        "label" : "viz_production_output",
+        "x" : 260,
+        "y" : 120,
+        "phase" : 0,
+        "comment" : "Exposes Production output for Analysis dashboards"
+      },
+      "properties" : { },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ed55OCd0I2",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ]
+      },
+      "parent" : "461fff03d12e"
+    },
+    "inbound_weighted##vLrNDK2h" : {
+      "id" : "inbound_weighted##vLrNDK2h",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "inbound_shipments",
+        "x" : 900,
+        "y" : 2860,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "item_id"
+          },
+          "_row_id" : "1478092636"
+        }, {
+          "expression" : {
+            "expression" : "quantity_units"
+          },
+          "_row_id" : "1534753813"
+        }, {
+          "expression" : {
+            "expression" : "mfg_cost"
+          },
+          "_row_id" : "1931646515"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "TLPozDuY",
+          "slug" : "inbound_shipments_source"
+        } ],
+        "outputs" : [ {
+          "id" : "HpAiS8BD",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "9iUhumiJs5" : {
+      "id" : "9iUhumiJs5",
+      "component" : "Visualize",
+      "metadata" : {
+        "label" : "products_output_viz",
+        "x" : 260,
+        "y" : 120,
+        "phase" : 0,
+        "comment" : "Exposes Products output for Analysis dashboards"
+      },
+      "properties" : { },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "kaJbv01x8a",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ]
+      },
+      "parent" : "bbb10376d997"
+    },
+    "bbb10376d997" : {
+      "id" : "bbb10376d997",
+      "component" : "VisualGroup",
+      "metadata" : {
+        "label" : "products_container",
+        "x" : 2600,
+        "y" : 2660,
+        "height" : 280,
+        "width" : 400,
+        "phase" : 0
+      },
+      "properties" : {
+        "isCollapsed" : false,
+        "actualDimensions" : null
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "outbound_freight##bFkyQl4P" : {
+      "id" : "outbound_freight##bFkyQl4P",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "outbound_shipments",
+        "x" : 900,
+        "y" : 3100,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "item_bigint_key"
+          },
+          "_row_id" : "1552325948"
+        }, {
+          "expression" : {
+            "expression" : "shipment_method"
+          },
+          "_row_id" : "1740825646"
+        }, {
+          "expression" : {
+            "expression" : "quantity_units"
+          },
+          "_row_id" : "195943226"
+        }, {
+          "expression" : {
+            "expression" : "transportation_cost"
+          },
+          "_row_id" : "1423554484"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "e3xjqVFP",
+          "slug" : "outbound_shipments_source"
+        } ],
+        "outputs" : [ {
+          "id" : "tDElNRQq",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "outbound_custome##qKFwliWs" : {
+      "id" : "outbound_custome##qKFwliWs",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "deduplicated_customer_sites",
+        "x" : 1840,
+        "y" : 840,
+        "phase" : 0,
+        "leadingComment" : "Step 10: Dedupe outbound customer sites",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "\"Name\""
+          },
+          "_row_id" : "124079713"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "\"Name\""
+            },
+            "_row_id" : "1228930801"
+          }
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "cuEOr8V2",
+          "slug" : "outbound_customer_sites_joined"
+        } ],
+        "outputs" : [ {
+          "id" : "hWVQxyjS",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "QhjcWaKm4Y" : {
+      "id" : "QhjcWaKm4Y",
+      "component" : "Visualize",
+      "metadata" : {
+        "label" : "visualize_sites_output",
+        "x" : 260,
+        "y" : 160,
+        "phase" : 0,
+        "comment" : "Exposes Sites output for Analysis dashboards"
+      },
+      "properties" : { },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "CiV6DGlKib",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ]
+      },
+      "parent" : "74ee5af3737d"
+    },
+    "products_with_gr##GagCpDIM" : {
+      "id" : "products_with_gr##GagCpDIM",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "product_catalog",
+        "x" : 1840,
+        "y" : 2780,
+        "phase" : 0,
+        "comment" : "Standardizes product catalog data by extracting key attributes and preparing empty fields for future categorization.",
+        "leadingComment" : "Step 7: Add remaining grouping columns (Alteryx Select tool 450)",
+        "autoUpdateComment" : true,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "\"Name\""
+          },
+          "_row_id" : "1378924695"
+        }, {
+          "expression" : {
+            "expression" : "\"Active\""
+          },
+          "_row_id" : "1081455567"
+        }, {
+          "expression" : {
+            "expression" : "\"Weight\""
+          },
+          "_row_id" : "1980558588"
+        }, {
+          "expression" : {
+            "expression" : "\"Shipment Volume\""
+          },
+          "_row_id" : "131127257"
+        }, {
+          "expression" : {
+            "expression" : "\"Warehouse Volume\""
+          },
+          "_row_id" : "768641704"
+        }, {
+          "expression" : {
+            "expression" : "\"Adjusted Volume\""
+          },
+          "_row_id" : "922698176"
+        }, {
+          "expression" : {
+            "expression" : "TRY_CAST(\"Freight Class\" AS VARCHAR)"
+          },
+          "alias" : "\"Freight Class\"",
+          "_row_id" : "853589295"
+        }, {
+          "expression" : {
+            "expression" : "\"Value\""
+          },
+          "_row_id" : "1758833434"
+        }, {
+          "expression" : {
+            "expression" : "\"Max Shelf Life\""
+          },
+          "_row_id" : "331951073"
+        }, {
+          "expression" : {
+            "expression" : "\"Grouping 1\""
+          },
+          "_row_id" : "1780534488"
+        }, {
+          "expression" : {
+            "expression" : "\"Grouping 2\""
+          },
+          "_row_id" : "1492509052"
+        }, {
+          "expression" : {
+            "expression" : "TRY_CAST(\"Grouping 3\" AS VARCHAR)"
+          },
+          "alias" : "\"Grouping 3\"",
+          "_row_id" : "960626380"
+        }, {
+          "expression" : {
+            "expression" : "CAST(NULL AS VARCHAR)"
+          },
+          "alias" : "\"Grouping 4\"",
+          "_row_id" : "1583542843"
+        }, {
+          "expression" : {
+            "expression" : "CAST(NULL AS VARCHAR)"
+          },
+          "alias" : "\"Grouping 5\"",
+          "_row_id" : "379093773"
+        }, {
+          "expression" : {
+            "expression" : "CAST(NULL AS VARCHAR)"
+          },
+          "alias" : "\"Grouping 6\"",
+          "_row_id" : "319867829"
+        }, {
+          "expression" : {
+            "expression" : "CAST(NULL AS VARCHAR)"
+          },
+          "alias" : "\"Grouping 7\"",
+          "_row_id" : "229087107"
+        }, {
+          "expression" : {
+            "expression" : "CAST(NULL AS VARCHAR)"
+          },
+          "alias" : "\"Grouping 8\"",
+          "_row_id" : "145540347"
+        }, {
+          "expression" : {
+            "expression" : "CAST(NULL AS VARCHAR)"
+          },
+          "alias" : "\"Grouping 9\"",
+          "_row_id" : "223300113"
+        }, {
+          "expression" : {
+            "expression" : "CAST(NULL AS VARCHAR)"
+          },
+          "alias" : "\"Grouping 10\"",
+          "_row_id" : "1736280325"
+        }, {
+          "expression" : {
+            "expression" : "CAST(NULL AS VARCHAR)"
+          },
+          "alias" : "\"Notes\"",
+          "_row_id" : "1867088031"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "UQQSSKaJ",
+          "slug" : "products_with_costs"
+        } ],
+        "outputs" : [ {
+          "id" : "Kp7wm4zW",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "inbound_volumes_##t0Osrg2q" : {
+      "id" : "inbound_volumes_##t0Osrg2q",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "valid_volumes",
+        "x" : 1300,
+        "y" : 1680,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "receiving_org_name IS NOT NULL AND item_id IS NOT NULL"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pu7ZxfX5",
+          "slug" : "inbound_volumes_from_000"
+        } ],
+        "outputs" : [ {
+          "id" : "t8uHOotY",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "outbound_custome##hR52I4Tg" : {
+      "id" : "outbound_custome##hR52I4Tg",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "valid_customer_sites",
+        "x" : 1100,
+        "y" : 800,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "customer_site_bigint_key IS NOT NULL"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "yGxndVRA",
+          "slug" : "outbound_customer_sites_select_from_000"
+        } ],
+        "outputs" : [ {
+          "id" : "qsgupItV",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "products_deduped##OX9mDVAh" : {
+      "id" : "products_deduped##OX9mDVAh",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "products_deduplicated",
+        "x" : 2180,
+        "y" : 2780,
+        "phase" : 0,
+        "leadingComment" : "Step 8: Deduplicate products (Alteryx Unique tools)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "\"Name\""
+          },
+          "_row_id" : "1285215527"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "\"Name\""
+            },
+            "_row_id" : "2115785676"
+          }
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "px0ziN8h",
+          "slug" : "products_with_groupings"
+        } ],
+        "outputs" : [ {
+          "id" : "pOD53cFo",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "transfer_volumes##nbGmEzYE" : {
+      "id" : "transfer_volumes##nbGmEzYE",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "transfer_volumes_by_site_product",
+        "x" : 1560,
+        "y" : 2080,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "source_site"
+          },
+          "alias" : "\"Site\"",
+          "_row_id" : "614763374"
+        }, {
+          "expression" : {
+            "expression" : "item_id"
+          },
+          "alias" : "\"Product\"",
+          "_row_id" : "917551823"
+        }, {
+          "expression" : {
+            "expression" : "SUM(COALESCE(TRY_CAST(quantity AS DOUBLE), 0))"
+          },
+          "alias" : "transfer_quantity",
+          "_row_id" : "388657794"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "source_site"
+          },
+          "_row_id" : "633969041"
+        }, {
+          "expression" : {
+            "expression" : "item_id"
+          },
+          "_row_id" : "1904592912"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "aZp44ZlD",
+          "slug" : "transfer_volumes_filter_001"
+        } ],
+        "outputs" : [ {
+          "id" : "jDYrB8CO",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "production_with_##PFWf8Yk8" : {
+      "id" : "production_with_##PFWf8Yk8",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "site_product_volumes",
+        "x" : 1820,
+        "y" : 1800,
+        "phase" : 0,
+        "leadingComment" : "Step 11: Join base with actual production data",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "inv",
+          "expression" : {
+            "expression" : "spb.\"Site\" = inv.\"Site\" AND spb.\"Product\" = inv.\"Product\""
+          },
+          "joinType" : "LEFT"
+        }, {
+          "alias" : "outv",
+          "expression" : {
+            "expression" : "spb.\"Site\" = outv.\"Site\" AND spb.\"Product\" = outv.\"Product\""
+          },
+          "joinType" : "LEFT"
+        }, {
+          "alias" : "trv",
+          "expression" : {
+            "expression" : "spb.\"Site\" = trv.\"Site\" AND spb.\"Product\" = trv.\"Product\""
+          },
+          "joinType" : "LEFT"
+        } ],
+        "allowSelection" : false,
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "spb.\"Site\""
+          },
+          "_row_id" : "1031780084"
+        }, {
+          "expression" : {
+            "expression" : "spb.\"Product\""
+          },
+          "_row_id" : "919097319"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(inv.inbound_quantity, 0)"
+          },
+          "alias" : "\"Inbound_Quantity\"",
+          "_row_id" : "2040126901"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(outv.outbound_quantity, 0)"
+          },
+          "alias" : "\"Outbound_Quantity\"",
+          "_row_id" : "861162435"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(trv.transfer_quantity, 0)"
+          },
+          "alias" : "\"Transfer_Quantity\"",
+          "_row_id" : "193708946"
+        }, {
+          "expression" : {
+            "expression" : "spb.\"Cost\""
+          },
+          "_row_id" : "1962802701"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ ],
+        "headAlias" : "spb"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "MCAoiiZB",
+          "slug" : "spb"
+        }, {
+          "id" : "EEQxFRWS",
+          "slug" : "inv"
+        }, {
+          "id" : "qpDLRB7a",
+          "slug" : "outv"
+        }, {
+          "id" : "yJZpIgCX",
+          "slug" : "trv"
+        } ],
+        "outputs" : [ {
+          "id" : "Op4H7uwc",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "74ee5af3737d" : {
+      "id" : "74ee5af3737d",
+      "component" : "VisualGroup",
+      "metadata" : {
+        "label" : "sites_container",
+        "x" : 3340,
+        "y" : 660,
+        "height" : 315,
+        "width" : 400,
+        "phase" : 0
+      },
+      "properties" : {
+        "isCollapsed" : false,
+        "actualDimensions" : null
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "products_unique_##TZgg7j5Z" : {
+      "id" : "products_unique_##TZgg7j5Z",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "products_unique_filtered",
+        "x" : 1300,
+        "y" : 1480,
+        "phase" : 0,
+        "leadingComment" : "Step 6: Dedupe products by Product name (Alteryx Unique tool 536: Name)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "\"Product\""
+          },
+          "_row_id" : "787163430"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "\"Product\""
+            },
+            "_row_id" : "1832957224"
+          }
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "HoTrlg6w",
+          "slug" : "products_unique_filter_001"
+        } ],
+        "outputs" : [ {
+          "id" : "eCEY9Q5u",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "outbound_volumes##ilvusjmH" : {
+      "id" : "outbound_volumes##ilvusjmH",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "outbound_shipments_detail",
+        "x" : 900,
+        "y" : 1880,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "item_bigint_key"
+          },
+          "_row_id" : "763518712"
+        }, {
+          "expression" : {
+            "expression" : "quantity_units"
+          },
+          "_row_id" : "1349809048"
+        }, {
+          "expression" : {
+            "expression" : "inventory_organization_bigint_key"
+          },
+          "_row_id" : "1341612755"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "VGda8CNQ",
+          "slug" : "outbound_shipments_source"
+        } ],
+        "outputs" : [ {
+          "id" : "Gfxm5d6u",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "d1aLIviiW2" : {
+      "id" : "d1aLIviiW2",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "country_continent_mapping_xlsx",
+        "x" : 100,
+        "y" : 120,
+        "phase" : 0,
+        "comment" : "Country-continent geographic mapping"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "includeFileNameColumn" : true,
+            "includeSheetNameColumn" : false,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/Country-continent Mapping.xlsx"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "xlsx",
+          "category" : "file",
+          "properties" : {
+            "allowUndefinedRows" : true,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "FilterValue" : null,
+            "description" : "Country to continent mapping for geographic grouping",
+            "inferenceDataSamplingLimit" : null,
+            "ignoreCellFormatting" : null,
+            "enableSchemaMerging" : null,
+            "cellRange" : null,
+            "dateFormatRef" : null,
+            "allNullRowsPeekLimit" : 100,
+            "FilterOption" : null,
+            "outputSheetColumnName" : null,
+            "sheetNames" : null,
+            "skipUndefinedRows" : null,
+            "schema" : {
+              "providerType" : "Arrow",
+              "fields" : [ {
+                "name" : "Country Code",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Country code identifier"
+              }, {
+                "name" : "Continent",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Continent name"
+              } ]
+            },
+            "ReadMethod" : "SingleSheetData",
+            "timeFormatRef" : null,
+            "allowIncompleteRows" : true,
+            "sheetName" : null,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "allowAllNullRows" : null,
+            "fileNameColumnName" : null,
+            "defaultColumnPrefix" : null,
+            "timestampFormatRef" : null,
+            "password" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Z4EYHre0EH",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "4df38d5c0f60"
+    },
+    "all_sites_union##xfl5hxrG" : {
+      "id" : "all_sites_union##xfl5hxrG",
+      "component" : "Union",
+      "metadata" : {
+        "label" : "combined_sites",
+        "x" : 2160,
+        "y" : 480,
+        "phase" : 0,
+        "leadingComment" : "Step 14: Union all site types (Alteryx Union tools 54-56, 59)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "operationType" : "union",
+        "preserveDuplicates" : true,
+        "useMinus" : false,
+        "inputAliases" : [ "st_sites_with_continent", "supplier_sites_formatted", "customer_sites_formatted", "outbound_customer_sites_deduped", "ports_formatted" ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ZWyYB21F",
+          "slug" : "st_sites_with_continent"
+        }, {
+          "id" : "cxA0DTQQ",
+          "slug" : "supplier_sites_formatted"
+        }, {
+          "id" : "avZDpFiv",
+          "slug" : "customer_sites_formatted"
+        }, {
+          "id" : "ctni23Qr",
+          "slug" : "outbound_customer_sites_deduped"
+        }, {
+          "id" : "BoDiqsR2",
+          "slug" : "ports_formatted"
+        } ],
+        "outputs" : [ {
+          "id" : "katYKyzm",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "sites_final_dedu##OmtuJBX7" : {
+      "id" : "sites_final_dedu##OmtuJBX7",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "deduplicated_sites",
+        "x" : 2760,
+        "y" : 780,
+        "phase" : 0,
+        "leadingComment" : "Step 16: Final deduplication by Name (Alteryx Unique tool 67)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "\"Name\""
+          },
+          "_row_id" : "939016842"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "\"Name\""
+            },
+            "_row_id" : "685313752"
+          }
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "bNMo4moN",
+          "slug" : "sites_with_parameters"
+        } ],
+        "outputs" : [ {
+          "id" : "HjjzdyQC",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "suppliers_dedupe##Cxm0IGqp" : {
+      "id" : "suppliers_dedupe##Cxm0IGqp",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "unique_supplier_sites",
+        "x" : 1300,
+        "y" : 440,
+        "phase" : 0,
+        "leadingComment" : "Step 6: Dedupe suppliers by key fields (Alteryx Unique tool 19)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "supplier_name"
+          },
+          "_row_id" : "245753843"
+        }, {
+          "expression" : {
+            "expression" : "supplier_number"
+          },
+          "_row_id" : "718135020"
+        }, {
+          "expression" : {
+            "expression" : "supplier_site_code"
+          },
+          "_row_id" : "2023886127"
+        }, {
+          "expression" : {
+            "expression" : "country"
+          },
+          "_row_id" : "792784458"
+        }, {
+          "expression" : {
+            "expression" : "postal_code"
+          },
+          "_row_id" : "291137383"
+        }, {
+          "expression" : {
+            "expression" : "latitude"
+          },
+          "_row_id" : "1256272772"
+        }, {
+          "expression" : {
+            "expression" : "longitude"
+          },
+          "_row_id" : "626070861"
+        }, {
+          "expression" : {
+            "expression" : "supplier_type"
+          },
+          "_row_id" : "1334863749"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "supplier_site_bigint_key"
+            },
+            "_row_id" : "566311051"
+          }
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "NS1cl9Ah",
+          "slug" : "suppliers"
+        } ],
+        "outputs" : [ {
+          "id" : "DzJZ2IZ9",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "461fff03d12e" : {
+      "id" : "461fff03d12e",
+      "component" : "VisualGroup",
+      "metadata" : {
+        "label" : "production_container",
+        "x" : 3900,
+        "y" : 2060,
+        "height" : 280,
+        "width" : 400,
+        "phase" : 0
+      },
+      "properties" : {
+        "isCollapsed" : false,
+        "actualDimensions" : null
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "supplier_ports_f##GDX0iW81" : {
+      "id" : "supplier_ports_f##GDX0iW81",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "supplier_ports_filtered",
+        "x" : 1100,
+        "y" : 2660,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "origin_supplier_loading_port IS NOT NULL"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "b506edTX",
+          "slug" : "supplier_ports_from_000"
+        } ],
+        "outputs" : [ {
+          "id" : "mg09kxpI",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "outbound_volumes##vVz8KenV" : {
+      "id" : "outbound_volumes##vVz8KenV",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "outbound_quantity_by_site_product",
+        "x" : 1560,
+        "y" : 1880,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "inventory_organization_bigint_key"
+          },
+          "alias" : "\"Site\"",
+          "_row_id" : "1716702897"
+        }, {
+          "expression" : {
+            "expression" : "item_bigint_key"
+          },
+          "alias" : "\"Product\"",
+          "_row_id" : "1963588792"
+        }, {
+          "expression" : {
+            "expression" : "SUM(COALESCE(TRY_CAST(quantity_units AS DOUBLE), 0))"
+          },
+          "alias" : "outbound_quantity",
+          "_row_id" : "713235289"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "inventory_organization_bigint_key"
+          },
+          "_row_id" : "511002929"
+        }, {
+          "expression" : {
+            "expression" : "item_bigint_key"
+          },
+          "_row_id" : "441555874"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "OR3iRDD3",
+          "slug" : "outbound_volumes_filter_001"
+        } ],
+        "outputs" : [ {
+          "id" : "z9jePZSp",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "supplier_product##HZRjW3K5" : {
+      "id" : "supplier_product##HZRjW3K5",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "deduplicated_supplier_production",
+        "x" : 2180,
+        "y" : 2340,
+        "phase" : 0,
+        "leadingComment" : "Step 3: Dedupe supplier production by Site, Product",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "\"Site\""
+          },
+          "_row_id" : "1856831356"
+        }, {
+          "expression" : {
+            "expression" : "\"Product\""
+          },
+          "_row_id" : "1654075159"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "\"Site\""
+            },
+            "_row_id" : "749099677"
+          }
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "EBvsHiD8",
+          "slug" : "supplier_production_keyed"
+        } ],
+        "outputs" : [ {
+          "id" : "XDgr9ejS",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "warehouse_produc##x9s95NJF" : {
+      "id" : "warehouse_produc##x9s95NJF",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "production_supply_config",
+        "x" : 2400,
+        "y" : 1800,
+        "phase" : 0,
+        "leadingComment" : "Step 13: Add production parameters (Alteryx Formula tool 316)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "\"Site\""
+          },
+          "_row_id" : "641386595"
+        }, {
+          "expression" : {
+            "expression" : "\"Product\""
+          },
+          "_row_id" : "784654191"
+        }, {
+          "expression" : {
+            "expression" : "'*all*'"
+          },
+          "alias" : "\"Time_Period\"",
+          "_row_id" : "400815391"
+        }, {
+          "expression" : {
+            "expression" : "0"
+          },
+          "alias" : "\"Min_Supply\"",
+          "_row_id" : "633893525"
+        }, {
+          "expression" : {
+            "expression" : "{{ var('max_supply_default') }}"
+          },
+          "alias" : "\"Max_Supply\"",
+          "_row_id" : "1187254203"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(TRY_CAST(\"Cost\" AS DOUBLE), 0)"
+          },
+          "alias" : "\"Cost\"",
+          "_row_id" : "919408451"
+        }, {
+          "expression" : {
+            "expression" : "{{ var('rate_default') }}"
+          },
+          "alias" : "\"Rate\"",
+          "_row_id" : "1026265227"
+        }, {
+          "expression" : {
+            "expression" : "0"
+          },
+          "alias" : "\"Tiered_Cost\"",
+          "_row_id" : "651324692"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "OwUxX04W",
+          "slug" : "production_active"
+        } ],
+        "outputs" : [ {
+          "id" : "HT1qWLMo",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "inbound_ports_de##yVQF8K4p" : {
+      "id" : "inbound_ports_de##yVQF8K4p",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "unique_ports_by_name",
+        "x" : 1560,
+        "y" : 1040,
+        "phase" : 0,
+        "leadingComment" : "Step 12: Dedupe ports",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "port_name"
+          },
+          "_row_id" : "2147041363"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "port_name"
+            },
+            "_row_id" : "1000302406"
+          }
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "XqhxZMEn",
+          "slug" : "inbound_ports_select"
+        } ],
+        "outputs" : [ {
+          "id" : "ICWs82G2",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "XPyCyHbFDl" : {
+      "id" : "XPyCyHbFDl",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "product_master_csv",
+        "x" : 100,
+        "y" : 1520,
+        "phase" : 0,
+        "comment" : "Product master - items, weights, volumes, costs"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "includeFileNameColumn" : false,
+            "includeSheetNameColumn" : true,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/new_DS__Product_Master.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : null,
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "ProphecyManaged",
+              "fields" : [ {
+                "name" : "item_bigint_key",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "item_id",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "selling_item_number",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "country_of_origin",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "item_class",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "item_description",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pl0_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pl0_description",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pl1_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pl1_description",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pl2_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pl2_description",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pl3_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pl3_description",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pl4_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pl4_description",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "global_planning_abc_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "npd_launch_date",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "discontinued_date",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "item_status",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "unit_volume",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "unit_weight",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "units_per_case",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "units_per_pallet",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "units_per_container",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "active_estimated_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "applied_standard_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "direct_labor_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "direct_material_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "duty_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "fixed_overhead_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "freight_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "import_fee_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "purchase_burden_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "standard_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "variable_overhead_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "special_handling_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "has_lithium_ion",
+                "dataType" : {
+                  "type" : "Boolean"
+                }
+              }, {
+                "name" : "battery_size",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "battery_watt_hours",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "partner_item_number",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "transition_activel",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "transition_activeg",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "tskul_start_date",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "tskul_end_date",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "tskug_start_date",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "tskug_end_date",
+                "dataType" : {
+                  "type" : "String"
+                }
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "8xgBYxz8gH",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "4df38d5c0f60"
+    },
+    "supplier_product##Z64u4meO" : {
+      "id" : "supplier_product##Z64u4meO",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "supplier_cost_mapping",
+        "x" : 900,
+        "y" : 2280,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "item_id"
+          },
+          "_row_id" : "1712224879"
+        }, {
+          "expression" : {
+            "expression" : "origin_supplier_number"
+          },
+          "_row_id" : "1130105701"
+        }, {
+          "expression" : {
+            "expression" : "item_id"
+          },
+          "alias" : "\"Product\"",
+          "_row_id" : "1204855281"
+        }, {
+          "expression" : {
+            "expression" : "origin_supplier_site_code"
+          },
+          "_row_id" : "1018139955"
+        }, {
+          "expression" : {
+            "expression" : "mfg_cost"
+          },
+          "_row_id" : "1319155186"
+        }, {
+          "expression" : {
+            "expression" : "origin_supplier_number || '_' || origin_supplier_site_code"
+          },
+          "alias" : "supplier_key",
+          "_row_id" : "1127857039"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(TRY_CAST(mfg_cost AS DOUBLE), 0)"
+          },
+          "alias" : "\"Cost\"",
+          "_row_id" : "2096716912"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "i6PgBS1C",
+          "slug" : "inbound_shipments_source"
+        } ],
+        "outputs" : [ {
+          "id" : "ixBSCpvq",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "final##hwasYXVe" : {
+      "id" : "final##hwasYXVe",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "facility_operations_inventory",
+        "x" : 60,
+        "y" : 120,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "sites_output",
+          "sourceType" : "Table",
+          "sourceName" : "ProphecyCompute_main",
+          "alias" : ""
+        },
+        "materialization" : { },
+        "writeOptions" : {
+          "entityConfig" : {
+            "database" : "\"ProphecyCompute\"",
+            "alias" : "\"sites_output\"",
+            "schema" : "\"main\"",
+            "type" : "ModelConfig",
+            "materialized" : "table"
+          },
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ug9Y3CzB",
+          "slug" : "site_details"
+        } ],
+        "outputs" : [ {
+          "id" : "NEP6x0RW",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "74ee5af3737d",
+      "index" : 28
+    },
+    "supplier_product##EH0nXbkR" : {
+      "id" : "supplier_product##EH0nXbkR",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "supplier_product_costs",
+        "x" : 1300,
+        "y" : 2280,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "supplier_key"
+          },
+          "_row_id" : "1343352772"
+        }, {
+          "expression" : {
+            "expression" : "\"Product\""
+          },
+          "_row_id" : "518148977"
+        }, {
+          "expression" : {
+            "expression" : "\"Cost\""
+          },
+          "_row_id" : "834574879"
+        } ],
+        "dedupType" : "distinct",
+        "columnsSelector" : [ ],
+        "orders" : [ ],
+        "useOrderBy" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "RNnTQxvr",
+          "slug" : "supplier_product_pairs_filter_001"
+        } ],
+        "outputs" : [ {
+          "id" : "FiM5rgF4",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "transfer_volumes##MBrSe2dT" : {
+      "id" : "transfer_volumes##MBrSe2dT",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "transfer_inventory",
+        "x" : 900,
+        "y" : 2080,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "CAST(source_organization_code AS VARCHAR)"
+          },
+          "alias" : "source_site",
+          "_row_id" : "1290279388"
+        }, {
+          "expression" : {
+            "expression" : "item_id"
+          },
+          "_row_id" : "689823944"
+        }, {
+          "expression" : {
+            "expression" : "shipped_quantity"
+          },
+          "alias" : "quantity",
+          "_row_id" : "245883992"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "re9GxkiK",
+          "slug" : "transfers_source"
+        } ],
+        "outputs" : [ {
+          "id" : "Pp5xjoPc",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "outbound_freight##f1Xxw4VD" : {
+      "id" : "outbound_freight##f1Xxw4VD",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "outbound_freight_analytics",
+        "x" : 1300,
+        "y" : 3100,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "item_bigint_key"
+          },
+          "alias" : "\"Product\"",
+          "_row_id" : "1470192180"
+        }, {
+          "expression" : {
+            "expression" : "SUM(COALESCE(TRY_CAST(quantity_units AS DOUBLE), 0))"
+          },
+          "alias" : "total_outbound_quantity",
+          "_row_id" : "1947237183"
+        }, {
+          "expression" : {
+            "expression" : "AVG(COALESCE(TRY_CAST(transportation_cost AS DOUBLE), 0))"
+          },
+          "alias" : "avg_freight_cost",
+          "_row_id" : "198176953"
+        }, {
+          "expression" : {
+            "expression" : "COUNT(DISTINCT shipment_method)"
+          },
+          "alias" : "carrier_count",
+          "_row_id" : "257055014"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "item_bigint_key"
+          },
+          "_row_id" : "1993181451"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "otzczV7K",
+          "slug" : "outbound_freight_metrics_filter_001"
+        } ],
+        "outputs" : [ {
+          "id" : "dUlmnJjn",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "product_base##ysdZRXG5" : {
+      "id" : "product_base##ysdZRXG5",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "product_master_enriched",
+        "x" : 900,
+        "y" : 2460,
+        "phase" : 0,
+        "leadingComment" : "Step 1: Transform product master base (Alteryx Reformat + Formula tools)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "{{ var('max_shelf_life') }}"
+          },
+          "alias" : "\"Max Shelf Life\"",
+          "_row_id" : "127450037"
+        }, {
+          "expression" : {
+            "expression" : "country_of_origin"
+          },
+          "alias" : "\"Grouping 2\"",
+          "_row_id" : "860754034"
+        }, {
+          "expression" : {
+            "expression" : "standard_cost"
+          },
+          "_row_id" : "352452422"
+        }, {
+          "expression" : {
+            "expression" : "unit_volume"
+          },
+          "_row_id" : "2085881844"
+        }, {
+          "expression" : {
+            "expression" : "selling_item_number"
+          },
+          "alias" : "\"Name\"",
+          "_row_id" : "824239617"
+        }, {
+          "expression" : {
+            "expression" : "item_class"
+          },
+          "alias" : "\"Grouping 1\"",
+          "_row_id" : "2115312387"
+        }, {
+          "expression" : {
+            "expression" : "unit_weight"
+          },
+          "_row_id" : "40939573"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Grouping 3\"",
+          "_row_id" : "665873206"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Freight Class\"",
+          "_row_id" : "1988723676"
+        }, {
+          "expression" : {
+            "expression" : "selling_item_number"
+          },
+          "_row_id" : "1346193688"
+        }, {
+          "expression" : {
+            "expression" : "'Y'"
+          },
+          "alias" : "\"Active\"",
+          "_row_id" : "1332047598"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(TRY_CAST(unit_weight AS DOUBLE), 0)"
+          },
+          "alias" : "\"Weight\"",
+          "_row_id" : "1959107662"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN COALESCE(TRY_CAST(unit_volume AS DOUBLE), 0) > 0\n    THEN 1.0 / TRY_CAST(unit_volume AS DOUBLE)\n  ELSE 0\nEND"
+          },
+          "alias" : "\"Shipment Volume\"",
+          "_row_id" : "1435276544"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(TRY_CAST(unit_volume AS DOUBLE), 0)"
+          },
+          "alias" : "\"Warehouse Volume\"",
+          "_row_id" : "28311822"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN COALESCE(TRY_CAST(unit_volume AS DOUBLE), 0) > 0\n    THEN 1.0 / TRY_CAST(unit_volume AS DOUBLE)\n  ELSE 0\nEND"
+          },
+          "alias" : "\"Adjusted Volume\"",
+          "_row_id" : "1146240162"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(TRY_CAST(standard_cost AS DOUBLE), 0)"
+          },
+          "alias" : "\"Value\"",
+          "_row_id" : "1724119698"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "nBwoWMAT",
+          "slug" : "product_master_source"
+        } ],
+        "outputs" : [ {
+          "id" : "FgMhveQ8",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "inbound_weighted##WiRWh5oN" : {
+      "id" : "inbound_weighted##WiRWh5oN",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "valid_inbound_costs",
+        "x" : 1100,
+        "y" : 2860,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "item_id IS NOT NULL AND quantity_units IS NOT NULL"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "GkTWr2Rc",
+          "slug" : "inbound_weighted_costs_from_000"
+        } ],
+        "outputs" : [ {
+          "id" : "gbLybXuT",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "outbound_custome##Nx2Pqwv1" : {
+      "id" : "outbound_custome##Nx2Pqwv1",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "outbound_shipments_1",
+        "x" : 900,
+        "y" : 800,
+        "phase" : 0,
+        "dataPreview" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "customer_site_bigint_key"
+          },
+          "_row_id" : "483024675"
+        }, {
+          "expression" : {
+            "expression" : "ship_date"
+          },
+          "_row_id" : "1040065018"
+        }, {
+          "expression" : {
+            "expression" : "quantity_units"
+          },
+          "_row_id" : "1385928574"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "RGSaeC7N",
+          "slug" : "outbound_shipments_source"
+        } ],
+        "outputs" : [ {
+          "id" : "YLJZCXKA",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "sites_deduped##QcQe9G3K" : {
+      "id" : "sites_deduped##QcQe9G3K",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "unique_sites_by_org",
+        "x" : 900,
+        "y" : 1280,
+        "phase" : 0,
+        "leadingComment" : "Step 4: Dedupe sites (Alteryx Unique tool 315)",
+        "dataPreview" : true
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "org_name"
+          },
+          "_row_id" : "305409351"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "org_name"
+            },
+            "_row_id" : "628983110"
+          }
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "OBv0pwNk",
+          "slug" : "sites"
+        } ],
+        "outputs" : [ {
+          "id" : "t5df61Km",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "BYgSReEh",
+    "source" : "supplier_ports_f##y924ok2l",
+    "sourcePort" : "vJ4qz4na",
+    "target" : "supplier_ports_f##GDX0iW81",
+    "targetPort" : "b506edTX",
+    "isWireless" : false
+  }, {
+    "id" : "urbP2RjN",
+    "source" : "supplier_ports_f##GDX0iW81",
+    "sourcePort" : "mg09kxpI",
+    "target" : "supplier_ports_p##qf0M2SGY",
+    "targetPort" : "PCUyzJIL",
+    "isWireless" : false
+  }, {
+    "id" : "VbeurFRoe2_to_q6YqKpx81j##YZWBvl7C",
+    "source" : "TRAt0f2S1i",
+    "sourcePort" : "VbeurFRoe2",
+    "target" : "supplier_ports_f##y924ok2l",
+    "targetPort" : "x3k19LVU"
+  }, {
+    "id" : "wCEGgo44",
+    "source" : "st_sites_deduped##CyNyeWbG",
+    "sourcePort" : "mvdvMdvN",
+    "target" : "st_sites_formatt##NjElAoyj",
+    "targetPort" : "L1yRgSR0",
+    "isWireless" : false
+  }, {
+    "id" : "grG0knn5",
+    "source" : "st_sites_formatt##NjElAoyj",
+    "sourcePort" : "UFUapI89",
+    "target" : "st_sites_with_co##HtKZRyHt",
+    "targetPort" : "Yw8UHfLQ",
+    "isWireless" : false
+  }, {
+    "id" : "DrDjs44A",
+    "source" : "outbound_custome##Nx2Pqwv1",
+    "sourcePort" : "YLJZCXKA",
+    "target" : "outbound_custome##hR52I4Tg",
+    "targetPort" : "yGxndVRA",
+    "isWireless" : false
+  }, {
+    "id" : "MxpeSYPN",
+    "source" : "outbound_custome##hR52I4Tg",
+    "sourcePort" : "qsgupItV",
+    "target" : "outbound_custome##lzQBm2Rx",
+    "targetPort" : "c57dWTKj",
+    "isWireless" : false
+  }, {
+    "id" : "tYvrMolW",
+    "source" : "inbound_ports_se##pEK3bq9H",
+    "sourcePort" : "El7ZtjWJ",
+    "target" : "inbound_ports_se##p9nbXD4f",
+    "targetPort" : "Rpcb9mYQ",
+    "isWireless" : false
+  }, {
+    "id" : "Wlz99Uef",
+    "source" : "outbound_custome##lzQBm2Rx",
+    "sourcePort" : "uxVvq76g",
+    "target" : "outbound_custome##BHVss4fa",
+    "targetPort" : "ecr5xGX4",
+    "isWireless" : false
+  }, {
+    "id" : "cRtNHtmC",
+    "source" : "customer_sites_d##EfZNSgLq",
+    "sourcePort" : "ViBiK1wG",
+    "target" : "customer_sites_f##JMQ87g6u",
+    "targetPort" : "RChS6gc5",
+    "isWireless" : false
+  }, {
+    "id" : "JH6EKYr0",
+    "source" : "suppliers_dedupe##Cxm0IGqp",
+    "sourcePort" : "DzJZ2IZ9",
+    "target" : "supplier_sites_f##gawDD70y",
+    "targetPort" : "E0txM29e",
+    "isWireless" : false
+  }, {
+    "id" : "fieuweF0",
+    "source" : "inbound_ports_se##p9nbXD4f",
+    "sourcePort" : "AD1ZII7i",
+    "target" : "inbound_ports_se##aW4JbahH",
+    "targetPort" : "veb4qvIg",
+    "isWireless" : false
+  }, {
+    "id" : "tBT26Il1",
+    "source" : "inbound_ports_se##aW4JbahH",
+    "sourcePort" : "cNdcesEv",
+    "target" : "inbound_ports_de##yVQF8K4p",
+    "targetPort" : "XqhxZMEn",
+    "isWireless" : false
+  }, {
+    "id" : "tOsOynkm",
+    "source" : "inbound_ports_de##yVQF8K4p",
+    "sourcePort" : "ICWs82G2",
+    "target" : "ports_formatted##dCJxNaHg",
+    "targetPort" : "IxLiE2fs",
+    "isWireless" : false
+  }, {
+    "id" : "OXApTDoM",
+    "source" : "outbound_custome##BHVss4fa",
+    "sourcePort" : "LQH7Z0Ra",
+    "target" : "outbound_custome##qKFwliWs",
+    "targetPort" : "cuEOr8V2",
+    "isWireless" : false
+  }, {
+    "id" : "pkEDiSP4",
+    "source" : "st_sites_with_co##HtKZRyHt",
+    "sourcePort" : "rJetafn6",
+    "target" : "all_sites_union##xfl5hxrG",
+    "targetPort" : "ZWyYB21F",
+    "isWireless" : false
+  }, {
+    "id" : "DQsa7hor",
+    "source" : "supplier_sites_f##gawDD70y",
+    "sourcePort" : "U9ib0QNA",
+    "target" : "all_sites_union##xfl5hxrG",
+    "targetPort" : "cxA0DTQQ",
+    "isWireless" : false
+  }, {
+    "id" : "Q8g2J0PR",
+    "source" : "customer_sites_f##JMQ87g6u",
+    "sourcePort" : "jUq1VN7f",
+    "target" : "all_sites_union##xfl5hxrG",
+    "targetPort" : "avZDpFiv",
+    "isWireless" : false
+  }, {
+    "id" : "QlZxzngY",
+    "source" : "outbound_custome##qKFwliWs",
+    "sourcePort" : "hWVQxyjS",
+    "target" : "all_sites_union##xfl5hxrG",
+    "targetPort" : "ctni23Qr",
+    "isWireless" : false
+  }, {
+    "id" : "UVPSFIMc",
+    "source" : "ports_formatted##dCJxNaHg",
+    "sourcePort" : "oHR01B7y",
+    "target" : "all_sites_union##xfl5hxrG",
+    "targetPort" : "BoDiqsR2",
+    "isWireless" : false
+  }, {
+    "id" : "mFWNCeRk",
+    "source" : "all_sites_union##xfl5hxrG",
+    "sourcePort" : "katYKyzm",
+    "target" : "sites_with_param##eG0GdLWa",
+    "targetPort" : "i9KkMRRx",
+    "isWireless" : false
+  }, {
+    "id" : "P81MWixk",
+    "source" : "sites_with_param##eG0GdLWa",
+    "sourcePort" : "f8vdS4B0",
+    "target" : "sites_final_dedu##OmtuJBX7",
+    "targetPort" : "bNMo4moN",
+    "isWireless" : false
+  }, {
+    "id" : "Scnj2VYF",
+    "source" : "sites_final_dedu##OmtuJBX7",
+    "sourcePort" : "HjjzdyQC",
+    "target" : "sites_transform##FlwU5m2S",
+    "targetPort" : "OXQjWAjF",
+    "isWireless" : false
+  }, {
+    "id" : "SAVwlUGz",
+    "source" : "sites_transform##FlwU5m2S",
+    "sourcePort" : "OjqLk1st",
+    "target" : "final##hwasYXVe",
+    "targetPort" : "ug9Y3CzB",
+    "isWireless" : false
+  }, {
+    "id" : "z7riMF6jUQ_to_bB6KQay2Uu##gAqYWb6d",
+    "source" : "U2ac1r4Xcv",
+    "sourcePort" : "z7riMF6jUQ",
+    "target" : "st_sites_deduped##CyNyeWbG",
+    "targetPort" : "vSWx0uyp"
+  }, {
+    "id" : "Z4EYHre0EH_to_PsiDxGsbxh##S5XkN0dI",
+    "source" : "d1aLIviiW2",
+    "sourcePort" : "Z4EYHre0EH",
+    "target" : "st_sites_with_co##HtKZRyHt",
+    "targetPort" : "uV3tphQQ"
+  }, {
+    "id" : "gkme3DmJ0D_to_7SkpvWJPpJ##qtgWJFNQ",
+    "source" : "n9H90NGioM",
+    "sourcePort" : "gkme3DmJ0D",
+    "target" : "outbound_custome##Nx2Pqwv1",
+    "targetPort" : "RGSaeC7N"
+  }, {
+    "id" : "VbeurFRoe2_to_XXByMbgrR5##fCfGSGIZ",
+    "source" : "TRAt0f2S1i",
+    "sourcePort" : "VbeurFRoe2",
+    "target" : "inbound_ports_se##pEK3bq9H",
+    "targetPort" : "tr0L7cXr"
+  }, {
+    "id" : "1CtAVN87XI_to_bCIY4KXPYh##vCtbfzXS",
+    "source" : "oMgsJcDtiZ",
+    "sourcePort" : "1CtAVN87XI",
+    "target" : "outbound_custome##BHVss4fa",
+    "targetPort" : "PQW4qF5b"
+  }, {
+    "id" : "1CtAVN87XI_to_bCIY4KXPYh##iHDSJCSO",
+    "source" : "oMgsJcDtiZ",
+    "sourcePort" : "1CtAVN87XI",
+    "target" : "customer_sites_d##EfZNSgLq",
+    "targetPort" : "F5LQqXZV"
+  }, {
+    "id" : "PN02QySItD_to_WIBDCtlppE##Grusiru8",
+    "source" : "mxk53CTTVJ",
+    "sourcePort" : "PN02QySItD",
+    "target" : "suppliers_dedupe##Cxm0IGqp",
+    "targetPort" : "NS1cl9Ah"
+  }, {
+    "id" : "bLrWfJquw8_to_fU7yx29Osn##AKrheyk8",
+    "source" : "0AgoM5ylHc",
+    "sourcePort" : "bLrWfJquw8",
+    "target" : "sites_with_param##eG0GdLWa",
+    "targetPort" : "W1r5COTX"
+  }, {
+    "id" : "8oUPcfraWc_to_CiV6DGlKib",
+    "source" : "final##hwasYXVe",
+    "sourcePort" : "NEP6x0RW",
+    "target" : "QhjcWaKm4Y",
+    "targetPort" : "CiV6DGlKib"
+  }, {
+    "id" : "lOVzuBBW",
+    "source" : "supplier_product##Z64u4meO",
+    "sourcePort" : "ixBSCpvq",
+    "target" : "supplier_product##Lh6RqupW",
+    "targetPort" : "mcHpBuhm",
+    "isWireless" : false
+  }, {
+    "id" : "dpBbo2uG",
+    "source" : "supplier_product##Lh6RqupW",
+    "sourcePort" : "tuVaYK4P",
+    "target" : "supplier_product##EH0nXbkR",
+    "targetPort" : "RNnTQxvr",
+    "isWireless" : false
+  }, {
+    "id" : "bPr41cWk",
+    "source" : "supplier_product##EH0nXbkR",
+    "sourcePort" : "FiM5rgF4",
+    "target" : "supplier_product##jpMuOJmw",
+    "targetPort" : "MF0hqZ5y",
+    "isWireless" : false
+  }, {
+    "id" : "YbVh8KPH",
+    "source" : "transfer_volumes##MBrSe2dT",
+    "sourcePort" : "Pp5xjoPc",
+    "target" : "transfer_volumes##WJmc0xTi",
+    "targetPort" : "co33texA",
+    "isWireless" : false
+  }, {
+    "id" : "svx411Et",
+    "source" : "sites_deduped##QcQe9G3K",
+    "sourcePort" : "t5df61Km",
+    "target" : "sites_mt_only##WpNA5ZbZ",
+    "targetPort" : "kIr9441u",
+    "isWireless" : false
+  }, {
+    "id" : "Ru45dN73",
+    "source" : "sites_mt_only##WpNA5ZbZ",
+    "sourcePort" : "gUPvnYQU",
+    "target" : "sites_formatted##R1ulFpYd",
+    "targetPort" : "V5PDVB0V",
+    "isWireless" : false
+  }, {
+    "id" : "nMcqdZmL",
+    "source" : "products_unique_##iEco4XDz",
+    "sourcePort" : "QIqOXAd1",
+    "target" : "products_unique_##uwIpBWaz",
+    "targetPort" : "pRyRoofq",
+    "isWireless" : false
+  }, {
+    "id" : "b2pzpSEo",
+    "source" : "products_unique_##uwIpBWaz",
+    "sourcePort" : "AFXtFqjn",
+    "target" : "products_unique_##TZgg7j5Z",
+    "targetPort" : "HoTrlg6w",
+    "isWireless" : false
+  }, {
+    "id" : "w5lY25Ku",
+    "source" : "sites_formatted##R1ulFpYd",
+    "sourcePort" : "YK6kEmnG",
+    "target" : "site_product_bas##MlDgFqhq",
+    "targetPort" : "aJwDGvr4",
+    "isWireless" : false
+  }, {
+    "id" : "xzuflHHv",
+    "source" : "products_unique_##TZgg7j5Z",
+    "sourcePort" : "eCEY9Q5u",
+    "target" : "site_product_bas##MlDgFqhq",
+    "targetPort" : "wWVk9pQw",
+    "isWireless" : false
+  }, {
+    "id" : "xsEgcw3m",
+    "source" : "inbound_volumes_##Z2cSVaHX",
+    "sourcePort" : "sAvYfP1t",
+    "target" : "inbound_volumes_##t0Osrg2q",
+    "targetPort" : "pu7ZxfX5",
+    "isWireless" : false
+  }, {
+    "id" : "g0w9m57Q",
+    "source" : "inbound_volumes_##t0Osrg2q",
+    "sourcePort" : "t8uHOotY",
+    "target" : "inbound_volumes_##JjX4SRhU",
+    "targetPort" : "weTYL1d4",
+    "isWireless" : false
+  }, {
+    "id" : "vxxqlLPz",
+    "source" : "transfer_volumes##WJmc0xTi",
+    "sourcePort" : "ZMWaDR13",
+    "target" : "transfer_volumes##nbGmEzYE",
+    "targetPort" : "aZp44ZlD",
+    "isWireless" : false
+  }, {
+    "id" : "xwDsrM6v",
+    "source" : "outbound_volumes##ilvusjmH",
+    "sourcePort" : "Gfxm5d6u",
+    "target" : "outbound_volumes##CqhXgx6h",
+    "targetPort" : "jMWn8QyF",
+    "isWireless" : false
+  }, {
+    "id" : "xO755Aqp",
+    "source" : "outbound_volumes##CqhXgx6h",
+    "sourcePort" : "qJQXZ6Zj",
+    "target" : "outbound_volumes##vVz8KenV",
+    "targetPort" : "OR3iRDD3",
+    "isWireless" : false
+  }, {
+    "id" : "rs0AVcId",
+    "source" : "site_product_bas##MlDgFqhq",
+    "sourcePort" : "GuLdYI9x",
+    "target" : "production_with_##PFWf8Yk8",
+    "targetPort" : "MCAoiiZB",
+    "isWireless" : false
+  }, {
+    "id" : "CNM5Bmir",
+    "source" : "inbound_volumes_##JjX4SRhU",
+    "sourcePort" : "zcJlTrIV",
+    "target" : "production_with_##PFWf8Yk8",
+    "targetPort" : "EEQxFRWS",
+    "isWireless" : false
+  }, {
+    "id" : "iAj0v3aB",
+    "source" : "outbound_volumes##vVz8KenV",
+    "sourcePort" : "z9jePZSp",
+    "target" : "production_with_##PFWf8Yk8",
+    "targetPort" : "qpDLRB7a",
+    "isWireless" : false
+  }, {
+    "id" : "LyWKpaY8",
+    "source" : "transfer_volumes##nbGmEzYE",
+    "sourcePort" : "jDYrB8CO",
+    "target" : "production_with_##PFWf8Yk8",
+    "targetPort" : "yJZpIgCX",
+    "isWireless" : false
+  }, {
+    "id" : "jI1JX1jx",
+    "source" : "production_with_##PFWf8Yk8",
+    "sourcePort" : "Op4H7uwc",
+    "target" : "production_activ##kb4YzZEf",
+    "targetPort" : "VDfmwGnZ",
+    "isWireless" : false
+  }, {
+    "id" : "yEjv5oU4",
+    "source" : "supplier_product##jpMuOJmw",
+    "sourcePort" : "JODufTe4",
+    "target" : "supplier_product##HZRjW3K5",
+    "targetPort" : "EBvsHiD8",
+    "isWireless" : false
+  }, {
+    "id" : "jUNld1tc",
+    "source" : "production_activ##kb4YzZEf",
+    "sourcePort" : "Ja4m1z2q",
+    "target" : "warehouse_produc##x9s95NJF",
+    "targetPort" : "OwUxX04W",
+    "isWireless" : false
+  }, {
+    "id" : "usfP0Ver",
+    "source" : "warehouse_produc##x9s95NJF",
+    "sourcePort" : "HT1qWLMo",
+    "target" : "production_combi##cPCizYv0",
+    "targetPort" : "R52BEje2",
+    "isWireless" : false
+  }, {
+    "id" : "AY4T5dLO",
+    "source" : "supplier_product##HZRjW3K5",
+    "sourcePort" : "XDgr9ejS",
+    "target" : "production_combi##cPCizYv0",
+    "targetPort" : "wSzHgrSD",
+    "isWireless" : false
+  }, {
+    "id" : "ZNnPvHvI",
+    "source" : "production_combi##cPCizYv0",
+    "sourcePort" : "HJlIpVyP",
+    "target" : "production_final##Bee8XaFW",
+    "targetPort" : "seMwmehh",
+    "isWireless" : false
+  }, {
+    "id" : "lvDCVK54",
+    "source" : "production_final##Bee8XaFW",
+    "sourcePort" : "MSkUYMRx",
+    "target" : "production_trans##PkYpqTU2",
+    "targetPort" : "l1k9p2Do",
+    "isWireless" : false
+  }, {
+    "id" : "TvOZRPuu",
+    "source" : "production_trans##PkYpqTU2",
+    "sourcePort" : "tD7fUbFB",
+    "target" : "final##L2wOuRdp",
+    "targetPort" : "MnN2vxmR",
+    "isWireless" : false
+  }, {
+    "id" : "VbeurFRoe2_to_h0YSOPeIm4##SwZAyyrt",
+    "source" : "TRAt0f2S1i",
+    "sourcePort" : "VbeurFRoe2",
+    "target" : "supplier_product##Z64u4meO",
+    "targetPort" : "i6PgBS1C"
+  }, {
+    "id" : "PN02QySItD_to_DnhmfWBEx5##wmbYyZeG",
+    "source" : "mxk53CTTVJ",
+    "sourcePort" : "PN02QySItD",
+    "target" : "supplier_product##jpMuOJmw",
+    "targetPort" : "F3ufgvuT"
+  }, {
+    "id" : "8xgBYxz8gH_to_YfUHIsOrJX##uwFaicXj",
+    "source" : "XPyCyHbFDl",
+    "sourcePort" : "8xgBYxz8gH",
+    "target" : "supplier_product##jpMuOJmw",
+    "targetPort" : "b4eOptMJ"
+  }, {
+    "id" : "8xgBYxz8gH_to_YfUHIsOrJX##O0s8wMaP",
+    "source" : "XPyCyHbFDl",
+    "sourcePort" : "8xgBYxz8gH",
+    "target" : "products_unique_##iEco4XDz",
+    "targetPort" : "oG7rysrN"
+  }, {
+    "id" : "QD80kIxPYZ_to_Xn4rbC6OYF##pKDm9kDA",
+    "source" : "jRjgAA7ehZ",
+    "sourcePort" : "QD80kIxPYZ",
+    "target" : "transfer_volumes##MBrSe2dT",
+    "targetPort" : "re9GxkiK"
+  }, {
+    "id" : "z7riMF6jUQ_to_X9PzGFQ5PA##wO3di5MD",
+    "source" : "U2ac1r4Xcv",
+    "sourcePort" : "z7riMF6jUQ",
+    "target" : "sites_deduped##QcQe9G3K",
+    "targetPort" : "OBv0pwNk"
+  }, {
+    "id" : "VbeurFRoe2_to_h0YSOPeIm4##wU0SCGb3",
+    "source" : "TRAt0f2S1i",
+    "sourcePort" : "VbeurFRoe2",
+    "target" : "inbound_volumes_##Z2cSVaHX",
+    "targetPort" : "eKatgTAw"
+  }, {
+    "id" : "gkme3DmJ0D_to_zHxOGIR8fO##JBeMFnl1",
+    "source" : "n9H90NGioM",
+    "sourcePort" : "gkme3DmJ0D",
+    "target" : "outbound_volumes##ilvusjmH",
+    "targetPort" : "VGda8CNQ"
+  }, {
+    "id" : "jMcbn8uMq9_to_ed55OCd0I2",
+    "source" : "final##L2wOuRdp",
+    "sourcePort" : "AYiOs0pR",
+    "target" : "s6cpU9I82A",
+    "targetPort" : "ed55OCd0I2"
+  }, {
+    "id" : "Dz4mleTl",
+    "source" : "inbound_weighted##vLrNDK2h",
+    "sourcePort" : "HpAiS8BD",
+    "target" : "inbound_weighted##WiRWh5oN",
+    "targetPort" : "GkTWr2Rc",
+    "isWireless" : false
+  }, {
+    "id" : "rBO2ReWE",
+    "source" : "inbound_weighted##WiRWh5oN",
+    "sourcePort" : "gbLybXuT",
+    "target" : "inbound_weighted##zjoH9IO5",
+    "targetPort" : "fjKbBQ5f",
+    "isWireless" : false
+  }, {
+    "id" : "tFTrIPKG",
+    "source" : "product_base##ysdZRXG5",
+    "sourcePort" : "FgMhveQ8",
+    "target" : "product_base_fil##eIpht17u",
+    "targetPort" : "UDkfFOnA",
+    "isWireless" : false
+  }, {
+    "id" : "oj4Jsd8Y",
+    "source" : "product_base_fil##eIpht17u",
+    "sourcePort" : "N0F31cBz",
+    "target" : "product_base_pro##ejECciKN",
+    "targetPort" : "xK3VVFQx",
+    "isWireless" : false
+  }, {
+    "id" : "PKzn9Y3E",
+    "source" : "outbound_freight##bFkyQl4P",
+    "sourcePort" : "tDElNRQq",
+    "target" : "outbound_freight##pD8xiYlp",
+    "targetPort" : "pufcHT7Q",
+    "isWireless" : false
+  }, {
+    "id" : "ag9cEGRi",
+    "source" : "outbound_freight##pD8xiYlp",
+    "sourcePort" : "s4nb5WU9",
+    "target" : "outbound_freight##f1Xxw4VD",
+    "targetPort" : "otzczV7K",
+    "isWireless" : false
+  }, {
+    "id" : "XMBhKRe5",
+    "source" : "product_base_pro##ejECciKN",
+    "sourcePort" : "lu2lgb7X",
+    "target" : "products_with_co##sJMgPCeO",
+    "targetPort" : "Olpk8YBI",
+    "isWireless" : false
+  }, {
+    "id" : "r9zjAHPm",
+    "source" : "inbound_weighted##zjoH9IO5",
+    "sourcePort" : "hcHPhkLm",
+    "target" : "products_with_co##sJMgPCeO",
+    "targetPort" : "g51PMzU3",
+    "isWireless" : false
+  }, {
+    "id" : "moTnKzOw",
+    "source" : "outbound_freight##f1Xxw4VD",
+    "sourcePort" : "dUlmnJjn",
+    "target" : "products_with_co##sJMgPCeO",
+    "targetPort" : "YmOGDFpL",
+    "isWireless" : false
+  }, {
+    "id" : "BkVhuLMF",
+    "source" : "products_with_co##sJMgPCeO",
+    "sourcePort" : "XoPARXcf",
+    "target" : "products_with_gr##GagCpDIM",
+    "targetPort" : "UQQSSKaJ",
+    "isWireless" : false
+  }, {
+    "id" : "zaIMVBdB",
+    "source" : "products_with_gr##GagCpDIM",
+    "sourcePort" : "Kp7wm4zW",
+    "target" : "products_deduped##OX9mDVAh",
+    "targetPort" : "px0ziN8h",
+    "isWireless" : false
+  }, {
+    "id" : "Xo6YsdpD",
+    "source" : "products_deduped##OX9mDVAh",
+    "sourcePort" : "pOD53cFo",
+    "target" : "products_transfo##lXdEX4kJ",
+    "targetPort" : "iATAPEhi",
+    "isWireless" : false
+  }, {
+    "id" : "lu3xU99r",
+    "source" : "products_transfo##lXdEX4kJ",
+    "sourcePort" : "bQpc5Plr",
+    "target" : "final##shbIkNKR",
+    "targetPort" : "WztFeQ6p",
+    "isWireless" : false
+  }, {
+    "id" : "VbeurFRoe2_to_PfGFTwFdwg##a5Grt6d6",
+    "source" : "TRAt0f2S1i",
+    "sourcePort" : "VbeurFRoe2",
+    "target" : "inbound_weighted##vLrNDK2h",
+    "targetPort" : "TLPozDuY"
+  }, {
+    "id" : "8xgBYxz8gH_to_iJpILrSd5L##SLAHXIJW",
+    "source" : "XPyCyHbFDl",
+    "sourcePort" : "8xgBYxz8gH",
+    "target" : "product_base##ysdZRXG5",
+    "targetPort" : "nBwoWMAT"
+  }, {
+    "id" : "gkme3DmJ0D_to_PVvKqJKsf3##vQ20fuie",
+    "source" : "n9H90NGioM",
+    "sourcePort" : "gkme3DmJ0D",
+    "target" : "outbound_freight##bFkyQl4P",
+    "targetPort" : "e3xjqVFP"
+  }, {
+    "id" : "nJZClfqveY_to_kaJbv01x8a",
+    "source" : "final##shbIkNKR",
+    "sourcePort" : "DbtLkX59",
+    "target" : "9iUhumiJs5",
+    "targetPort" : "kaJbv01x8a"
+  } ],
+  "component" : "Pipeline"
+}

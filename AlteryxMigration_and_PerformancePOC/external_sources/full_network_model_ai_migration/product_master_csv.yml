@@ -1,0 +1,143 @@
+providerType: "ProphecyManaged"
+fields:
+- name: "item_bigint_key"
+  dataType:
+    type: "BigInt"
+- name: "item_id"
+  dataType:
+    type: "String"
+- name: "selling_item_number"
+  dataType:
+    type: "String"
+- name: "country_of_origin"
+  dataType:
+    type: "String"
+- name: "item_class"
+  dataType:
+    type: "String"
+- name: "item_description"
+  dataType:
+    type: "String"
+- name: "pl0_code"
+  dataType:
+    type: "String"
+- name: "pl0_description"
+  dataType:
+    type: "String"
+- name: "pl1_code"
+  dataType:
+    type: "String"
+- name: "pl1_description"
+  dataType:
+    type: "String"
+- name: "pl2_code"
+  dataType:
+    type: "String"
+- name: "pl2_description"
+  dataType:
+    type: "String"
+- name: "pl3_code"
+  dataType:
+    type: "String"
+- name: "pl3_description"
+  dataType:
+    type: "String"
+- name: "pl4_code"
+  dataType:
+    type: "String"
+- name: "pl4_description"
+  dataType:
+    type: "String"
+- name: "global_planning_abc_code"
+  dataType:
+    type: "String"
+- name: "npd_launch_date"
+  dataType:
+    type: "String"
+- name: "discontinued_date"
+  dataType:
+    type: "String"
+- name: "item_status"
+  dataType:
+    type: "String"
+- name: "unit_volume"
+  dataType:
+    type: "String"
+- name: "unit_weight"
+  dataType:
+    type: "String"
+- name: "units_per_case"
+  dataType:
+    type: "String"
+- name: "units_per_pallet"
+  dataType:
+    type: "String"
+- name: "units_per_container"
+  dataType:
+    type: "String"
+- name: "active_estimated_cost"
+  dataType:
+    type: "String"
+- name: "applied_standard_cost"
+  dataType:
+    type: "String"
+- name: "direct_labor_cost"
+  dataType:
+    type: "String"
+- name: "direct_material_cost"
+  dataType:
+    type: "String"
+- name: "duty_cost"
+  dataType:
+    type: "String"
+- name: "fixed_overhead_cost"
+  dataType:
+    type: "String"
+- name: "freight_cost"
+  dataType:
+    type: "String"
+- name: "import_fee_cost"
+  dataType:
+    type: "String"
+- name: "purchase_burden_cost"
+  dataType:
+    type: "String"
+- name: "standard_cost"
+  dataType:
+    type: "String"
+- name: "variable_overhead_cost"
+  dataType:
+    type: "String"
+- name: "special_handling_code"
+  dataType:
+    type: "String"
+- name: "has_lithium_ion"
+  dataType:
+    type: "Boolean"
+- name: "battery_size"
+  dataType:
+    type: "String"
+- name: "battery_watt_hours"
+  dataType:
+    type: "String"
+- name: "partner_item_number"
+  dataType:
+    type: "String"
+- name: "transition_activel"
+  dataType:
+    type: "String"
+- name: "transition_activeg"
+  dataType:
+    type: "String"
+- name: "tskul_start_date"
+  dataType:
+    type: "String"
+- name: "tskul_end_date"
+  dataType:
+    type: "String"
+- name: "tskug_start_date"
+  dataType:
+    type: "String"
+- name: "tskug_end_date"
+  dataType:
+    type: "String"

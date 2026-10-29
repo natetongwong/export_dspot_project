@@ -1,0 +1,166 @@
+{
+  "id" : "test_rerun_idempotency",
+  "metainfo" : {
+    "label" : "test_rerun_idempotency",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "isTranspiledPipeline" : false,
+    "processesVsModelFiles" : {
+      "sales_output##fvHISayq" : "models/test_rerun_idempotency/test_rerun_idempotency__sales_output.sql",
+      "final##XwcD5I5Z" : "models/test_rerun_idempotency/test_rerun_idempotency__sales_output.sql",
+      "m7K5Vkk0Pb" : "models/test_rerun_idempotency/test_rerun_idempotency__sales_output.sql"
+    }
+  },
+  "processes" : {
+    "final##XwcD5I5Z" : {
+      "id" : "final##XwcD5I5Z",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "sales_output",
+        "x" : 420,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "database" : "ProphecyCompute",
+          "name" : "sales_output_test",
+          "sourceType" : "Table",
+          "alias" : "",
+          "schema" : "schema"
+        },
+        "materialization" : {
+          "materialized" : "",
+          "incremental_strategy" : "merge"
+        },
+        "writeOptions" : {
+          "entityConfig" : {
+            "database" : "\"ProphecyCompute\"",
+            "incremental_strategy" : "\"merge\"",
+            "alias" : "\"sales_output_test\"",
+            "schema" : "\"schema\"",
+            "unique_key" : "[\"SaleID\"]",
+            "type" : "ModelConfig",
+            "materialized" : "incremental"
+          },
+          "writeMode" : "merge",
+          "mergeApproach" : "columns"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "UhMIfTyh",
+          "slug" : "sales_output_final"
+        } ],
+        "outputs" : [ {
+          "id" : "Ix399qFw",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "index" : 2
+    },
+    "sales_output##fvHISayq" : {
+      "id" : "sales_output##fvHISayq",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "sales_output_final",
+        "x" : 220,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "\"SaleID\""
+          },
+          "_row_id" : "1766533124"
+        }, {
+          "expression" : {
+            "expression" : "\"CustomerName\""
+          },
+          "_row_id" : "296030387"
+        }, {
+          "expression" : {
+            "expression" : "\"Product\""
+          },
+          "_row_id" : "790643325"
+        }, {
+          "expression" : {
+            "expression" : "CAST(\"Amount\" AS DOUBLE)"
+          },
+          "alias" : "\"Amount\"",
+          "_row_id" : "1693356048"
+        }, {
+          "expression" : {
+            "expression" : "\"SaleDate\""
+          },
+          "_row_id" : "30937275"
+        }, {
+          "expression" : {
+            "expression" : "CURRENT_TIMESTAMP"
+          },
+          "alias" : "\"LoadTimestamp\"",
+          "_row_id" : "563674935"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "hp9McZoQ",
+          "slug" : "sales_source"
+        } ],
+        "outputs" : [ {
+          "id" : "D1kQXYUi",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "m7K5Vkk0Pb" : {
+      "id" : "m7K5Vkk0Pb",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "sales_source",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "sales_idempotency_test",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "jv0fqpzT1v",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "GmqFJUjg",
+    "source" : "sales_output##fvHISayq",
+    "sourcePort" : "D1kQXYUi",
+    "target" : "final##XwcD5I5Z",
+    "targetPort" : "UhMIfTyh",
+    "isWireless" : false
+  }, {
+    "id" : "jv0fqpzT1v_to_cSWOvHZCKW##wkusOWRv",
+    "source" : "m7K5Vkk0Pb",
+    "sourcePort" : "jv0fqpzT1v",
+    "target" : "sales_output##fvHISayq",
+    "targetPort" : "hp9McZoQ"
+  } ],
+  "component" : "Pipeline"
+}

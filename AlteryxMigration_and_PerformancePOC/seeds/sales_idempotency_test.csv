@@ -1,0 +1,11 @@
+SaleID,CustomerName,Product,Amount,SaleDate
+1,Alice,Widget A,150.00,2026-01-15
+2,Bob,Widget B,75.50,2026-01-16
+3,Charlie,Widget A,200.00,2026-01-17
+4,Diana,Widget C,45.00,2026-01-18
+5,Eve,Widget B,180.00,2026-01-19
+6,Frank,Widget A,95.00,2026-01-20
+7,Grace,Widget C,120.00,2026-01-21
+8,Henry,Widget B,65.00,2026-01-22
+9,Ivy,Widget A,225.00,2026-01-23
+10,Jack,Widget C,110.00,2026-01-24

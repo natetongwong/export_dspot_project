@@ -1,0 +1,958 @@
+{
+  "id" : "weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002",
+  "metainfo" : {
+    "label" : "weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"ProphecyCompute\"",
+        "schema" : "\"schema\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "weighted_avg_calc_final_projection_002_V49w9VB8" : {
+      "id" : "weighted_avg_calc_final_projection_002_V49w9VB8",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "weighted_avg_calc_final_projection_002"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM weighted_avg_calc_final_projection_002\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_2",
+          "slug" : "input_port_2"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_2",
+          "slug" : "output_port_2"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "wa_numerator_den##GivlZpmL" : {
+      "id" : "wa_numerator_den##GivlZpmL",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "wa_numerator_denom",
+        "x" : 620,
+        "y" : -320,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "selling_item_number"
+          },
+          "_row_id" : "794324500"
+        }, {
+          "expression" : {
+            "expression" : "sum_quantity_units"
+          },
+          "_row_id" : "1519729272"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN unit_weight != 0\n    THEN unit_weight * sum_quantity_units\n  ELSE 0\nEND"
+          },
+          "alias" : "weight_num",
+          "_row_id" : "1924215468"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN unit_weight != 0\n    THEN sum_quantity_units\n  ELSE 0\nEND"
+          },
+          "alias" : "weight_denom",
+          "_row_id" : "2130536476"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN units_per_pallet != 0\n    THEN units_per_pallet * sum_quantity_units\n  ELSE 0\nEND"
+          },
+          "alias" : "units_per_pallet_num",
+          "_row_id" : "1518299770"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN units_per_pallet != 0\n    THEN sum_quantity_units\n  ELSE 0\nEND"
+          },
+          "alias" : "units_per_pallet_denom",
+          "_row_id" : "1842529640"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN units_per_container != 0\n    THEN units_per_container * sum_quantity_units\n  ELSE 0\nEND"
+          },
+          "alias" : "units_per_container_num",
+          "_row_id" : "1704830586"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN units_per_container != 0\n    THEN sum_quantity_units\n  ELSE 0\nEND"
+          },
+          "alias" : "units_per_container_denom",
+          "_row_id" : "546955369"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN applied_standard_cost != 0\n    THEN applied_standard_cost * sum_quantity_units\n  ELSE 0\nEND"
+          },
+          "alias" : "standard_cost_num",
+          "_row_id" : "450560040"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN applied_standard_cost != 0\n    THEN sum_quantity_units\n  ELSE 0\nEND"
+          },
+          "alias" : "standard_cost_denom",
+          "_row_id" : "331540104"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "RgF2pE0N",
+          "slug" : "wa_joined"
+        } ],
+        "outputs" : [ {
+          "id" : "lEAwvDWh",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "wa_shipments_agg##jcdxdLOV" : {
+      "id" : "wa_shipments_agg##jcdxdLOV",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "wa_shipments_aggregated",
+        "x" : 220,
+        "y" : -600,
+        "phase" : 0
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "item_bigint_key"
+          },
+          "_row_id" : "681229601"
+        }, {
+          "expression" : {
+            "expression" : "SUM(quantity_units)"
+          },
+          "alias" : "sum_quantity_units",
+          "_row_id" : "1409300984"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "item_bigint_key"
+          },
+          "_row_id" : "210561807"
+        } ],
+        "mode" : "simple"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "A72B7NIo",
+          "slug" : "wa_shipments_positive_qty"
+        } ],
+        "outputs" : [ {
+          "id" : "sCa6akAv",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "wa_joined##GjfUwwnu" : {
+      "id" : "wa_joined##GjfUwwnu",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "wa_joined",
+        "x" : 420,
+        "y" : -320,
+        "phase" : 0
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "pm",
+          "expression" : {
+            "expression" : "sa.item_bigint_key = pm.item_bigint_key"
+          },
+          "joinType" : "INNER"
+        } ],
+        "allowSelection" : false,
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "pm.selling_item_number"
+          },
+          "_row_id" : "1538020607"
+        }, {
+          "expression" : {
+            "expression" : "sa.sum_quantity_units"
+          },
+          "_row_id" : "820605245"
+        }, {
+          "expression" : {
+            "expression" : "pm.unit_weight"
+          },
+          "_row_id" : "2058558348"
+        }, {
+          "expression" : {
+            "expression" : "pm.units_per_case"
+          },
+          "_row_id" : "1291119829"
+        }, {
+          "expression" : {
+            "expression" : "pm.units_per_pallet"
+          },
+          "_row_id" : "1201705132"
+        }, {
+          "expression" : {
+            "expression" : "pm.units_per_container"
+          },
+          "_row_id" : "1867642606"
+        }, {
+          "expression" : {
+            "expression" : "pm.applied_standard_cost"
+          },
+          "_row_id" : "828890472"
+        }, {
+          "expression" : {
+            "expression" : "pm.direct_material_cost"
+          },
+          "_row_id" : "1150471698"
+        }, {
+          "expression" : {
+            "expression" : "pm.item_class"
+          },
+          "_row_id" : "915115255"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ ],
+        "headAlias" : "sa"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "k7uo2aYM",
+          "slug" : "sa"
+        }, {
+          "id" : "XHrbiklE",
+          "slug" : "pm"
+        } ],
+        "outputs" : [ {
+          "id" : "kP0I6z1U",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "weighted_avg_cal##O2HKjflm" : {
+      "id" : "weighted_avg_cal##O2HKjflm",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "weighted_avg_calc_final_from_000",
+        "x" : 1220,
+        "y" : -320,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "units_per_pallet_wa"
+          },
+          "_row_id" : "1447158434"
+        }, {
+          "expression" : {
+            "expression" : "weighted_average_standard_cost"
+          },
+          "_row_id" : "1096045840"
+        }, {
+          "expression" : {
+            "expression" : "sum_quantity_units"
+          },
+          "_row_id" : "1345802883"
+        }, {
+          "expression" : {
+            "expression" : "weight_wa"
+          },
+          "_row_id" : "1993493881"
+        }, {
+          "expression" : {
+            "expression" : "units_per_container_wa"
+          },
+          "_row_id" : "1953154091"
+        }, {
+          "expression" : {
+            "expression" : "selling_item_number"
+          },
+          "_row_id" : "57217141"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ySzQSiV1",
+          "slug" : "wa_weighted_averages"
+        } ],
+        "outputs" : [ {
+          "id" : "EbfY2e4Z",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "wa_product_maste##H1BO29yL" : {
+      "id" : "wa_product_maste##H1BO29yL",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "wa_product_master_cleaned",
+        "x" : 20,
+        "y" : -220,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "item_bigint_key"
+          },
+          "_row_id" : "453853433"
+        }, {
+          "expression" : {
+            "expression" : "item_id"
+          },
+          "_row_id" : "812417949"
+        }, {
+          "expression" : {
+            "expression" : "selling_item_number"
+          },
+          "_row_id" : "329725012"
+        }, {
+          "expression" : {
+            "expression" : "item_class"
+          },
+          "_row_id" : "1372945916"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(TRY_CAST(unit_weight AS DOUBLE), 0)"
+          },
+          "alias" : "unit_weight",
+          "_row_id" : "527084800"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(TRY_CAST(units_per_case AS DOUBLE), 0)"
+          },
+          "alias" : "units_per_case",
+          "_row_id" : "1990528625"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(TRY_CAST(units_per_pallet AS DOUBLE), 0)"
+          },
+          "alias" : "units_per_pallet",
+          "_row_id" : "1967545449"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(TRY_CAST(units_per_container AS DOUBLE), 0)"
+          },
+          "alias" : "units_per_container",
+          "_row_id" : "268300126"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(TRY_CAST(applied_standard_cost AS DOUBLE), 0)"
+          },
+          "alias" : "applied_standard_cost",
+          "_row_id" : "208654079"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(TRY_CAST(direct_material_cost AS DOUBLE), 0)"
+          },
+          "alias" : "direct_material_cost",
+          "_row_id" : "1756353466"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "xssY4o2J",
+          "slug" : "wa_product_master"
+        } ],
+        "outputs" : [ {
+          "id" : "eJ84rP39",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "wa_aggregated##oGH8UB6y" : {
+      "id" : "wa_aggregated##oGH8UB6y",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "wa_aggregated",
+        "x" : 820,
+        "y" : -320,
+        "phase" : 0
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "selling_item_number"
+          },
+          "_row_id" : "1325405401"
+        }, {
+          "expression" : {
+            "expression" : "SUM(sum_quantity_units)"
+          },
+          "alias" : "sum_quantity_units",
+          "_row_id" : "609016636"
+        }, {
+          "expression" : {
+            "expression" : "SUM(weight_num)"
+          },
+          "alias" : "sum_weight_num",
+          "_row_id" : "946144161"
+        }, {
+          "expression" : {
+            "expression" : "SUM(weight_denom)"
+          },
+          "alias" : "sum_weight_denom",
+          "_row_id" : "1809179793"
+        }, {
+          "expression" : {
+            "expression" : "SUM(units_per_pallet_num)"
+          },
+          "alias" : "sum_units_per_pallet_num",
+          "_row_id" : "1880336455"
+        }, {
+          "expression" : {
+            "expression" : "SUM(units_per_pallet_denom)"
+          },
+          "alias" : "sum_units_per_pallet_denom",
+          "_row_id" : "1372811202"
+        }, {
+          "expression" : {
+            "expression" : "SUM(units_per_container_num)"
+          },
+          "alias" : "sum_units_per_container_num",
+          "_row_id" : "123535918"
+        }, {
+          "expression" : {
+            "expression" : "SUM(units_per_container_denom)"
+          },
+          "alias" : "sum_units_per_container_denom",
+          "_row_id" : "1923787791"
+        }, {
+          "expression" : {
+            "expression" : "SUM(standard_cost_num)"
+          },
+          "alias" : "sum_standard_cost_num",
+          "_row_id" : "1018855428"
+        }, {
+          "expression" : {
+            "expression" : "SUM(standard_cost_denom)"
+          },
+          "alias" : "sum_standard_cost_denom",
+          "_row_id" : "2057947338"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "selling_item_number"
+          },
+          "_row_id" : "1385031107"
+        } ],
+        "mode" : "simple"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "YqrP1YFV",
+          "slug" : "wa_numerator_denom"
+        } ],
+        "outputs" : [ {
+          "id" : "MBnssdyE",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "product_master_KqsMtDVeLe" : {
+      "id" : "product_master_KqsMtDVeLe",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "product_master"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_1",
+          "id" : "output_port_1",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ prophecy_tmp_source('weighted_average_standard_cost_poc', 'product_master') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_1",
+          "slug" : "input_port_1"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_1",
+          "slug" : "output_port_1"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "weighted_avg_cal##P2VQm6Cf" : {
+      "id" : "weighted_avg_cal##P2VQm6Cf",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "weighted_avg_calc_final_projection_002",
+        "x" : 1620,
+        "y" : -320,
+        "phase" : 0
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "selling_item_number"
+          },
+          "_row_id" : "1128802265"
+        }, {
+          "expression" : {
+            "expression" : "weight_wa"
+          },
+          "_row_id" : "1644458165"
+        }, {
+          "expression" : {
+            "expression" : "units_per_pallet_wa"
+          },
+          "_row_id" : "1712297697"
+        }, {
+          "expression" : {
+            "expression" : "units_per_container_wa"
+          },
+          "_row_id" : "1203838004"
+        }, {
+          "expression" : {
+            "expression" : "weighted_average_standard_cost"
+          },
+          "_row_id" : "998324178"
+        }, {
+          "expression" : {
+            "expression" : "sum_quantity_units"
+          },
+          "_row_id" : "285521631"
+        } ],
+        "dedupType" : "distinct",
+        "columnsSelector" : [ ],
+        "orders" : [ ],
+        "useOrderBy" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "J6lDrV1m",
+          "slug" : "weighted_avg_calc_final_filter_001"
+        } ],
+        "outputs" : [ {
+          "id" : "V49w9VB8",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "wa_weighted_aver##PtBkytw3" : {
+      "id" : "wa_weighted_aver##PtBkytw3",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "wa_weighted_averages",
+        "x" : 1020,
+        "y" : -320,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "selling_item_number"
+          },
+          "_row_id" : "1786718441"
+        }, {
+          "expression" : {
+            "expression" : "sum_quantity_units"
+          },
+          "_row_id" : "605944836"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN sum_weight_denom = 0\n    THEN NULL\n  ELSE sum_weight_num / sum_weight_denom\nEND"
+          },
+          "alias" : "weight_wa",
+          "_row_id" : "552975683"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN sum_units_per_pallet_denom = 0\n    THEN NULL\n  ELSE sum_units_per_pallet_num / sum_units_per_pallet_denom\nEND"
+          },
+          "alias" : "units_per_pallet_wa",
+          "_row_id" : "120651751"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN sum_units_per_container_denom = 0\n    THEN NULL\n  ELSE sum_units_per_container_num / sum_units_per_container_denom\nEND"
+          },
+          "alias" : "units_per_container_wa",
+          "_row_id" : "964880415"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN sum_standard_cost_denom = 0\n    THEN NULL\n  ELSE sum_standard_cost_num / sum_standard_cost_denom\nEND"
+          },
+          "alias" : "weighted_average_standard_cost",
+          "_row_id" : "609444595"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "wiOoQGFA",
+          "slug" : "wa_aggregated"
+        } ],
+        "outputs" : [ {
+          "id" : "bBlJBVkf",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "inbound_shipments_tbwugQSkyi" : {
+      "id" : "inbound_shipments_tbwugQSkyi",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "inbound_shipments"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_0",
+          "id" : "output_port_0",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ prophecy_tmp_source('weighted_average_standard_cost_poc', 'inbound_shipments') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "wa_shipments_fil##bRZ8ZsUC" : {
+      "id" : "wa_shipments_fil##bRZ8ZsUC",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "wa_shipments_filtered_year",
+        "x" : -180,
+        "y" : -600,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "EXTRACT(YEAR FROM TRY_CAST(delivery_date AS DATE)) IN ({{ var('filter_year_start') }}, {{ var('filter_year_end') }})"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "UfwtU9Sd",
+          "slug" : "wa_shipments_selected"
+        } ],
+        "outputs" : [ {
+          "id" : "pd7EDyem",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "wa_finished_good##gqswkxd6" : {
+      "id" : "wa_finished_good##gqswkxd6",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "wa_finished_goods",
+        "x" : 220,
+        "y" : -220,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "item_class = 'Finished Goods'"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "QNxUZoDt",
+          "slug" : "wa_product_master_cleaned"
+        } ],
+        "outputs" : [ {
+          "id" : "vMB8htrJ",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "wa_shipments_pos##iyc8ugWG" : {
+      "id" : "wa_shipments_pos##iyc8ugWG",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "wa_shipments_positive_qty",
+        "x" : 20,
+        "y" : -600,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "quantity_units > 0"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "YIq7viBK",
+          "slug" : "wa_shipments_filtered_year"
+        } ],
+        "outputs" : [ {
+          "id" : "VQz3NRoR",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "weighted_avg_cal##PLnBT0Vf" : {
+      "id" : "weighted_avg_cal##PLnBT0Vf",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "weighted_avg_calc_final_filter_001",
+        "x" : 1420,
+        "y" : -320,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "sum_quantity_units > 0"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "QpFOlM2l",
+          "slug" : "weighted_avg_calc_final_from_000"
+        } ],
+        "outputs" : [ {
+          "id" : "SVBFPvmy",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "wa_shipments_sel##kXgwAAp0" : {
+      "id" : "wa_shipments_sel##kXgwAAp0",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "wa_shipments_selected",
+        "x" : -380,
+        "y" : -600,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "delivery_date"
+          },
+          "_row_id" : "801924883"
+        }, {
+          "expression" : {
+            "expression" : "origin_supplier_number"
+          },
+          "_row_id" : "505852384"
+        }, {
+          "expression" : {
+            "expression" : "origin_supplier_site_code"
+          },
+          "_row_id" : "1015504605"
+        }, {
+          "expression" : {
+            "expression" : "origin_supplier_loading_port_actual"
+          },
+          "_row_id" : "352844075"
+        }, {
+          "expression" : {
+            "expression" : "origin_supplier_loading_port"
+          },
+          "_row_id" : "326997973"
+        }, {
+          "expression" : {
+            "expression" : "item_bigint_key"
+          },
+          "_row_id" : "351861556"
+        }, {
+          "expression" : {
+            "expression" : "CAST(quantity_units AS DOUBLE)"
+          },
+          "alias" : "quantity_units",
+          "_row_id" : "1477522915"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "a9Uvo8u0",
+          "slug" : "wa_inbound_shipments"
+        } ],
+        "outputs" : [ {
+          "id" : "VkHtSOBo",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_weighted_avg_cal##P2VQm6Cf_V49w9VB8_weighted_avg_calc_final_projection_002_V49w9VB8",
+    "source" : "weighted_avg_cal##P2VQm6Cf",
+    "sourcePort" : "V49w9VB8",
+    "target" : "weighted_avg_calc_final_projection_002_V49w9VB8",
+    "targetPort" : "input_port_2",
+    "isWireless" : false
+  }, {
+    "id" : "C3vTQVro",
+    "source" : "weighted_avg_cal##PLnBT0Vf",
+    "sourcePort" : "SVBFPvmy",
+    "target" : "weighted_avg_cal##P2VQm6Cf",
+    "targetPort" : "J6lDrV1m",
+    "isWireless" : false
+  }, {
+    "id" : "jYQwIpb0",
+    "source" : "weighted_avg_cal##O2HKjflm",
+    "sourcePort" : "EbfY2e4Z",
+    "target" : "weighted_avg_cal##PLnBT0Vf",
+    "targetPort" : "QpFOlM2l",
+    "isWireless" : false
+  }, {
+    "id" : "PHgGGhfX",
+    "source" : "wa_weighted_aver##PtBkytw3",
+    "sourcePort" : "bBlJBVkf",
+    "target" : "weighted_avg_cal##O2HKjflm",
+    "targetPort" : "ySzQSiV1",
+    "isWireless" : false
+  }, {
+    "id" : "pPFty29L",
+    "source" : "wa_aggregated##oGH8UB6y",
+    "sourcePort" : "MBnssdyE",
+    "target" : "wa_weighted_aver##PtBkytw3",
+    "targetPort" : "wiOoQGFA",
+    "isWireless" : false
+  }, {
+    "id" : "UcezonPf",
+    "source" : "wa_numerator_den##GivlZpmL",
+    "sourcePort" : "lEAwvDWh",
+    "target" : "wa_aggregated##oGH8UB6y",
+    "targetPort" : "YqrP1YFV",
+    "isWireless" : false
+  }, {
+    "id" : "uIvxDsRn",
+    "source" : "wa_joined##GjfUwwnu",
+    "sourcePort" : "kP0I6z1U",
+    "target" : "wa_numerator_den##GivlZpmL",
+    "targetPort" : "RgF2pE0N",
+    "isWireless" : false
+  }, {
+    "id" : "C8YKWoAL",
+    "source" : "wa_shipments_agg##jcdxdLOV",
+    "sourcePort" : "sCa6akAv",
+    "target" : "wa_joined##GjfUwwnu",
+    "targetPort" : "k7uo2aYM",
+    "isWireless" : false
+  }, {
+    "id" : "N2llUDaz",
+    "source" : "wa_finished_good##gqswkxd6",
+    "sourcePort" : "vMB8htrJ",
+    "target" : "wa_joined##GjfUwwnu",
+    "targetPort" : "XHrbiklE",
+    "isWireless" : false
+  }, {
+    "id" : "m0ia9LIX",
+    "source" : "wa_shipments_pos##iyc8ugWG",
+    "sourcePort" : "VQz3NRoR",
+    "target" : "wa_shipments_agg##jcdxdLOV",
+    "targetPort" : "A72B7NIo",
+    "isWireless" : false
+  }, {
+    "id" : "X6fMeaZX",
+    "source" : "wa_product_maste##H1BO29yL",
+    "sourcePort" : "eJ84rP39",
+    "target" : "wa_finished_good##gqswkxd6",
+    "targetPort" : "QNxUZoDt",
+    "isWireless" : false
+  }, {
+    "id" : "NLJ85ZML",
+    "source" : "wa_shipments_fil##bRZ8ZsUC",
+    "sourcePort" : "pd7EDyem",
+    "target" : "wa_shipments_pos##iyc8ugWG",
+    "targetPort" : "YIq7viBK",
+    "isWireless" : false
+  }, {
+    "id" : "KqsMtDVeLe_to_kOXVVbz0kN##nKjuBo0n",
+    "source" : "product_master_KqsMtDVeLe",
+    "sourcePort" : "output_port_1",
+    "target" : "wa_product_maste##H1BO29yL",
+    "targetPort" : "xssY4o2J",
+    "isWireless" : false
+  }, {
+    "id" : "vqvaoy2m",
+    "source" : "wa_shipments_sel##kXgwAAp0",
+    "sourcePort" : "VkHtSOBo",
+    "target" : "wa_shipments_fil##bRZ8ZsUC",
+    "targetPort" : "UfwtU9Sd",
+    "isWireless" : false
+  }, {
+    "id" : "tbwugQSkyi_to_BAGNEhqzFI##MKea2MBl",
+    "source" : "inbound_shipments_tbwugQSkyi",
+    "sourcePort" : "output_port_0",
+    "target" : "wa_shipments_sel##kXgwAAp0",
+    "targetPort" : "a9Uvo8u0",
+    "isWireless" : false
+  } ],
+  "component" : "Model"
+}

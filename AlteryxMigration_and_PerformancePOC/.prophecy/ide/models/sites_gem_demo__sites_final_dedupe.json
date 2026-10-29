@@ -1,0 +1,958 @@
+{
+  "id" : "sites_gem_demo__sites_final_dedupe",
+  "metainfo" : {
+    "label" : "sites_gem_demo__sites_final_dedupe",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"sites_demo_output\"",
+        "materialized" : "table",
+        "database" : "\"ProphecyCompute\"",
+        "schema" : "\"schema\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "sites_filter_2##bThL47G7" : {
+      "id" : "sites_filter_2##bThL47G7",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "sites_filter_2",
+        "x" : 220,
+        "y" : 20,
+        "phase" : 0,
+        "leadingComment" : " FILTER GEM: Prophecy equivalent of Alteryx Filter tool "
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "org_name IS NOT NULL AND country IS NOT NULL"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "i6WPX6ea",
+          "slug" : "customer_sites_source"
+        } ],
+        "outputs" : [ {
+          "id" : "q5YhUOTt",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "sites_dedupe_1##HCXk3TZP" : {
+      "id" : "sites_dedupe_1##HCXk3TZP",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "sites_dedupe_1",
+        "x" : 420,
+        "y" : 220,
+        "phase" : 0,
+        "leadingComment" : " DEDUPLICATE GEM: Prophecy equivalent of Alteryx Unique tool "
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "country"
+          },
+          "_row_id" : "1710943240"
+        }, {
+          "expression" : {
+            "expression" : "\"Customer Key\""
+          },
+          "_row_id" : "1460164090"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "\"Customer Key\""
+            },
+            "_row_id" : "830435981"
+          }
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "L4etkIHn",
+          "slug" : "sites_filter_1"
+        } ],
+        "outputs" : [ {
+          "id" : "lnSFizyP",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "sites_union_all##a0xi4Pcp" : {
+      "id" : "sites_union_all##a0xi4Pcp",
+      "component" : "Union",
+      "metadata" : {
+        "label" : "sites_union_all",
+        "x" : 1140,
+        "y" : 200,
+        "phase" : 0,
+        "leadingComment" : " UNION GEM: Prophecy equivalent of Alteryx Union tool "
+      },
+      "properties" : {
+        "operationType" : "union",
+        "preserveDuplicates" : true,
+        "useMinus" : false,
+        "inputAliases" : [ "sites_join_1", "supplier_reformat_1", "sites_reformat_1" ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "LIKJLeQW",
+          "slug" : "sites_join_1"
+        }, {
+          "id" : "V60XrrD6",
+          "slug" : "supplier_reformat_1"
+        }, {
+          "id" : "MZhu5Uv2",
+          "slug" : "sites_reformat_1"
+        } ],
+        "outputs" : [ {
+          "id" : "DGGcfpOc",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "sites_join_1##T35W2ePC" : {
+      "id" : "sites_join_1##T35W2ePC",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "sites_join_1",
+        "x" : 880,
+        "y" : 20,
+        "phase" : 0,
+        "leadingComment" : " JOIN GEM: Prophecy equivalent of Alteryx Join tool "
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "c",
+          "expression" : {
+            "expression" : "s.country = c.country AND s.\"Postal Code\" = c.\"Postal Code\""
+          },
+          "joinType" : "LEFT"
+        } ],
+        "allowSelection" : false,
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "s.\"Name\""
+          },
+          "_row_id" : "1182702011"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Active\""
+          },
+          "_row_id" : "1758270964"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Latitude\""
+          },
+          "_row_id" : "1369390751"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Longitude\""
+          },
+          "_row_id" : "458707405"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Sourcing Status\""
+          },
+          "_row_id" : "869868259"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Open Close Status\""
+          },
+          "_row_id" : "258291417"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Inventory Status\""
+          },
+          "_row_id" : "1549311589"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Opening Cost\""
+          },
+          "_row_id" : "1443365866"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Operating Cost\""
+          },
+          "_row_id" : "2063953527"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Closing  Cost\""
+          },
+          "_row_id" : "1393110249"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Postal Code\""
+          },
+          "_row_id" : "590528014"
+        }, {
+          "expression" : {
+            "expression" : "s.country"
+          },
+          "_row_id" : "743482808"
+        }, {
+          "expression" : {
+            "expression" : "s.\"Site Type\""
+          },
+          "_row_id" : "1374540361"
+        }, {
+          "expression" : {
+            "expression" : "s.source_type"
+          },
+          "_row_id" : "652021519"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ ],
+        "headAlias" : "s"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "iwLFfekI",
+          "slug" : "s"
+        }, {
+          "id" : "q8bfZ1V2",
+          "slug" : "c"
+        } ],
+        "outputs" : [ {
+          "id" : "dZRNYdOb",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "customer_dedupe_##Lpp8qvwZ" : {
+      "id" : "customer_dedupe_##Lpp8qvwZ",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "customer_dedupe_1",
+        "x" : 420,
+        "y" : 20,
+        "phase" : 0,
+        "leadingComment" : " DEDUPLICATE GEM: Prophecy equivalent of Alteryx Unique tool "
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "org_name"
+          },
+          "_row_id" : "1578864006"
+        }, {
+          "expression" : {
+            "expression" : "country"
+          },
+          "_row_id" : "1248302573"
+        }, {
+          "expression" : {
+            "expression" : "postal_code"
+          },
+          "_row_id" : "998424698"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "customer_site_key"
+            },
+            "_row_id" : "638069645"
+          }
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "BQdqgIlI",
+          "slug" : "sites_filter_2"
+        } ],
+        "outputs" : [ {
+          "id" : "xwFKcCc4",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "customer_reforma##TGdVJdgH" : {
+      "id" : "customer_reforma##TGdVJdgH",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "customer_reformat_1",
+        "x" : 620,
+        "y" : 20,
+        "phase" : 0,
+        "leadingComment" : " REFORMAT GEM: Prophecy equivalent of Alteryx Formula tool "
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "org_name"
+          },
+          "alias" : "\"Name\"",
+          "_row_id" : "120169986"
+        }, {
+          "expression" : {
+            "expression" : "'Y'"
+          },
+          "alias" : "\"Active\"",
+          "_row_id" : "2102305708"
+        }, {
+          "expression" : {
+            "expression" : "lat"
+          },
+          "alias" : "\"Latitude\"",
+          "_row_id" : "1273637772"
+        }, {
+          "expression" : {
+            "expression" : "lon"
+          },
+          "alias" : "\"Longitude\"",
+          "_row_id" : "71126279"
+        }, {
+          "expression" : {
+            "expression" : "'Can Source'"
+          },
+          "alias" : "\"Sourcing Status\"",
+          "_row_id" : "59171652"
+        }, {
+          "expression" : {
+            "expression" : "'Cannot Open'"
+          },
+          "alias" : "\"Open Close Status\"",
+          "_row_id" : "161702027"
+        }, {
+          "expression" : {
+            "expression" : "'Do Not Include'"
+          },
+          "alias" : "\"Inventory Status\"",
+          "_row_id" : "3214565"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Opening Cost\"",
+          "_row_id" : "1482749142"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Operating Cost\"",
+          "_row_id" : "612024561"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Closing  Cost\"",
+          "_row_id" : "1951857189"
+        }, {
+          "expression" : {
+            "expression" : "postal_code"
+          },
+          "alias" : "\"Postal Code\"",
+          "_row_id" : "602387809"
+        }, {
+          "expression" : {
+            "expression" : "country"
+          },
+          "_row_id" : "1456534784"
+        }, {
+          "expression" : {
+            "expression" : "'Customer'"
+          },
+          "alias" : "\"Site Type\"",
+          "_row_id" : "2115841043"
+        }, {
+          "expression" : {
+            "expression" : "'Customer'"
+          },
+          "alias" : "source_type",
+          "_row_id" : "824186564"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "prGnTYxm",
+          "slug" : "customer_dedupe_1"
+        } ],
+        "outputs" : [ {
+          "id" : "Ag4jb34i",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "sites_source_f5OoAkTaEz" : {
+      "id" : "sites_source_f5OoAkTaEz",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "sites_source"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_1",
+          "id" : "output_port_1",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ prophecy_tmp_source('sites_gem_demo', 'sites_source') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_1",
+          "slug" : "input_port_1"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_1",
+          "slug" : "output_port_1"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "final##gp1uxjWi" : {
+      "id" : "final##gp1uxjWi",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "sites_final_dedupe",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM sites_final_dedupe_final\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "YR5dhxX3",
+          "slug" : "sites_final_dedupe"
+        } ],
+        "outputs" : [ {
+          "id" : "UtmfsFeP",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "sites_filter_1##oolat98l" : {
+      "id" : "sites_filter_1##oolat98l",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "sites_filter_1",
+        "x" : 220,
+        "y" : 220,
+        "phase" : 0,
+        "leadingComment" : " FILTER GEM: Prophecy equivalent of Alteryx Filter tool "
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "country IS NOT NULL"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "EvpZpF3i",
+          "slug" : "sites_source"
+        } ],
+        "outputs" : [ {
+          "id" : "XSOVYX9z",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "supplier_dedupe_##Dsmiv6Ku" : {
+      "id" : "supplier_dedupe_##Dsmiv6Ku",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "supplier_dedupe_1",
+        "x" : 620,
+        "y" : 420,
+        "phase" : 0,
+        "leadingComment" : " DEDUPLICATE GEM: Prophecy equivalent of Alteryx Unique tool "
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "supplier_name"
+          },
+          "_row_id" : "1996295657"
+        }, {
+          "expression" : {
+            "expression" : "supplier_number"
+          },
+          "_row_id" : "2055327946"
+        }, {
+          "expression" : {
+            "expression" : "country"
+          },
+          "_row_id" : "526034202"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "\"Supplier Key\""
+            },
+            "_row_id" : "1723123121"
+          }
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "GvWvxthY",
+          "slug" : "suppliers_source"
+        } ],
+        "outputs" : [ {
+          "id" : "fe6TOJyw",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "customer_sites_source_SF0tUfuD4H" : {
+      "id" : "customer_sites_source_SF0tUfuD4H",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "customer_sites_source"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_2",
+          "id" : "output_port_2",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ prophecy_tmp_source('sites_gem_demo', 'customer_sites_source') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_2",
+          "slug" : "input_port_2"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_2",
+          "slug" : "output_port_2"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "sites_final_dedu##T87ZcV1K" : {
+      "id" : "sites_final_dedu##T87ZcV1K",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "sites_final_dedupe_final",
+        "x" : 1340,
+        "y" : 200,
+        "phase" : 0,
+        "leadingComment" : " DEDUPLICATE GEM: Prophecy equivalent of Alteryx Unique tool (final) "
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "\"Name\""
+          },
+          "_row_id" : "1494000229"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "\"Name\""
+            },
+            "_row_id" : "1580552351"
+          }
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SEf74JVl",
+          "slug" : "sites_union_all"
+        } ],
+        "outputs" : [ {
+          "id" : "Nzy3dA4S",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "sites_reformat_1##bEEdB2UP" : {
+      "id" : "sites_reformat_1##bEEdB2UP",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "sites_reformat_1",
+        "x" : 620,
+        "y" : 220,
+        "phase" : 0,
+        "leadingComment" : " REFORMAT GEM: Prophecy equivalent of Alteryx Select/Formula tool "
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "\"Customer Key\""
+          },
+          "alias" : "\"Name\"",
+          "_row_id" : "919177011"
+        }, {
+          "expression" : {
+            "expression" : "\"Active\""
+          },
+          "_row_id" : "408091729"
+        }, {
+          "expression" : {
+            "expression" : "\"Latitude\""
+          },
+          "_row_id" : "833197755"
+        }, {
+          "expression" : {
+            "expression" : "\"Longitude\""
+          },
+          "_row_id" : "315523831"
+        }, {
+          "expression" : {
+            "expression" : "\"Sourcing Status\""
+          },
+          "_row_id" : "644305937"
+        }, {
+          "expression" : {
+            "expression" : "\"Open Close Status\""
+          },
+          "_row_id" : "822821119"
+        }, {
+          "expression" : {
+            "expression" : "\"Inventory Status\""
+          },
+          "_row_id" : "117139787"
+        }, {
+          "expression" : {
+            "expression" : "\"Opening Cost\""
+          },
+          "_row_id" : "999222154"
+        }, {
+          "expression" : {
+            "expression" : "\"Operating Cost\""
+          },
+          "_row_id" : "1395957088"
+        }, {
+          "expression" : {
+            "expression" : "\"Closing  Cost\""
+          },
+          "_row_id" : "491216069"
+        }, {
+          "expression" : {
+            "expression" : "postal_code"
+          },
+          "alias" : "\"Postal Code\"",
+          "_row_id" : "2030626814"
+        }, {
+          "expression" : {
+            "expression" : "country"
+          },
+          "_row_id" : "1954038108"
+        }, {
+          "expression" : {
+            "expression" : "\"Site Type\""
+          },
+          "_row_id" : "445841174"
+        }, {
+          "expression" : {
+            "expression" : "'Site'"
+          },
+          "alias" : "source_type",
+          "_row_id" : "1684085647"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "KnOfVzzQ",
+          "slug" : "sites_dedupe_1"
+        } ],
+        "outputs" : [ {
+          "id" : "fZfnGQcL",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "suppliers_source_pRpx0DuvDV" : {
+      "id" : "suppliers_source_pRpx0DuvDV",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "suppliers_source"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_0",
+          "id" : "output_port_0",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ prophecy_tmp_source('sites_gem_demo', 'suppliers_source') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "supplier_reforma##YVRgdWtc" : {
+      "id" : "supplier_reforma##YVRgdWtc",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "supplier_reformat_1",
+        "x" : 880,
+        "y" : 420,
+        "phase" : 0,
+        "leadingComment" : " REFORMAT GEM: Prophecy equivalent of Alteryx Formula tool "
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "\"Supplier Key\""
+          },
+          "alias" : "\"Name\"",
+          "_row_id" : "1598566702"
+        }, {
+          "expression" : {
+            "expression" : "'Y'"
+          },
+          "alias" : "\"Active\"",
+          "_row_id" : "158617213"
+        }, {
+          "expression" : {
+            "expression" : "latitude"
+          },
+          "alias" : "\"Latitude\"",
+          "_row_id" : "2064344065"
+        }, {
+          "expression" : {
+            "expression" : "longitude"
+          },
+          "alias" : "\"Longitude\"",
+          "_row_id" : "1724928707"
+        }, {
+          "expression" : {
+            "expression" : "'Can Source'"
+          },
+          "alias" : "\"Sourcing Status\"",
+          "_row_id" : "1230751049"
+        }, {
+          "expression" : {
+            "expression" : "'Cannot Open'"
+          },
+          "alias" : "\"Open Close Status\"",
+          "_row_id" : "812072142"
+        }, {
+          "expression" : {
+            "expression" : "'Do Not Include'"
+          },
+          "alias" : "\"Inventory Status\"",
+          "_row_id" : "2067992616"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Opening Cost\"",
+          "_row_id" : "797414510"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Operating Cost\"",
+          "_row_id" : "483126162"
+        }, {
+          "expression" : {
+            "expression" : "'0'"
+          },
+          "alias" : "\"Closing  Cost\"",
+          "_row_id" : "1386923437"
+        }, {
+          "expression" : {
+            "expression" : "postal_code"
+          },
+          "alias" : "\"Postal Code\"",
+          "_row_id" : "948151808"
+        }, {
+          "expression" : {
+            "expression" : "country"
+          },
+          "_row_id" : "1210586904"
+        }, {
+          "expression" : {
+            "expression" : "'Supplier'"
+          },
+          "alias" : "\"Site Type\"",
+          "_row_id" : "1958952364"
+        }, {
+          "expression" : {
+            "expression" : "'Supplier'"
+          },
+          "alias" : "source_type",
+          "_row_id" : "939182839"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "marfYBYv",
+          "slug" : "supplier_dedupe_1"
+        } ],
+        "outputs" : [ {
+          "id" : "jmVrQG7B",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "e8A4nnxR",
+    "source" : "sites_final_dedu##T87ZcV1K",
+    "sourcePort" : "Nzy3dA4S",
+    "target" : "final##gp1uxjWi",
+    "targetPort" : "YR5dhxX3",
+    "isWireless" : false
+  }, {
+    "id" : "MTeedDr0TI_to_IZeMFNSjoC##LziSDTiD",
+    "source" : "sites_union_all##a0xi4Pcp",
+    "sourcePort" : "DGGcfpOc",
+    "target" : "sites_final_dedu##T87ZcV1K",
+    "targetPort" : "SEf74JVl",
+    "isWireless" : false
+  }, {
+    "id" : "ABJCYQEqIl_to_03KdA3WFdM##jWBcU1a7",
+    "source" : "supplier_reforma##YVRgdWtc",
+    "sourcePort" : "jmVrQG7B",
+    "target" : "sites_union_all##a0xi4Pcp",
+    "targetPort" : "V60XrrD6",
+    "isWireless" : false
+  }, {
+    "id" : "4jcm1TDPXX_to_ubK9JP8CHh##kxM8dj7a",
+    "source" : "sites_join_1##T35W2ePC",
+    "sourcePort" : "dZRNYdOb",
+    "target" : "sites_union_all##a0xi4Pcp",
+    "targetPort" : "LIKJLeQW",
+    "isWireless" : false
+  }, {
+    "id" : "6LyPtKcWNH_to_ZBNzvKPxHk##UCvDxine",
+    "source" : "sites_reformat_1##bEEdB2UP",
+    "sourcePort" : "fZfnGQcL",
+    "target" : "sites_union_all##a0xi4Pcp",
+    "targetPort" : "MZhu5Uv2",
+    "isWireless" : false
+  }, {
+    "id" : "exOYfNJsq2_to_7kFY9BJVid##DIaiVSmi",
+    "source" : "supplier_dedupe_##Dsmiv6Ku",
+    "sourcePort" : "fe6TOJyw",
+    "target" : "supplier_reforma##YVRgdWtc",
+    "targetPort" : "marfYBYv",
+    "isWireless" : false
+  }, {
+    "id" : "6LyPtKcWNH_to_yvBXaCUbwu##fIzVe1zz",
+    "source" : "sites_reformat_1##bEEdB2UP",
+    "sourcePort" : "fZfnGQcL",
+    "target" : "sites_join_1##T35W2ePC",
+    "targetPort" : "iwLFfekI",
+    "isWireless" : false
+  }, {
+    "id" : "g0Iqrc3Jdn_to_98C8482MGl##O6syDiaI",
+    "source" : "customer_reforma##TGdVJdgH",
+    "sourcePort" : "Ag4jb34i",
+    "target" : "sites_join_1##T35W2ePC",
+    "targetPort" : "q8bfZ1V2",
+    "isWireless" : false
+  }, {
+    "id" : "nHT8rwV9zl_to_Xoi8gkUaTv##brYEU0YX",
+    "source" : "sites_dedupe_1##HCXk3TZP",
+    "sourcePort" : "lnSFizyP",
+    "target" : "sites_reformat_1##bEEdB2UP",
+    "targetPort" : "KnOfVzzQ",
+    "isWireless" : false
+  }, {
+    "id" : "pRpx0DuvDV_to_ugs12rnQoi##NuIcMQic",
+    "source" : "suppliers_source_pRpx0DuvDV",
+    "sourcePort" : "output_port_0",
+    "target" : "supplier_dedupe_##Dsmiv6Ku",
+    "targetPort" : "GvWvxthY",
+    "isWireless" : false
+  }, {
+    "id" : "ZzzjRi7STC_to_BDfqaUvMkS##NNmcOtUs",
+    "source" : "customer_dedupe_##Lpp8qvwZ",
+    "sourcePort" : "xwFKcCc4",
+    "target" : "customer_reforma##TGdVJdgH",
+    "targetPort" : "prGnTYxm",
+    "isWireless" : false
+  }, {
+    "id" : "4uDrNwhKeD_to_DLDOGmcotA##d3jSgPHM",
+    "source" : "sites_filter_1##oolat98l",
+    "sourcePort" : "XSOVYX9z",
+    "target" : "sites_dedupe_1##HCXk3TZP",
+    "targetPort" : "L4etkIHn",
+    "isWireless" : false
+  }, {
+    "id" : "aukes60q2i_to_dZ89eZVOqE##NVlANBtY",
+    "source" : "sites_filter_2##bThL47G7",
+    "sourcePort" : "q5YhUOTt",
+    "target" : "customer_dedupe_##Lpp8qvwZ",
+    "targetPort" : "BQdqgIlI",
+    "isWireless" : false
+  }, {
+    "id" : "f5OoAkTaEz_to_EHfUqKNPeO##x5TWg4p2",
+    "source" : "sites_source_f5OoAkTaEz",
+    "sourcePort" : "output_port_1",
+    "target" : "sites_filter_1##oolat98l",
+    "targetPort" : "EvpZpF3i",
+    "isWireless" : false
+  }, {
+    "id" : "SF0tUfuD4H_to_EG5dAAVlHa##uVbM188T",
+    "source" : "customer_sites_source_SF0tUfuD4H",
+    "sourcePort" : "output_port_2",
+    "target" : "sites_filter_2##bThL47G7",
+    "targetPort" : "i6WPX6ea",
+    "isWireless" : false
+  } ],
+  "component" : "Model"
+}

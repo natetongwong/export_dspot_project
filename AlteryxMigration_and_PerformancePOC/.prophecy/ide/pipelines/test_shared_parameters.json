@@ -1,0 +1,170 @@
+{
+  "id" : "test_shared_parameters",
+  "metainfo" : {
+    "label" : "test_shared_parameters",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "cutoff_date",
+          "kind" : {
+            "type" : "date",
+            "value" : "'2026-07-01'"
+          }
+        } ]
+      }
+    },
+    "isTranspiledPipeline" : false,
+    "processesVsModelFiles" : {
+      "filter_before_cu##Dob0LPUn" : "models/test_shared_parameters/test_shared_parameters__filter_before_cutoff.sql",
+      "filter_before_cutoff_GFtiZdvd" : "models/test_shared_parameters/test_shared_parameters__filter_before_cutoff.sql",
+      "filter_after_cutoff_MeboB8QB" : "models/test_shared_parameters/test_shared_parameters__filter_after_cutoff.sql",
+      "filter_after_cut##MFJxUsma" : "models/test_shared_parameters/test_shared_parameters__filter_after_cutoff.sql",
+      "P6BidtRC3v" : "models/test_shared_parameters/test_shared_parameters__filter_after_cutoff.sql"
+    }
+  },
+  "processes" : {
+    "filter_before_cu##Dob0LPUn" : {
+      "id" : "filter_before_cu##Dob0LPUn",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "filter_before_cutoff",
+        "x" : 220,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "\"TransactionDate\" < {{ var('cutoff_date') }}"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "mU1hEYsI",
+          "slug" : "sales_source"
+        } ],
+        "outputs" : [ {
+          "id" : "GFtiZdvd",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "bnmBLmPKOJ" : {
+      "id" : "bnmBLmPKOJ",
+      "component" : "Visualize",
+      "metadata" : {
+        "label" : "viz_after_cutoff",
+        "x" : 420,
+        "y" : 220,
+        "phase" : 0
+      },
+      "properties" : { },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "m6ZtjichCq",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ]
+      }
+    },
+    "filter_after_cut##MFJxUsma" : {
+      "id" : "filter_after_cut##MFJxUsma",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "filter_after_cutoff",
+        "x" : 220,
+        "y" : 220,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "\"TransactionDate\" >= {{ var('cutoff_date') }}"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "rs5zIhqr",
+          "slug" : "sales_source"
+        } ],
+        "outputs" : [ {
+          "id" : "MeboB8QB",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "zRwhAEs19M" : {
+      "id" : "zRwhAEs19M",
+      "component" : "Visualize",
+      "metadata" : {
+        "label" : "viz_before_cutoff",
+        "x" : 420,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : { },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "BKYEhyMjhX",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ]
+      }
+    },
+    "P6BidtRC3v" : {
+      "id" : "P6BidtRC3v",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "sales_source",
+        "x" : 20,
+        "y" : 120,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "sales_with_dates",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "WgwIDFS4st",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "WgwIDFS4st_to_K9nNIdhSVH##rO8FDm1t",
+    "source" : "P6BidtRC3v",
+    "sourcePort" : "WgwIDFS4st",
+    "target" : "filter_after_cut##MFJxUsma",
+    "targetPort" : "rs5zIhqr"
+  }, {
+    "id" : "tkmwOFOfT0_to_m6ZtjichCq",
+    "source" : "filter_after_cut##MFJxUsma",
+    "sourcePort" : "MeboB8QB",
+    "target" : "bnmBLmPKOJ",
+    "targetPort" : "m6ZtjichCq"
+  }, {
+    "id" : "WgwIDFS4st_to_ZfRPkGFYis##ng8NX5ZO",
+    "source" : "P6BidtRC3v",
+    "sourcePort" : "WgwIDFS4st",
+    "target" : "filter_before_cu##Dob0LPUn",
+    "targetPort" : "mU1hEYsI"
+  }, {
+    "id" : "Bs8K7IfGjg_to_BKYEhyMjhX",
+    "source" : "filter_before_cu##Dob0LPUn",
+    "sourcePort" : "GFtiZdvd",
+    "target" : "zRwhAEs19M",
+    "targetPort" : "BKYEhyMjhX"
+  } ],
+  "component" : "Pipeline"
+}

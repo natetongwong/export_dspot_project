@@ -1,0 +1,109 @@
+{
+  "id" : "test_partial_execution",
+  "metainfo" : {
+    "label" : "test_partial_execution",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "isTranspiledPipeline" : false,
+    "processesVsModelFiles" : {
+      "aggregate_step_UViMFFB5" : "models/test_partial_execution/test_partial_execution__aggregate_step.sql",
+      "final##uBuMIX0u" : "models/test_partial_execution/test_partial_execution__aggregate_step.sql",
+      "final##W35dQFpq" : "models/test_partial_execution/test_partial_execution__aggregate_step.sql",
+      "1XCvVDNeio" : "models/test_partial_execution/test_partial_execution__aggregate_step.sql",
+      "final##Tn1ANQuL" : "models/test_partial_execution/test_partial_execution__aggregate_step.sql"
+    }
+  },
+  "processes" : {
+    "zQVUTxWL0t" : {
+      "id" : "zQVUTxWL0t",
+      "component" : "Visualize",
+      "metadata" : {
+        "label" : "target_viz",
+        "x" : 820,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : { },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Bq4VXfU23u",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ]
+      }
+    },
+    "final##W35dQFpq" : {
+      "id" : "final##W35dQFpq",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "test_partial_execution__aggregate_step",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "test_partial_execution__aggregate_step"
+      },
+      "visualMetaInfo" : {
+        "lastNodeProcessIds" : [ "aggregate_step_UViMFFB5" ],
+        "skipIfZeroRows" : false,
+        "visualProcessIds" : [ "aggregate_step_UViMFFB5", "final##W35dQFpq", "final##Tn1ANQuL", "final##uBuMIX0u", "1XCvVDNeio" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "XBTRyqM1",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "UViMFFB5",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "1XCvVDNeio" : {
+      "id" : "1XCvVDNeio",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "source_records",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "sample_records",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "nvpmwODCAO",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "nvpmwODCAO_to_SodKfDlkFg##nCBzoJSG",
+    "source" : "1XCvVDNeio",
+    "sourcePort" : "nvpmwODCAO",
+    "target" : "final##W35dQFpq",
+    "targetPort" : "XBTRyqM1"
+  }, {
+    "id" : "0YNjlYnjAx_to_Bq4VXfU23u",
+    "source" : "final##W35dQFpq",
+    "sourcePort" : "UViMFFB5",
+    "target" : "zQVUTxWL0t",
+    "targetPort" : "Bq4VXfU23u"
+  } ],
+  "component" : "Pipeline"
+}

@@ -1,0 +1,87 @@
+{
+  "id" : "test_drag_and_drop",
+  "metainfo" : {
+    "label" : "test_drag_and_drop",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "isTranspiledPipeline" : false,
+    "processesVsModelFiles" : {
+      "avg_demand_YTXLBg9Z" : "models/test_drag_and_drop/test_drag_and_drop__avg_demand.sql",
+      "RQ1e1ekT4UJN7YhS77TAM$$L46nQ3B0m3rx27UnbiDyx" : "models/test_drag_and_drop/test_drag_and_drop__avg_demand.sql",
+      "avg_demand##hbJ89ngw" : "models/test_drag_and_drop/test_drag_and_drop__avg_demand.sql"
+    }
+  },
+  "processes" : {
+    "RQ1e1ekT4UJN7YhS77TAM$$L46nQ3B0m3rx27UnbiDyx" : {
+      "id" : "RQ1e1ekT4UJN7YhS77TAM$$L46nQ3B0m3rx27UnbiDyx",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "solution_2026_aug_22_9_2026_8_21_33_175",
+        "x" : -420,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "solution_2026_aug_22_9_2026_8_21_33_175",
+          "sourceType" : "Table",
+          "sourceName" : "ProphecyCompute_main"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "na8uJVEX",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "avg_demand##hbJ89ngw" : {
+      "id" : "avg_demand##hbJ89ngw",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "avg_demand",
+        "x" : -260,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "AVG(\"Total Historical Demand\")"
+          },
+          "alias" : "avg_total_historical_demand",
+          "_row_id" : "74294262"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "MeSqRLkP",
+          "slug" : "solution_source"
+        } ],
+        "outputs" : [ {
+          "id" : "YTXLBg9Z",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "U8xA9psN",
+    "source" : "RQ1e1ekT4UJN7YhS77TAM$$L46nQ3B0m3rx27UnbiDyx",
+    "sourcePort" : "na8uJVEX",
+    "target" : "avg_demand##hbJ89ngw",
+    "targetPort" : "MeSqRLkP",
+    "isWireless" : false
+  } ],
+  "component" : "Pipeline"
+}

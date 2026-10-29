@@ -1,0 +1,21 @@
+---
+version: 2
+models:
+- name: "test_group_activate_deactivate_run__filter_high_sales"
+  tags:
+  - "prophecy_temp"
+- name: "test_group_activate_deactivate_run__filter_high_sales_1"
+  tags:
+  - "prophecy_temp"
+- name: "test_group_activate_deactivate_run__filter_high_sales_2"
+  tags:
+  - "prophecy_temp"
+- name: "test_group_activate_deactivate_run__filter_low_sales"
+  tags:
+  - "prophecy_temp"
+- name: "test_group_activate_deactivate_run__filter_low_sales_1"
+  tags:
+  - "prophecy_temp"
+- name: "test_group_activate_deactivate_run__filter_low_sales_2"
+  tags:
+  - "prophecy_temp"

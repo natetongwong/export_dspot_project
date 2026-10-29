@@ -1,0 +1,708 @@
+---
+version: 2
+sources:
+- name: "ProphecyCompute_main"
+  database: "ProphecyCompute"
+  schema: "main"
+  tables:
+  - name: "inbound_shipments"
+    description: "Inbound shipments data containing purchase orders, delivery dates,\
+      \ item keys, and quantities"
+    columns:
+    - name: "order_line_bigint_key"
+      dataType:
+        type: "String"
+    - name: "purchase_order_number"
+      dataType:
+        type: "String"
+    - name: "purchase_order_line_number"
+      dataType:
+        type: "String"
+    - name: "order_date"
+      dataType:
+        type: "String"
+    - name: "delivery_date"
+      dataType:
+        type: "String"
+    - name: "first_delivery_date"
+      dataType:
+        type: "String"
+    - name: "partner_item_number"
+      dataType:
+        type: "String"
+    - name: "origin_supplier_name"
+      dataType:
+        type: "String"
+    - name: "origin_supplier_number"
+      dataType:
+        type: "String"
+    - name: "origin_supplier_site_code"
+      dataType:
+        type: "String"
+    - name: "origin_supplier_mfg"
+      dataType:
+        type: "String"
+    - name: "supplier_name"
+      dataType:
+        type: "String"
+    - name: "supplier_number"
+      dataType:
+        type: "String"
+    - name: "supplier_country"
+      dataType:
+        type: "String"
+    - name: "origin_supplier_loading_port_actual"
+      dataType:
+        type: "String"
+    - name: "origin_supplier_loading_port"
+      dataType:
+        type: "String"
+    - name: "origin_supplier_country"
+      dataType:
+        type: "String"
+    - name: "item_country_of_origin"
+      dataType:
+        type: "String"
+    - name: "transport_mode"
+      dataType:
+        type: "String"
+    - name: "port_source"
+      dataType:
+        type: "String"
+    - name: "inventory_organization_bigint_key"
+      dataType:
+        type: "String"
+    - name: "receiving_org_code"
+      dataType:
+        type: "String"
+    - name: "receiving_org_name"
+      dataType:
+        type: "String"
+    - name: "item_bigint_key"
+      dataType:
+        type: "String"
+    - name: "item_id"
+      dataType:
+        type: "String"
+    - name: "item_type"
+      dataType:
+        type: "String"
+    - name: "quantity_units"
+      dataType:
+        type: "String"
+    - name: "quantity_weight"
+      dataType:
+        type: "String"
+    - name: "quantity_pallets"
+      dataType:
+        type: "String"
+    - name: "quantity_containers"
+      dataType:
+        type: "String"
+    - name: "mfg_cost"
+      dataType:
+        type: "String"
+    - name: "receipt_cost"
+      dataType:
+        type: "String"
+  - name: "product_master"
+    description: "Product master data with item attributes, weights, units per pallet/container,\
+      \ and costs"
+    columns:
+    - name: "item_bigint_key"
+      dataType:
+        type: "String"
+    - name: "item_id"
+      dataType:
+        type: "String"
+    - name: "selling_item_number"
+      dataType:
+        type: "String"
+    - name: "country_of_origin"
+      dataType:
+        type: "String"
+    - name: "item_class"
+      dataType:
+        type: "String"
+    - name: "item_description"
+      dataType:
+        type: "String"
+    - name: "unit_volume"
+      dataType:
+        type: "String"
+    - name: "unit_weight"
+      dataType:
+        type: "String"
+    - name: "units_per_case"
+      dataType:
+        type: "String"
+    - name: "units_per_pallet"
+      dataType:
+        type: "String"
+    - name: "units_per_container"
+      dataType:
+        type: "String"
+    - name: "active_estimated_cost"
+      dataType:
+        type: "String"
+    - name: "applied_standard_cost"
+      dataType:
+        type: "String"
+    - name: "direct_labor_cost"
+      dataType:
+        type: "String"
+    - name: "direct_material_cost"
+      dataType:
+        type: "String"
+    - name: "duty_cost"
+      dataType:
+        type: "String"
+    - name: "fixed_overhead_cost"
+      dataType:
+        type: "String"
+    - name: "freight_cost"
+      dataType:
+        type: "String"
+    - name: "import_fee_cost"
+      dataType:
+        type: "String"
+    - name: "purchase_burden_cost"
+      dataType:
+        type: "String"
+    - name: "standard_cost"
+      dataType:
+        type: "String"
+    - name: "variable_overhead_cost"
+      dataType:
+        type: "String"
+  - name: "products_catalog"
+    description: "Product catalog with product names, weights, volumes, values, and\
+      \ grouping attributes"
+    columns:
+    - name: "Name"
+      dataType:
+        type: "String"
+    - name: "Active"
+      dataType:
+        type: "String"
+    - name: "Weight"
+      dataType:
+        type: "String"
+    - name: "Shipment Volume"
+      dataType:
+        type: "String"
+    - name: "Warehouse Volume"
+      dataType:
+        type: "String"
+    - name: "Adjusted Volume"
+      dataType:
+        type: "String"
+    - name: "Freight Class"
+      dataType:
+        type: "String"
+    - name: "Value"
+      dataType:
+        type: "String"
+    - name: "Max Shelf Life"
+      dataType:
+        type: "String"
+    - name: "Grouping 1"
+      dataType:
+        type: "String"
+    - name: "Grouping 2"
+      dataType:
+        type: "String"
+    - name: "Grouping 3"
+      dataType:
+        type: "String"
+    - name: "Grouping 4"
+      dataType:
+        type: "String"
+    - name: "Grouping 5"
+      dataType:
+        type: "String"
+    - name: "Grouping 6"
+      dataType:
+        type: "String"
+    - name: "Grouping 7"
+      dataType:
+        type: "String"
+    - name: "Grouping 8"
+      dataType:
+        type: "String"
+    - name: "Grouping 9"
+      dataType:
+        type: "String"
+    - name: "Grouping 10"
+      dataType:
+        type: "String"
+    - name: "Notes"
+      dataType:
+        type: "String"
+  - name: "site_product_inv_info"
+    description: "Site-level product inventory information with holding costs and\
+      \ inventory levels"
+    columns:
+    - name: "Site"
+      dataType:
+        type: "String"
+    - name: "Product"
+      dataType:
+        type: "String"
+    - name: "Itor"
+      dataType:
+        type: "String"
+    - name: "Holding Cost"
+      dataType:
+        type: "String"
+    - name: "Starting Inventory"
+      dataType:
+        type: "String"
+    - name: "Ending Inventory"
+      dataType:
+        type: "String"
+  - name: "products_holding_cost"
+    description: "Product values used for holding cost calculation (Holding Cost =\
+      \ 0.14 * Value)"
+    columns:
+    - name: "Name"
+      dataType:
+        type: "String"
+    - name: "Active"
+      dataType:
+        type: "String"
+    - name: "Weight"
+      dataType:
+        type: "String"
+    - name: "Shipment Volume"
+      dataType:
+        type: "String"
+    - name: "Warehouse Volume"
+      dataType:
+        type: "String"
+    - name: "Adjusted Volume"
+      dataType:
+        type: "String"
+    - name: "Freight Class"
+      dataType:
+        type: "String"
+    - name: "Value"
+      dataType:
+        type: "String"
+    - name: "Max Shelf Life"
+      dataType:
+        type: "String"
+    - name: "Grouping 1"
+      dataType:
+        type: "String"
+    - name: "Grouping 2"
+      dataType:
+        type: "String"
+    - name: "Grouping 3"
+      dataType:
+        type: "String"
+    - name: "Grouping 4"
+      dataType:
+        type: "String"
+    - name: "Grouping 5"
+      dataType:
+        type: "String"
+    - name: "Grouping 6"
+      dataType:
+        type: "String"
+    - name: "Grouping 7"
+      dataType:
+        type: "String"
+    - name: "Grouping 8"
+      dataType:
+        type: "String"
+    - name: "Grouping 9"
+      dataType:
+        type: "String"
+    - name: "Grouping 10"
+      dataType:
+        type: "String"
+    - name: "Notes"
+      dataType:
+        type: "String"
+  - name: "production_data"
+    description: "Production data with supply constraints, costs, and rates"
+    columns:
+    - name: "Site"
+      dataType:
+        type: "String"
+    - name: "Product"
+      dataType:
+        type: "String"
+    - name: "Time Period"
+      dataType:
+        type: "String"
+    - name: "Min Supply"
+      dataType:
+        type: "String"
+    - name: "Max Supply"
+      dataType:
+        type: "String"
+    - name: "Cost"
+      dataType:
+        type: "String"
+    - name: "Rate"
+      dataType:
+        type: "String"
+    - name: "Tiered Cost"
+      dataType:
+        type: "String"
+  - name: "sites_output"
+    description: "Unified site master output from Sites container"
+    config:
+      tags:
+      - "pipeline:full_network_model_ai_migration"
+    columns:
+    - name: "Name"
+      dataType:
+        type: "String"
+    - name: "Active"
+      dataType:
+        type: "String"
+    - name: "Latitude"
+      dataType:
+        type: "String"
+    - name: "Longitude"
+      dataType:
+        type: "String"
+    - name: "Sourcing Status"
+      dataType:
+        type: "String"
+    - name: "Open Close Status"
+      dataType:
+        type: "String"
+    - name: "Inventory Status"
+      dataType:
+        type: "String"
+    - name: "Opening Cost"
+      dataType:
+        type: "String"
+    - name: "Operating Cost"
+      dataType:
+        type: "String"
+    - name: "Closing Cost"
+      dataType:
+        type: "String"
+    - name: "Postal Code"
+      dataType:
+        type: "String"
+    - name: "Country"
+      dataType:
+        type: "String"
+    - name: "Site Type"
+      dataType:
+        type: "String"
+    - name: "Zone 1"
+      dataType:
+        type: "String"
+    - name: "Zone 2"
+      dataType:
+        type: "String"
+    - name: "Zone 3"
+      dataType:
+        type: "String"
+    - name: "Zone 4"
+      dataType:
+        type: "String"
+    - name: "Zone 5"
+      dataType:
+        type: "String"
+    - name: "Zone 6"
+      dataType:
+        type: "String"
+    - name: "Zone 7"
+      dataType:
+        type: "String"
+    - name: "Zone 8"
+      dataType:
+        type: "String"
+    - name: "Notes"
+      dataType:
+        type: "String"
+  - name: "production_output"
+    description: "Production capacity output from Production container"
+    config:
+      tags:
+      - "pipeline:full_network_model_ai_migration"
+    columns:
+    - name: "Site"
+      dataType:
+        type: "String"
+    - name: "Product"
+      dataType:
+        type: "String"
+    - name: "Time_Period"
+      dataType:
+        type: "String"
+    - name: "Min_Supply"
+      dataType:
+        type: "Integer"
+    - name: "Max_Supply"
+      dataType:
+        type: "Integer"
+    - name: "Cost"
+      dataType:
+        type: "Double"
+    - name: "Rate"
+      dataType:
+        type: "Integer"
+    - name: "Tiered_Cost"
+      dataType:
+        type: "Integer"
+  - name: "products_output"
+    description: "Products output from Products container"
+    config:
+      tags:
+      - "pipeline:full_network_model_ai_migration"
+    columns:
+    - name: "Name"
+      dataType:
+        type: "String"
+    - name: "Active"
+      dataType:
+        type: "String"
+    - name: "Weight"
+      dataType:
+        type: "Double"
+    - name: "Shipment Volume"
+      dataType:
+        type: "Double"
+    - name: "Warehouse Volume"
+      dataType:
+        type: "Double"
+    - name: "Adjusted Volume"
+      dataType:
+        type: "Double"
+    - name: "Freight Class"
+      dataType:
+        type: "String"
+    - name: "Value"
+      dataType:
+        type: "Double"
+    - name: "Max Shelf Life"
+      dataType:
+        type: "Integer"
+    - name: "Grouping 1"
+      dataType:
+        type: "String"
+    - name: "Grouping 2"
+      dataType:
+        type: "String"
+    - name: "Grouping 3"
+      dataType:
+        type: "String"
+    - name: "Grouping 4"
+      dataType:
+        type: "String"
+    - name: "Grouping 5"
+      dataType:
+        type: "String"
+    - name: "Grouping 6"
+      dataType:
+        type: "String"
+    - name: "Grouping 7"
+      dataType:
+        type: "String"
+    - name: "Grouping 8"
+      dataType:
+        type: "String"
+    - name: "Grouping 9"
+      dataType:
+        type: "String"
+    - name: "Grouping 10"
+      dataType:
+        type: "String"
+    - name: "Notes"
+      dataType:
+        type: "String"
+  - name: "scenario_a_minmax_v4"
+    columns:
+    - name: "Name"
+      dataType:
+        type: "String"
+    - name: "Active"
+      dataType:
+        type: "Boolean"
+    - name: "Latitude"
+      dataType:
+        type: "Double"
+    - name: "Longitude"
+      dataType:
+        type: "Double"
+    - name: "Sourcing Status"
+      dataType:
+        type: "String"
+    - name: "Open Close Status"
+      dataType:
+        type: "String"
+    - name: "Inventory Status"
+      dataType:
+        type: "String"
+    - name: "Opening Cost"
+      dataType:
+        type: "Boolean"
+    - name: "Operating Cost"
+      dataType:
+        type: "Boolean"
+    - name: "Closing Cost"
+      dataType:
+        type: "Boolean"
+    - name: "Postal Code"
+      dataType:
+        type: "String"
+    - name: "Country"
+      dataType:
+        type: "String"
+    - name: "Site Type"
+      dataType:
+        type: "String"
+    - name: "Zone 1"
+      dataType:
+        type: "String"
+    - name: "Zone 2"
+      dataType:
+        type: "String"
+    - name: "Zone 3"
+      dataType:
+        type: "String"
+    - name: "Zone 4"
+      dataType:
+        type: "String"
+    - name: "Zone 5"
+      dataType:
+        type: "String"
+    - name: "Zone 6"
+      dataType:
+        type: "String"
+    - name: "Zone 7"
+      dataType:
+        type: "String"
+    - name: "Zone 8"
+      dataType:
+        type: "String"
+    - name: "Notes"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "solution_2026_aug_22_9_2026_8_21_33_175"
+    config:
+      tags:
+      - "pipeline:test_drag_and_drop"
+    columns:
+    - name: "Site"
+      dataType:
+        type: "String"
+    - name: "Product"
+      dataType:
+        type: "String"
+    - name: "Average Historical Demand"
+      dataType:
+        type: "Double"
+    - name: "Average Historical Forecast"
+      dataType:
+        type: "Double"
+    - name: "Total Historical Demand"
+      dataType:
+        type: "BigInt"
+    - name: "Total Historical Forecast"
+      dataType:
+        type: "BigInt"
+    - name: "Median Historical Demand"
+      dataType:
+        type: "BigInt"
+    - name: "Median Historical Forecast"
+      dataType:
+        type: "BigInt"
+    - name: "Mode Historical Demand"
+      dataType:
+        type: "Double"
+    - name: "Mode Historical Forecast"
+      dataType:
+        type: "Double"
+    - name: "RMSE"
+      dataType:
+        type: "Boolean"
+    - name: "MAPE"
+      dataType:
+        type: "Boolean"
+    - name: "MAE"
+      dataType:
+        type: "Boolean"
+    - name: "SD"
+      dataType:
+        type: "Boolean"
+    type: "table"
+  - name: "foresta_products_1039_26_10_2026_20_14_34_932"
+    config:
+      tags:
+      - "pipeline:weighted_average_standard_cost_poc"
+    columns:
+    - name: "Name"
+      dataType:
+        type: "String"
+    - name: "Active"
+      dataType:
+        type: "Boolean"
+    - name: "Weight"
+      dataType:
+        type: "BigInt"
+    - name: "Shipment Volume"
+      dataType:
+        type: "BigInt"
+    - name: "Warehouse Volume"
+      dataType:
+        type: "BigInt"
+    - name: "Adjusted Volume"
+      dataType:
+        type: "BigInt"
+    - name: "Freight Class"
+      dataType:
+        type: "BigInt"
+    - name: "Value"
+      dataType:
+        type: "BigInt"
+    - name: "Min Shelf Life"
+      dataType:
+        type: "BigInt"
+    - name: "Max Shelf Life"
+      dataType:
+        type: "BigInt"
+    - name: "Grouping 1"
+      dataType:
+        type: "String"
+    - name: "Grouping 2"
+      dataType:
+        type: "String"
+    - name: "Grouping 3"
+      dataType:
+        type: "String"
+    - name: "Grouping 4"
+      dataType:
+        type: "String"
+    - name: "Grouping 5"
+      dataType:
+        type: "String"
+    - name: "Grouping 6"
+      dataType:
+        type: "String"
+    - name: "Grouping 7"
+      dataType:
+        type: "String"
+    - name: "Grouping 8"
+      dataType:
+        type: "String"
+    - name: "Grouping 9"
+      dataType:
+        type: "String"
+    - name: "Grouping 10"
+      dataType:
+        type: "String"
+    - name: "Notes"
+      dataType:
+        type: "String"
+    type: "table"

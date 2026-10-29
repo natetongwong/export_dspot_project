@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "test_rerun_idempotency__sales_output"
+  tags:
+  - "prophecy_temp"

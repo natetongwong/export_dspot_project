@@ -1,0 +1,46 @@
+providerType: "Arrow"
+fields:
+- name: "sales_order_bigint_key"
+  dataType:
+    type: "utf8"
+  nativeType: "String"
+- name: "sales_fulfillment_line_bigint_key"
+  dataType:
+    type: "utf8"
+  nativeType: "String"
+- name: "inventory_organization_bigint_key"
+  dataType:
+    type: "utf8"
+  nativeType: "String"
+- name: "customer_site_bigint_key"
+  dataType:
+    type: "utf8"
+  nativeType: "String"
+- name: "item_bigint_key"
+  dataType:
+    type: "utf8"
+  nativeType: "String"
+- name: "ship_date"
+  dataType:
+    type: "date32"
+  nativeType: "Date"
+- name: "quantity_units"
+  dataType:
+    type: "utf8"
+  nativeType: "String"
+- name: "quantity_weight"
+  dataType:
+    type: "utf8"
+  nativeType: "String"
+- name: "transportation_cost"
+  dataType:
+    type: "utf8"
+  nativeType: "String"
+- name: "unit_selling_price"
+  dataType:
+    type: "utf8"
+  nativeType: "String"
+- name: "shipment_method"
+  dataType:
+    type: "utf8"
+  nativeType: "String"

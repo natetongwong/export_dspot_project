@@ -1,0 +1,10 @@
+providerType: "Arrow"
+fields:
+- name: "Country Code"
+  dataType:
+    type: "utf8"
+  description: "Country code identifier"
+- name: "Continent"
+  dataType:
+    type: "utf8"
+  description: "Continent name"

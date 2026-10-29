@@ -1,0 +1,126 @@
+{
+  "id" : "test_drag_and_drop__avg_demand",
+  "metainfo" : {
+    "label" : "test_drag_and_drop__avg_demand",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"ProphecyCompute\"",
+        "schema" : "\"schema\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "avg_demand_YTXLBg9Z" : {
+      "id" : "avg_demand_YTXLBg9Z",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "avg_demand"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM avg_demand\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "avg_demand##hbJ89ngw" : {
+      "id" : "avg_demand##hbJ89ngw",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "avg_demand",
+        "x" : -260,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "AVG(\"Total Historical Demand\")"
+          },
+          "alias" : "avg_total_historical_demand",
+          "_row_id" : "74294262"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "MeSqRLkP",
+          "slug" : "solution_source"
+        } ],
+        "outputs" : [ {
+          "id" : "YTXLBg9Z",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "RQ1e1ekT4UJN7YhS77TAM$$L46nQ3B0m3rx27UnbiDyx" : {
+      "id" : "RQ1e1ekT4UJN7YhS77TAM$$L46nQ3B0m3rx27UnbiDyx",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "solution_2026_aug_22_9_2026_8_21_33_175",
+        "x" : -420,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "solution_2026_aug_22_9_2026_8_21_33_175",
+          "sourceType" : "Table",
+          "sourceName" : "ProphecyCompute_main"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "na8uJVEX",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_avg_demand##hbJ89ngw_YTXLBg9Z_avg_demand_YTXLBg9Z",
+    "source" : "avg_demand##hbJ89ngw",
+    "sourcePort" : "YTXLBg9Z",
+    "target" : "avg_demand_YTXLBg9Z",
+    "targetPort" : "input_port_0",
+    "isWireless" : false
+  }, {
+    "id" : "U8xA9psN",
+    "source" : "RQ1e1ekT4UJN7YhS77TAM$$L46nQ3B0m3rx27UnbiDyx",
+    "sourcePort" : "na8uJVEX",
+    "target" : "avg_demand##hbJ89ngw",
+    "targetPort" : "MeSqRLkP",
+    "isWireless" : false
+  } ],
+  "component" : "Model"
+}

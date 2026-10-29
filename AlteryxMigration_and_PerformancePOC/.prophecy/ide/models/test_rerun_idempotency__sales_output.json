@@ -1,0 +1,155 @@
+{
+  "id" : "test_rerun_idempotency__sales_output",
+  "metainfo" : {
+    "label" : "test_rerun_idempotency__sales_output",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"sales_output_test\"",
+        "materialized" : "incremental",
+        "database" : "\"ProphecyCompute\"",
+        "unique_key" : "[\"SaleID\"]",
+        "schema" : "\"schema\"",
+        "incremental_strategy" : "\"merge\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "final##XwcD5I5Z" : {
+      "id" : "final##XwcD5I5Z",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "sales_output",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM sales_output_final\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "UhMIfTyh",
+          "slug" : "sales_output_final"
+        } ],
+        "outputs" : [ {
+          "id" : "Ix399qFw",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "sales_output##fvHISayq" : {
+      "id" : "sales_output##fvHISayq",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "sales_output_final",
+        "x" : 220,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "\"SaleID\""
+          },
+          "_row_id" : "1766533124"
+        }, {
+          "expression" : {
+            "expression" : "\"CustomerName\""
+          },
+          "_row_id" : "296030387"
+        }, {
+          "expression" : {
+            "expression" : "\"Product\""
+          },
+          "_row_id" : "790643325"
+        }, {
+          "expression" : {
+            "expression" : "CAST(\"Amount\" AS DOUBLE)"
+          },
+          "alias" : "\"Amount\"",
+          "_row_id" : "1693356048"
+        }, {
+          "expression" : {
+            "expression" : "\"SaleDate\""
+          },
+          "_row_id" : "30937275"
+        }, {
+          "expression" : {
+            "expression" : "CURRENT_TIMESTAMP"
+          },
+          "alias" : "\"LoadTimestamp\"",
+          "_row_id" : "563674935"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "hp9McZoQ",
+          "slug" : "sales_source"
+        } ],
+        "outputs" : [ {
+          "id" : "D1kQXYUi",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "m7K5Vkk0Pb" : {
+      "id" : "m7K5Vkk0Pb",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "sales_source",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "sales_idempotency_test",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "jv0fqpzT1v",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "GmqFJUjg",
+    "source" : "sales_output##fvHISayq",
+    "sourcePort" : "D1kQXYUi",
+    "target" : "final##XwcD5I5Z",
+    "targetPort" : "UhMIfTyh",
+    "isWireless" : false
+  }, {
+    "id" : "jv0fqpzT1v_to_cSWOvHZCKW##wkusOWRv",
+    "source" : "m7K5Vkk0Pb",
+    "sourcePort" : "jv0fqpzT1v",
+    "target" : "sales_output##fvHISayq",
+    "targetPort" : "hp9McZoQ",
+    "isWireless" : false
+  } ],
+  "component" : "Model"
+}

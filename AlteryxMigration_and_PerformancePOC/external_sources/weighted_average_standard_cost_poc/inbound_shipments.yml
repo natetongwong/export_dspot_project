@@ -1,0 +1,171 @@
+providerType: "Arrow"
+fields:
+- name: "order_line_bigint_key"
+  dataType:
+    type: "utf8"
+  description: "Unique identifier for each line item within an order."
+  nativeType: "String"
+- name: "purchase_order_number"
+  dataType:
+    type: "utf8"
+  description: "Unique number assigned to the purchase order."
+  nativeType: "String"
+- name: "purchase_order_line_number"
+  dataType:
+    type: "utf8"
+  description: "Sequential line number identifying each item within the purchase order."
+  nativeType: "String"
+- name: "order_date"
+  dataType:
+    type: "utf8"
+  description: "Date when the purchase order was placed."
+  nativeType: "String"
+- name: "delivery_date"
+  dataType:
+    type: "utf8"
+  description: "Date when the ordered items were delivered to the destination."
+  nativeType: "String"
+- name: "first_delivery_date"
+  dataType:
+    type: "utf8"
+  description: "Date of the initial delivery for the purchase order."
+  nativeType: "String"
+- name: "partner_item_number"
+  dataType:
+    type: "utf8"
+  description: "Item number assigned by the partner or external supplier for the product."
+  nativeType: "String"
+- name: "origin_supplier_name"
+  dataType:
+    type: "utf8"
+  description: "Name of the original supplier or manufacturer from whom the item was\
+    \ sourced."
+  nativeType: "String"
+- name: "origin_supplier_number"
+  dataType:
+    type: "utf8"
+  description: "Unique identifier assigned to the original supplier or manufacturer."
+  nativeType: "String"
+- name: "origin_supplier_site_code"
+  dataType:
+    type: "utf8"
+  description: "Location or facility code of the original supplier's site where the\
+    \ item was produced or sourced."
+  nativeType: "String"
+- name: "origin_supplier_mfg"
+  dataType:
+    type: "utf8"
+  description: "Manufacturing facility or plant code of the original supplier where\
+    \ the item was produced."
+  nativeType: "String"
+- name: "supplier_name"
+  dataType:
+    type: "utf8"
+  description: "Name of the current supplier providing the item."
+  nativeType: "String"
+- name: "supplier_number"
+  dataType:
+    type: "utf8"
+  description: "Unique identifier assigned to the current supplier."
+  nativeType: "String"
+- name: "supplier_country"
+  dataType:
+    type: "utf8"
+  description: "Country where the current supplier is located."
+  nativeType: "String"
+- name: "origin_supplier_loading_port_actual"
+  dataType:
+    type: "utf8"
+  description: "Actual port from which the item was physically loaded for shipment\
+    \ by the original supplier."
+  nativeType: "String"
+- name: "origin_supplier_loading_port"
+  dataType:
+    type: "utf8"
+  description: "Planned port from which the supplier ships the item."
+  nativeType: "String"
+- name: "origin_supplier_country"
+  dataType:
+    type: "utf8"
+  description: "Country where the supplier is located."
+  nativeType: "String"
+- name: "item_country_of_origin"
+  dataType:
+    type: "utf8"
+  description: "Country where the item was manufactured or produced."
+  nativeType: "String"
+- name: "transport_mode"
+  dataType:
+    type: "utf8"
+  description: "Method of transportation used to deliver the item; Examples include\
+    \ air, sea, rail, or truck."
+  nativeType: "String"
+- name: "port_source"
+  dataType:
+    type: "utf8"
+  description: "Primary port used as the source for item shipment and logistics operations."
+  nativeType: "String"
+- name: "inventory_organization_bigint_key"
+  dataType:
+    type: "utf8"
+  description: "Unique identifier for the organization managing the inventory."
+  nativeType: "String"
+- name: "receiving_org_code"
+  dataType:
+    type: "utf8"
+  description: "Code assigned to the organization receiving the inventory shipment."
+  nativeType: "String"
+- name: "receiving_org_name"
+  dataType:
+    type: "utf8"
+  description: "Name of the organization receiving the inventory shipment."
+  nativeType: "String"
+- name: "item_bigint_key"
+  dataType:
+    type: "utf8"
+  description: "Unique identifier for the item in the inventory system."
+  nativeType: "String"
+- name: "item_id"
+  dataType:
+    type: "utf8"
+  description: "Business identifier for the item being tracked in inventory."
+  nativeType: "String"
+- name: "item_type"
+  dataType:
+    type: "utf8"
+  description: "Category or classification of the item; Indicates the type of product\
+    \ or material."
+  nativeType: "String"
+- name: "quantity_units"
+  dataType:
+    type: "utf8"
+  description: "Number of individual units of the item; Represents the count of smallest\
+    \ measurable quantity."
+  nativeType: "String"
+- name: "quantity_weight"
+  dataType:
+    type: "utf8"
+  description: "Total weight of the item; Measured in standard weight units."
+  nativeType: "String"
+- name: "quantity_pallets"
+  dataType:
+    type: "utf8"
+  description: "Number of pallets used to store or transport the item; Represents\
+    \ bulk quantity at pallet level."
+  nativeType: "String"
+- name: "quantity_containers"
+  dataType:
+    type: "utf8"
+  description: "Number of containers holding the item; Represents intermediate quantity\
+    \ between units and pallets."
+  nativeType: "String"
+- name: "mfg_cost"
+  dataType:
+    type: "utf8"
+  description: "The manufacturing cost per unit of the product."
+  nativeType: "String"
+- name: "receipt_cost"
+  dataType:
+    type: "utf8"
+  description: "The cost incurred at the time of receipt or delivery of the product."
+  nativeType: "String"

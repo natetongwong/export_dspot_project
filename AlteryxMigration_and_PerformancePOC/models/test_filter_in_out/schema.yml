@@ -1,0 +1,9 @@
+---
+version: 2
+models:
+- name: "test_filter_in_out__filter_high_sales"
+  tags:
+  - "prophecy_temp"
+- name: "test_filter_in_out__filter_low_sales"
+  tags:
+  - "prophecy_temp"

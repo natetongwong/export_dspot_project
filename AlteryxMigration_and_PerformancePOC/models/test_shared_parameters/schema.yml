@@ -1,0 +1,9 @@
+---
+version: 2
+models:
+- name: "test_shared_parameters__filter_after_cutoff"
+  tags:
+  - "prophecy_temp"
+- name: "test_shared_parameters__filter_before_cutoff"
+  tags:
+  - "prophecy_temp"

@@ -1,0 +1,83 @@
+{
+  "id" : "test_rerun_idempotency",
+  "metainfo" : {
+    "label" : "test_rerun_idempotency",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "isTranspiledPipeline" : false,
+    "processesVsModelFiles" : {
+      "sales_output##fvHISayq" : "models/test_rerun_idempotency/test_rerun_idempotency__sales_output.sql",
+      "final##XwcD5I5Z" : "models/test_rerun_idempotency/test_rerun_idempotency__sales_output.sql",
+      "m7K5Vkk0Pb" : "models/test_rerun_idempotency/test_rerun_idempotency__sales_output.sql"
+    }
+  },
+  "processes" : {
+    "m7K5Vkk0Pb" : {
+      "id" : "m7K5Vkk0Pb",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "sales_source",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "sales_idempotency_test",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "jv0fqpzT1v",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "final##XwcD5I5Z" : {
+      "id" : "final##XwcD5I5Z",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "test_rerun_idempotency__sales_output",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "test_rerun_idempotency__sales_output"
+      },
+      "visualMetaInfo" : {
+        "lastNodeProcessIds" : [ "final##XwcD5I5Z" ],
+        "skipIfZeroRows" : false,
+        "visualProcessIds" : [ "final##XwcD5I5Z", "sales_output##fvHISayq", "m7K5Vkk0Pb" ],
+        "type" : "incremental",
+        "isTemporaryTable" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "hp9McZoQ",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "D1kQXYUi",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "jv0fqpzT1v_to_cSWOvHZCKW##wkusOWRv",
+    "source" : "m7K5Vkk0Pb",
+    "sourcePort" : "jv0fqpzT1v",
+    "target" : "final##XwcD5I5Z",
+    "targetPort" : "hp9McZoQ"
+  } ],
+  "component" : "Pipeline"
+}

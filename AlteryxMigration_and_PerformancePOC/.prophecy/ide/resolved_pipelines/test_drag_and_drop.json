@@ -1,0 +1,53 @@
+{
+  "id" : "test_drag_and_drop",
+  "metainfo" : {
+    "label" : "test_drag_and_drop",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "isTranspiledPipeline" : false,
+    "processesVsModelFiles" : {
+      "avg_demand_YTXLBg9Z" : "models/test_drag_and_drop/test_drag_and_drop__avg_demand.sql",
+      "RQ1e1ekT4UJN7YhS77TAM$$L46nQ3B0m3rx27UnbiDyx" : "models/test_drag_and_drop/test_drag_and_drop__avg_demand.sql",
+      "avg_demand##hbJ89ngw" : "models/test_drag_and_drop/test_drag_and_drop__avg_demand.sql"
+    }
+  },
+  "processes" : {
+    "avg_demand##hbJ89ngw" : {
+      "id" : "avg_demand##hbJ89ngw",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "test_drag_and_drop__avg_demand",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "test_drag_and_drop__avg_demand"
+      },
+      "visualMetaInfo" : {
+        "lastNodeProcessIds" : [ "avg_demand_YTXLBg9Z" ],
+        "skipIfZeroRows" : false,
+        "visualProcessIds" : [ "avg_demand_YTXLBg9Z", "avg_demand##hbJ89ngw", "RQ1e1ekT4UJN7YhS77TAM$$L46nQ3B0m3rx27UnbiDyx" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "MeSqRLkP",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "YTXLBg9Z",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}

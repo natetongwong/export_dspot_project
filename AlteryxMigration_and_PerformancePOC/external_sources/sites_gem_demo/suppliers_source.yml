@@ -1,0 +1,38 @@
+providerType: "Arrow"
+fields:
+- name: "Supplier Key"
+  dataType:
+    type: "utf8"
+  description: "Unique identifier for supplier"
+- name: "supplier_name"
+  dataType:
+    type: "utf8"
+  description: "Supplier company name"
+- name: "supplier_number"
+  dataType:
+    type: "utf8"
+  description: "Supplier account number"
+- name: "supplier_site_code"
+  dataType:
+    type: "utf8"
+  description: "Supplier facility site code"
+- name: "country"
+  dataType:
+    type: "utf8"
+  description: "Supplier country location"
+- name: "postal_code"
+  dataType:
+    type: "utf8"
+  description: "Supplier postal code"
+- name: "latitude"
+  dataType:
+    type: "utf8"
+  description: "Supplier latitude coordinate"
+- name: "longitude"
+  dataType:
+    type: "utf8"
+  description: "Supplier longitude coordinate"
+- name: "supplier_type"
+  dataType:
+    type: "utf8"
+  description: "Type/category of supplier"

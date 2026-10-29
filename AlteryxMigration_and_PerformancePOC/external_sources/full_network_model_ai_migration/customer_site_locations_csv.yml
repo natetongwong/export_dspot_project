@@ -1,0 +1,71 @@
+providerType: "ProphecyManaged"
+fields:
+- name: "customer_site_id"
+  dataType:
+    type: "BigInt"
+- name: "customer_site_base_id"
+  dataType:
+    type: "BigInt"
+- name: "account_number"
+  dataType:
+    type: "String"
+- name: "account_name"
+  dataType:
+    type: "String"
+- name: "mkedg1"
+  dataType:
+    type: "String"
+- name: "mkedg2"
+  dataType:
+    type: "String"
+- name: "mkedg3"
+  dataType:
+    type: "String"
+- name: "mkedg4"
+  dataType:
+    type: "String"
+- name: "mkedg5"
+  dataType:
+    type: "String"
+- name: "site_number"
+  dataType:
+    type: "String"
+- name: "location_name"
+  dataType:
+    type: "String"
+- name: "address1"
+  dataType:
+    type: "String"
+- name: "address2"
+  dataType:
+    type: "String"
+- name: "address3"
+  dataType:
+    type: "String"
+- name: "address4"
+  dataType:
+    type: "String"
+- name: "city"
+  dataType:
+    type: "String"
+- name: "state"
+  dataType:
+    type: "String"
+- name: "province"
+  dataType:
+    type: "String"
+- name: "country"
+  dataType:
+    type: "String"
+- name: "postal_code"
+  dataType:
+    type: "String"
+- name: "lat"
+  dataType:
+    type: "String"
+- name: "lon"
+  dataType:
+    type: "String"
+- name: "latlon_source"
+  dataType:
+    type: "String"

@@ -1,0 +1,56 @@
+providerType: "ProphecyManaged"
+fields:
+- name: "org_id"
+  dataType:
+    type: "BigInt"
+- name: "org_code"
+  dataType:
+    type: "BigInt"
+- name: "org_name"
+  dataType:
+    type: "String"
+- name: "business_unit"
+  dataType:
+    type: "String"
+- name: "facility_type_code"
+  dataType:
+    type: "String"
+- name: "facility_type_name"
+  dataType:
+    type: "String"
+- name: "address_line_1"
+  dataType:
+    type: "String"
+- name: "address_line_2"
+  dataType:
+    type: "String"
+- name: "address_line_3"
+  dataType:
+    type: "String"
+- name: "address_line_4"
+  dataType:
+    type: "String"
+- name: "city"
+  dataType:
+    type: "String"
+- name: "state"
+  dataType:
+    type: "String"
+- name: "province"
+  dataType:
+    type: "String"
+- name: "country"
+  dataType:
+    type: "String"
+- name: "postal_code"
+  dataType:
+    type: "String"
+- name: "lat"
+  dataType:
+    type: "String"
+- name: "lon"
+  dataType:
+    type: "String"
+- name: "FileName"
+  dataType:
+    type: "String"

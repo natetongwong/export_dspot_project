@@ -1,0 +1,123 @@
+{
+  "id" : "test_group_activate_deactivate_run__filter_low_sales_2",
+  "metainfo" : {
+    "label" : "test_group_activate_deactivate_run__filter_low_sales_2",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"ProphecyCompute\"",
+        "schema" : "\"schema\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "filter_low_sales_2_IYXrDENrCiBx7_2OCTis5$$giilaWXZskuI5Qq4t3rR0" : {
+      "id" : "filter_low_sales_2_IYXrDENrCiBx7_2OCTis5$$giilaWXZskuI5Qq4t3rR0",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "filter_low_sales_2"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM filter_low_sales_2\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_3",
+          "slug" : "input_port_3"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_3",
+          "slug" : "output_port_3"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "99ZSJS8oeEen_UJxfjc_C$$wRx7pKmcXzxk1yT9CMDLX" : {
+      "id" : "99ZSJS8oeEen_UJxfjc_C$$wRx7pKmcXzxk1yT9CMDLX",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "filter_low_sales_2",
+        "x" : 240,
+        "y" : 80,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ "HGlLE7Mu1QBYEzPR4x-mZ$$_hXf2N1ctguhKLejeKFXb##Sales" ],
+        "condition" : {
+          "expression" : "\"Sales\" <= 100"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "HGlLE7Mu1QBYEzPR4x-mZ$$_hXf2N1ctguhKLejeKFXb",
+          "slug" : "low_source_data"
+        } ],
+        "outputs" : [ {
+          "id" : "IYXrDENrCiBx7_2OCTis5$$giilaWXZskuI5Qq4t3rR0",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "parent" : "VisualGroup_1"
+    },
+    "GCFqEmScrMwxQ9z4VWt8A$$PG6wVC6TUBRIInp4cznWI" : {
+      "id" : "GCFqEmScrMwxQ9z4VWt8A$$PG6wVC6TUBRIInp4cznWI",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "filter_test_data_2",
+        "x" : 40,
+        "y" : 180,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "filter_test_data",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "fExTgs7XdQNwrlRUD_WBJ$$2Grq7tNgtiKjLTNGhUZDg",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "parent" : "VisualGroup_1"
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_99ZSJS8oeEen_UJxfjc_C$$wRx7pKmcXzxk1yT9CMDLX_IYXrDENrCiBx7_2OCTis5$$giilaWXZskuI5Qq4t3rR0_filter_low_sales_2_IYXrDENrCiBx7_2OCTis5$$giilaWXZskuI5Qq4t3rR0",
+    "source" : "99ZSJS8oeEen_UJxfjc_C$$wRx7pKmcXzxk1yT9CMDLX",
+    "sourcePort" : "IYXrDENrCiBx7_2OCTis5$$giilaWXZskuI5Qq4t3rR0",
+    "target" : "filter_low_sales_2_IYXrDENrCiBx7_2OCTis5$$giilaWXZskuI5Qq4t3rR0",
+    "targetPort" : "input_port_3",
+    "isWireless" : false
+  }, {
+    "id" : "JPICMH6H5dDG3eOrHuL8m",
+    "source" : "GCFqEmScrMwxQ9z4VWt8A$$PG6wVC6TUBRIInp4cznWI",
+    "sourcePort" : "fExTgs7XdQNwrlRUD_WBJ$$2Grq7tNgtiKjLTNGhUZDg",
+    "target" : "99ZSJS8oeEen_UJxfjc_C$$wRx7pKmcXzxk1yT9CMDLX",
+    "targetPort" : "HGlLE7Mu1QBYEzPR4x-mZ$$_hXf2N1ctguhKLejeKFXb",
+    "isWireless" : false
+  } ],
+  "component" : "Model"
+}

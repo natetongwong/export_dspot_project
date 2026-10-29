@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002"
+  tags:
+  - "prophecy_temp"

@@ -1,0 +1,38 @@
+{
+  "prophecy_tmp_source" : {
+    "name" : "prophecy_tmp_source",
+    "macroType" : "expression",
+    "definition" : "{%\n  set tmp_table = \"prophecy_tmp__\" ~ var('prophecy_run_id', 'default_run_id')  ~ \"__\" ~ pipelineName ~ \"__\" ~ label\n%}\n \n{% if suffix != '' %}\n  {% set tmp_table = tmp_table ~ \"_\" ~ suffix %}\n   \n{% endif %} \n{%\n  set table_name = adapter.quote(target.database) ~ \".\" ~ adapter.quote(target.schema) ~ \".\" ~ adapter.quote(\n    tmp_table\n  )\n%}\n \n{{ return(table_name) }}",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "pipelineName",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "label",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "suffix",
+        "kind" : {
+          "type" : "value",
+          "value" : "''"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      } ]
+    },
+    "staleState" : "none",
+    "version" : 0
+  }
+}

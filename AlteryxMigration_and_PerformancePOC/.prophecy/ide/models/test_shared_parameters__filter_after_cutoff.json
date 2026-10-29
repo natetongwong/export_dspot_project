@@ -1,0 +1,121 @@
+{
+  "id" : "test_shared_parameters__filter_after_cutoff",
+  "metainfo" : {
+    "label" : "test_shared_parameters__filter_after_cutoff",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"ProphecyCompute\"",
+        "schema" : "\"schema\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "filter_after_cutoff_MeboB8QB" : {
+      "id" : "filter_after_cutoff_MeboB8QB",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "filter_after_cutoff"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM filter_after_cutoff\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_1",
+          "slug" : "input_port_1"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_1",
+          "slug" : "output_port_1"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "filter_after_cut##MFJxUsma" : {
+      "id" : "filter_after_cut##MFJxUsma",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "filter_after_cutoff",
+        "x" : 220,
+        "y" : 220,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "\"TransactionDate\" >= {{ var('cutoff_date') }}"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "rs5zIhqr",
+          "slug" : "sales_source"
+        } ],
+        "outputs" : [ {
+          "id" : "MeboB8QB",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "P6BidtRC3v" : {
+      "id" : "P6BidtRC3v",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "sales_source",
+        "x" : 20,
+        "y" : 120,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "sales_with_dates",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "WgwIDFS4st",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_filter_after_cut##MFJxUsma_MeboB8QB_filter_after_cutoff_MeboB8QB",
+    "source" : "filter_after_cut##MFJxUsma",
+    "sourcePort" : "MeboB8QB",
+    "target" : "filter_after_cutoff_MeboB8QB",
+    "targetPort" : "input_port_1",
+    "isWireless" : false
+  }, {
+    "id" : "WgwIDFS4st_to_K9nNIdhSVH##rO8FDm1t",
+    "source" : "P6BidtRC3v",
+    "sourcePort" : "WgwIDFS4st",
+    "target" : "filter_after_cut##MFJxUsma",
+    "targetPort" : "rs5zIhqr",
+    "isWireless" : false
+  } ],
+  "component" : "Model"
+}

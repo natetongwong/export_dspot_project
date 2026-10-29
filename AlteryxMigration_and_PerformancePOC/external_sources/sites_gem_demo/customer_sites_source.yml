@@ -1,0 +1,38 @@
+providerType: "Arrow"
+fields:
+- name: "customer_site_key"
+  dataType:
+    type: "utf8"
+  description: "Unique identifier for customer site"
+- name: "customer_name"
+  dataType:
+    type: "utf8"
+  description: "Customer company name"
+- name: "country"
+  dataType:
+    type: "utf8"
+  description: "Customer country"
+- name: "postal_code"
+  dataType:
+    type: "utf8"
+  description: "Customer postal code"
+- name: "latitude"
+  dataType:
+    type: "utf8"
+  description: "Customer site latitude"
+- name: "longitude"
+  dataType:
+    type: "utf8"
+  description: "Customer site longitude"
+- name: "org_name"
+  dataType:
+    type: "utf8"
+  description: "Organization name"
+- name: "lat"
+  dataType:
+    type: "utf8"
+  description: "Alternate latitude field"
+- name: "lon"
+  dataType:
+    type: "utf8"
+  description: "Alternate longitude field"

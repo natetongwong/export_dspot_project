@@ -1,0 +1,68 @@
+providerType: "Arrow"
+fields:
+- name: "item_bigint_key"
+  dataType:
+    type: "utf8"
+- name: "item_id"
+  dataType:
+    type: "utf8"
+- name: "selling_item_number"
+  dataType:
+    type: "utf8"
+- name: "country_of_origin"
+  dataType:
+    type: "utf8"
+- name: "item_class"
+  dataType:
+    type: "utf8"
+- name: "item_description"
+  dataType:
+    type: "utf8"
+- name: "unit_volume"
+  dataType:
+    type: "utf8"
+- name: "unit_weight"
+  dataType:
+    type: "utf8"
+- name: "units_per_case"
+  dataType:
+    type: "utf8"
+- name: "units_per_pallet"
+  dataType:
+    type: "utf8"
+- name: "units_per_container"
+  dataType:
+    type: "utf8"
+- name: "active_estimated_cost"
+  dataType:
+    type: "utf8"
+- name: "applied_standard_cost"
+  dataType:
+    type: "utf8"
+- name: "direct_labor_cost"
+  dataType:
+    type: "utf8"
+- name: "direct_material_cost"
+  dataType:
+    type: "utf8"
+- name: "duty_cost"
+  dataType:
+    type: "utf8"
+- name: "fixed_overhead_cost"
+  dataType:
+    type: "utf8"
+- name: "freight_cost"
+  dataType:
+    type: "utf8"
+- name: "import_fee_cost"
+  dataType:
+    type: "utf8"
+- name: "purchase_burden_cost"
+  dataType:
+    type: "utf8"
+- name: "standard_cost"
+  dataType:
+    type: "utf8"
+- name: "variable_overhead_cost"
+  dataType:
+    type: "utf8"

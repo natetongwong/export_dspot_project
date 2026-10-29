@@ -1,0 +1,248 @@
+{
+  "id" : "test_partial_execution__aggregate_step",
+  "metainfo" : {
+    "label" : "test_partial_execution__aggregate_step",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"ProphecyCompute\"",
+        "schema" : "\"schema\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "aggregate_step_UViMFFB5" : {
+      "id" : "aggregate_step_UViMFFB5",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "aggregate_step"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM aggregate_step\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "final##uBuMIX0u" : {
+      "id" : "final##uBuMIX0u",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "reformat_step",
+        "x" : 220,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "\"ID\""
+          },
+          "_row_id" : "969485181"
+        }, {
+          "expression" : {
+            "expression" : "\"Name\""
+          },
+          "_row_id" : "854753627"
+        }, {
+          "expression" : {
+            "expression" : "\"Amount\""
+          },
+          "_row_id" : "1966620494"
+        }, {
+          "expression" : {
+            "expression" : "\"Category\""
+          },
+          "_row_id" : "801745638"
+        }, {
+          "expression" : {
+            "expression" : "\"Amount\" * 1.1"
+          },
+          "alias" : "\"Amount_With_Tax\"",
+          "_row_id" : "851392810"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "XBTRyqM1",
+          "slug" : "source_records"
+        } ],
+        "outputs" : [ {
+          "id" : "nsLXS2Ec",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "final##W35dQFpq" : {
+      "id" : "final##W35dQFpq",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "aggregate_step",
+        "x" : 620,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "\"Category\""
+          },
+          "_row_id" : "258167218"
+        }, {
+          "expression" : {
+            "expression" : "COUNT(*)"
+          },
+          "alias" : "\"Record_Count\"",
+          "_row_id" : "1434456539"
+        }, {
+          "expression" : {
+            "expression" : "SUM(\"Amount\")"
+          },
+          "alias" : "\"Total_Amount\"",
+          "_row_id" : "74571267"
+        }, {
+          "expression" : {
+            "expression" : "SUM(\"Amount_With_Tax\")"
+          },
+          "alias" : "\"Total_With_Tax\"",
+          "_row_id" : "1153850198"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "\"Category\""
+          },
+          "_row_id" : "162415807"
+        } ],
+        "mode" : "simple"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "VqWp2aKj",
+          "slug" : "filter_step"
+        } ],
+        "outputs" : [ {
+          "id" : "UViMFFB5",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "1XCvVDNeio" : {
+      "id" : "1XCvVDNeio",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "source_records",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "sample_records",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "nvpmwODCAO",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "final##Tn1ANQuL" : {
+      "id" : "final##Tn1ANQuL",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "filter_step",
+        "x" : 420,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "\"Amount\" > 50"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "INUgAQmD",
+          "slug" : "reformat_step"
+        } ],
+        "outputs" : [ {
+          "id" : "kihsBp3T",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_final##W35dQFpq_UViMFFB5_aggregate_step_UViMFFB5",
+    "source" : "final##W35dQFpq",
+    "sourcePort" : "UViMFFB5",
+    "target" : "aggregate_step_UViMFFB5",
+    "targetPort" : "input_port_0",
+    "isWireless" : false
+  }, {
+    "id" : "ih9duCyb",
+    "source" : "final##Tn1ANQuL",
+    "sourcePort" : "kihsBp3T",
+    "target" : "final##W35dQFpq",
+    "targetPort" : "VqWp2aKj",
+    "isWireless" : false
+  }, {
+    "id" : "Sr1LQ8Jz",
+    "source" : "final##uBuMIX0u",
+    "sourcePort" : "nsLXS2Ec",
+    "target" : "final##Tn1ANQuL",
+    "targetPort" : "INUgAQmD",
+    "isWireless" : false
+  }, {
+    "id" : "nvpmwODCAO_to_SodKfDlkFg##nCBzoJSG",
+    "source" : "1XCvVDNeio",
+    "sourcePort" : "nvpmwODCAO",
+    "target" : "final##uBuMIX0u",
+    "targetPort" : "XBTRyqM1",
+    "isWireless" : false
+  } ],
+  "component" : "Model"
+}

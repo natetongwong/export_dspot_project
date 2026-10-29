@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "sites_gem_demo__sites_final_dedupe"
+  tags:
+  - "prophecy_temp"

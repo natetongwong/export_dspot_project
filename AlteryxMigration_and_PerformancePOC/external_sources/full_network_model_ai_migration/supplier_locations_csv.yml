@@ -1,0 +1,50 @@
+providerType: "ProphecyManaged"
+fields:
+- name: "supplier_site_bigint_key"
+  dataType:
+    type: "BigInt"
+- name: "supplier_name"
+  dataType:
+    type: "String"
+- name: "supplier_number"
+  dataType:
+    type: "BigInt"
+- name: "supplier_site_code"
+  dataType:
+    type: "String"
+- name: "address1"
+  dataType:
+    type: "String"
+- name: "address2"
+  dataType:
+    type: "String"
+- name: "address3"
+  dataType:
+    type: "String"
+- name: "address4"
+  dataType:
+    type: "String"
+- name: "city"
+  dataType:
+    type: "String"
+- name: "state"
+  dataType:
+    type: "String"
+- name: "province"
+  dataType:
+    type: "String"
+- name: "country"
+  dataType:
+    type: "String"
+- name: "postal_code"
+  dataType:
+    type: "String"
+- name: "latitude"
+  dataType:
+    type: "String"
+- name: "longitude"
+  dataType:
+    type: "String"
+- name: "supplier_type"
+  dataType:
+    type: "String"

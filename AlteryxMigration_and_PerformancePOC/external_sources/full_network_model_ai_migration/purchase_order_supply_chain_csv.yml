@@ -1,0 +1,98 @@
+providerType: "ProphecyManaged"
+fields:
+- name: "order_line_bigint_key"
+  dataType:
+    type: "BigInt"
+- name: "purchase_order_number"
+  dataType:
+    type: "String"
+- name: "purchase_order_line_number"
+  dataType:
+    type: "BigInt"
+- name: "order_date"
+  dataType:
+    type: "String"
+- name: "delivery_date"
+  dataType:
+    type: "Date"
+- name: "first_delivery_date"
+  dataType:
+    type: "Date"
+- name: "partner_item_number"
+  dataType:
+    type: "String"
+- name: "origin_supplier_name"
+  dataType:
+    type: "String"
+- name: "origin_supplier_number"
+  dataType:
+    type: "BigInt"
+- name: "origin_supplier_site_code"
+  dataType:
+    type: "String"
+- name: "origin_supplier_mfg"
+  dataType:
+    type: "String"
+- name: "supplier_name"
+  dataType:
+    type: "String"
+- name: "supplier_number"
+  dataType:
+    type: "String"
+- name: "supplier_country"
+  dataType:
+    type: "String"
+- name: "origin_supplier_loading_port_actual"
+  dataType:
+    type: "String"
+- name: "origin_supplier_loading_port"
+  dataType:
+    type: "String"
+- name: "origin_supplier_country"
+  dataType:
+    type: "String"
+- name: "item_country_of_origin"
+  dataType:
+    type: "String"
+- name: "transport_mode"
+  dataType:
+    type: "String"
+- name: "port_source"
+  dataType:
+    type: "String"
+- name: "inventory_organization_bigint_key"
+  dataType:
+    type: "String"
+- name: "receiving_org_code"
+  dataType:
+    type: "String"
+- name: "receiving_org_name"
+  dataType:
+    type: "String"
+- name: "item_bigint_key"
+  dataType:
+    type: "BigInt"
+- name: "item_id"
+  dataType:
+    type: "String"
+- name: "item_type"
+  dataType:
+    type: "String"
+- name: "quantity_units"
+  dataType:
+    type: "BigInt"
+- name: "quantity_weight"
+  dataType:
+    type: "String"
+- name: "quantity_pallets"
+  dataType:
+    type: "String"
+- name: "quantity_containers"
+  dataType:
+    type: "String"
+- name: "mfg_cost"
+  dataType:
+    type: "String"
+- name: "receipt_cost"
+  dataType:
+    type: "Decimal"

@@ -1,0 +1,556 @@
+{
+  "id" : "sites_gem_demo",
+  "metainfo" : {
+    "label" : "sites_gem_demo",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "isTranspiledPipeline" : false,
+    "processesVsModelFiles" : {
+      "sites_filter_2##bThL47G7" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "sites_dedupe_1##HCXk3TZP" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "sites_union_all##a0xi4Pcp" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "sites_join_1##T35W2ePC" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "customer_dedupe_##Lpp8qvwZ" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "customer_reforma##TGdVJdgH" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "sites_source_f5OoAkTaEz" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "final##gp1uxjWi" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "sites_filter_1##oolat98l" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "supplier_dedupe_##Dsmiv6Ku" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "customer_sites_source_SF0tUfuD4H" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "sites_final_dedu##T87ZcV1K" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "sites_reformat_1##bEEdB2UP" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "suppliers_source_pRpx0DuvDV" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql",
+      "supplier_reforma##YVRgdWtc" : "models/sites_gem_demo/sites_gem_demo__sites_final_dedupe.sql"
+    }
+  },
+  "processes" : {
+    "MRtB0dbs6K" : {
+      "id" : "MRtB0dbs6K",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "customer_sites_source",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0,
+        "comment" : "Alteryx Tool: UniversalInput"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "includeFileNameColumn" : false,
+            "includeSheetNameColumn" : true,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/DS customer_site_v2.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : "Customer sites",
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "Arrow",
+              "fields" : [ {
+                "name" : "customer_site_key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Unique identifier for customer site"
+              }, {
+                "name" : "customer_name",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Customer company name"
+              }, {
+                "name" : "country",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Customer country"
+              }, {
+                "name" : "postal_code",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Customer postal code"
+              }, {
+                "name" : "latitude",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Customer site latitude"
+              }, {
+                "name" : "longitude",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Customer site longitude"
+              }, {
+                "name" : "org_name",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Organization name"
+              }, {
+                "name" : "lat",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Alternate latitude field"
+              }, {
+                "name" : "lon",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Alternate longitude field"
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "SF0tUfuD4H",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "final##gp1uxjWi" : {
+      "id" : "final##gp1uxjWi",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "sites_gem_demo__sites_final_dedupe",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "sites_gem_demo__sites_final_dedupe"
+      },
+      "visualMetaInfo" : {
+        "lastNodeProcessIds" : [ "final##gp1uxjWi" ],
+        "skipIfZeroRows" : false,
+        "visualProcessIds" : [ "final##gp1uxjWi", "sites_final_dedu##T87ZcV1K", "sites_union_all##a0xi4Pcp", "supplier_reforma##YVRgdWtc", "sites_join_1##T35W2ePC", "sites_reformat_1##bEEdB2UP", "supplier_dedupe_##Dsmiv6Ku", "suppliers_source_pRpx0DuvDV", "customer_reforma##TGdVJdgH", "sites_dedupe_1##HCXk3TZP", "customer_dedupe_##Lpp8qvwZ", "sites_filter_1##oolat98l", "sites_source_f5OoAkTaEz", "sites_filter_2##bThL47G7", "customer_sites_source_SF0tUfuD4H" ],
+        "type" : "table",
+        "isTemporaryTable" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "GvWvxthY",
+          "slug" : "in_0"
+        }, {
+          "id" : "i6WPX6ea",
+          "slug" : "in_1"
+        }, {
+          "id" : "EvpZpF3i",
+          "slug" : "in_2"
+        } ],
+        "outputs" : [ {
+          "id" : "Nzy3dA4S",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "uM05sOp83p" : {
+      "id" : "uM05sOp83p",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "suppliers_source",
+        "x" : 420,
+        "y" : 420,
+        "phase" : 0,
+        "comment" : "Alteryx Tool: UniversalInput"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "includeFileNameColumn" : false,
+            "includeSheetNameColumn" : true,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/new_DS__Suppliers.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : "Suppliers master",
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "Arrow",
+              "fields" : [ {
+                "name" : "Supplier Key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Unique identifier for supplier"
+              }, {
+                "name" : "supplier_name",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Supplier company name"
+              }, {
+                "name" : "supplier_number",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Supplier account number"
+              }, {
+                "name" : "supplier_site_code",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Supplier facility site code"
+              }, {
+                "name" : "country",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Supplier country location"
+              }, {
+                "name" : "postal_code",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Supplier postal code"
+              }, {
+                "name" : "latitude",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Supplier latitude coordinate"
+              }, {
+                "name" : "longitude",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Supplier longitude coordinate"
+              }, {
+                "name" : "supplier_type",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Type/category of supplier"
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "pRpx0DuvDV",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "qcbi5W4MFA" : {
+      "id" : "qcbi5W4MFA",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "sites_source",
+        "x" : 20,
+        "y" : 220,
+        "phase" : 0,
+        "comment" : "Alteryx Tool: UniversalInput"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "includeFileNameColumn" : false,
+            "includeSheetNameColumn" : true,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/DS__Sites.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : "Sites master data",
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "Arrow",
+              "fields" : [ {
+                "name" : "Customer Key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Unique identifier for the site/customer"
+              }, {
+                "name" : "Active",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Site active status flag"
+              }, {
+                "name" : "Latitude",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Site latitude coordinate"
+              }, {
+                "name" : "Longitude",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Site longitude coordinate"
+              }, {
+                "name" : "Sourcing Status",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Sourcing status for the site"
+              }, {
+                "name" : "Open Close Status",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Whether site can be opened/closed in optimization"
+              }, {
+                "name" : "Inventory Status",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Inventory management status"
+              }, {
+                "name" : "Opening Cost",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Cost to open the site"
+              }, {
+                "name" : "Operating Cost",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Operating cost per period"
+              }, {
+                "name" : "Closing  Cost",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Cost to close the site"
+              }, {
+                "name" : "postal_code",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Site postal code"
+              }, {
+                "name" : "country",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Site country"
+              }, {
+                "name" : "Site Type",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Type of site (warehouse, DC, etc.)"
+              }, {
+                "name" : "Zone 1",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Zone assignment level 1"
+              }, {
+                "name" : "Zone 2",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Zone assignment level 2"
+              }, {
+                "name" : "Zone 3",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Zone assignment level 3"
+              }, {
+                "name" : "Zone 4",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Zone assignment level 4"
+              }, {
+                "name" : "Zone _5",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Zone assignment level 5"
+              }, {
+                "name" : "Zone  6",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Zone assignment level 6"
+              }, {
+                "name" : "Zone  7",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Zone assignment level 7"
+              }, {
+                "name" : "Zone 8",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Zone assignment level 8"
+              }, {
+                "name" : "Notes",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Additional site notes"
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "f5OoAkTaEz",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "QyXfNWhRk0" : {
+      "id" : "QyXfNWhRk0",
+      "component" : "Visualize",
+      "metadata" : {
+        "label" : "sites_output_viz",
+        "x" : 1740,
+        "y" : 200,
+        "phase" : 0,
+        "comment" : "Final Sites output"
+      },
+      "properties" : { },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "xe2d5yZ8bJ",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ]
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "pRpx0DuvDV_to_ugs12rnQoi##NuIcMQic",
+    "source" : "uM05sOp83p",
+    "sourcePort" : "pRpx0DuvDV",
+    "target" : "final##gp1uxjWi",
+    "targetPort" : "GvWvxthY"
+  }, {
+    "id" : "SF0tUfuD4H_to_EG5dAAVlHa##uVbM188T",
+    "source" : "MRtB0dbs6K",
+    "sourcePort" : "SF0tUfuD4H",
+    "target" : "final##gp1uxjWi",
+    "targetPort" : "i6WPX6ea"
+  }, {
+    "id" : "f5OoAkTaEz_to_EHfUqKNPeO##x5TWg4p2",
+    "source" : "qcbi5W4MFA",
+    "sourcePort" : "f5OoAkTaEz",
+    "target" : "final##gp1uxjWi",
+    "targetPort" : "EvpZpF3i"
+  }, {
+    "id" : "conn_sites_final_dedu##T87ZcV1K_xe2d5yZ8bJ",
+    "source" : "final##gp1uxjWi",
+    "sourcePort" : "Nzy3dA4S",
+    "target" : "QyXfNWhRk0",
+    "targetPort" : "xe2d5yZ8bJ",
+    "isWireless" : false
+  } ],
+  "component" : "Pipeline"
+}

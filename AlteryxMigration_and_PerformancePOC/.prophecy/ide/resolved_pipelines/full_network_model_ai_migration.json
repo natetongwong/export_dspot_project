@@ -1,0 +1,2186 @@
+{
+  "id" : "full_network_model_ai_migration",
+  "metainfo" : {
+    "label" : "full_network_model_ai_migration",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "holding_cost_rate",
+          "kind" : {
+            "type" : "double",
+            "value" : "0.14"
+          }
+        }, {
+          "name" : "max_supply_default",
+          "kind" : {
+            "type" : "int",
+            "value" : "999999999"
+          }
+        }, {
+          "name" : "max_shelf_life",
+          "kind" : {
+            "type" : "int",
+            "value" : "999999999"
+          }
+        }, {
+          "name" : "rate_default",
+          "kind" : {
+            "type" : "int",
+            "value" : "99999999"
+          }
+        } ]
+      }
+    },
+    "isTranspiledPipeline" : false,
+    "processesVsModelFiles" : {
+      "supplier_product##jpMuOJmw" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "st_sites_with_co##HtKZRyHt" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "products_transfo##lXdEX4kJ" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "products_unique_##iEco4XDz" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "transfer_volumes##WJmc0xTi" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "outbound_custome##lzQBm2Rx" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "production_activ##kb4YzZEf" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "inbound_ports_se##p9nbXD4f" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "outbound_volumes##CqhXgx6h" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "site_product_bas##MlDgFqhq" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "inbound_weighted##zjoH9IO5" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "outbound_custome##BHVss4fa" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "final##shbIkNKR" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "inbound_ports_se##pEK3bq9H" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "sites_with_param##eG0GdLWa" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "st_sites_formatt##NjElAoyj" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "purchase_order_supply_chain_csv_VbeurFRoe2" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "production_final##Bee8XaFW" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "products_unique_##uwIpBWaz" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "customer_sites_f##JMQ87g6u" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "supplier_sites_f##gawDD70y" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "product_base_pro##ejECciKN" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "supplier_product##Lh6RqupW" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "supplier_ports_f##y924ok2l" : "models/full_network_model_ai_migration/full_network_model_ai_migration__origin_loading_ports.sql",
+      "production_combi##cPCizYv0" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "inbound_volumes_##Z2cSVaHX" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "inbound_ports_se##aW4JbahH" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "st_sites_deduped##CyNyeWbG" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "customer_sites_d##EfZNSgLq" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "ports_formatted##dCJxNaHg" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "outbound_freight##pD8xiYlp" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "customer_site_locations_csv_1CtAVN87XI" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "sites_formatted##R1ulFpYd" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "production_trans##PkYpqTU2" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "inbound_volumes_##JjX4SRhU" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "sites_transform##FlwU5m2S" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "sites_mt_only##WpNA5ZbZ" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "supplier_ports_p##qf0M2SGY" : "models/full_network_model_ai_migration/full_network_model_ai_migration__origin_loading_ports.sql",
+      "product_base_fil##eIpht17u" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "products_with_co##sJMgPCeO" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "organization_facilities_locations_csv_z7riMF6jUQ" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "country_continent_mapping_xlsx_Z4EYHre0EH" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "final##L2wOuRdp" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "inbound_weighted##vLrNDK2h" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "outbound_freight##bFkyQl4P" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "outbound_custome##qKFwliWs" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "transfer_order_logistics_csv_QD80kIxPYZ" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "products_with_gr##GagCpDIM" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "inbound_volumes_##t0Osrg2q" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "outbound_custome##hR52I4Tg" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "products_deduped##OX9mDVAh" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "transfer_volumes##nbGmEzYE" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "production_with_##PFWf8Yk8" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "products_unique_##TZgg7j5Z" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "outbound_volumes##ilvusjmH" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "supplier_locations_csv_PN02QySItD" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "all_sites_union##xfl5hxrG" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "supply_chain_parameters_xlsx_bLrWfJquw8" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "sites_final_dedu##OmtuJBX7" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "sales_fulfillment_csv_gkme3DmJ0D" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "suppliers_dedupe##Cxm0IGqp" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "supplier_ports_f##GDX0iW81" : "models/full_network_model_ai_migration/full_network_model_ai_migration__origin_loading_ports.sql",
+      "outbound_volumes##vVz8KenV" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "supplier_product##HZRjW3K5" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "warehouse_produc##x9s95NJF" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "inbound_ports_de##yVQF8K4p" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "supplier_product##Z64u4meO" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "final##hwasYXVe" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "origin_loading_ports_IH8agfp6" : "models/full_network_model_ai_migration/full_network_model_ai_migration__origin_loading_ports.sql",
+      "supplier_product##EH0nXbkR" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "product_master_csv_8xgBYxz8gH" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "transfer_volumes##MBrSe2dT" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql",
+      "outbound_freight##f1Xxw4VD" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "product_base##ysdZRXG5" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "inbound_weighted##WiRWh5oN" : "models/full_network_model_ai_migration/full_network_model_ai_migration__product_inventory_logistics.sql",
+      "outbound_custome##Nx2Pqwv1" : "models/full_network_model_ai_migration/full_network_model_ai_migration__facility_operations_inventory.sql",
+      "sites_deduped##QcQe9G3K" : "models/full_network_model_ai_migration/full_network_model_ai_migration__supply_cost_analysis.sql"
+    }
+  },
+  "processes" : {
+    "U2ac1r4Xcv" : {
+      "id" : "U2ac1r4Xcv",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "organization_facilities_locations_csv",
+        "x" : 100,
+        "y" : 320,
+        "phase" : 0,
+        "comment" : "Sites master data - locations, zones, costs"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "includeFileNameColumn" : false,
+            "includeSheetNameColumn" : true,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/DS__Sites.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : null,
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "ProphecyManaged",
+              "fields" : [ {
+                "name" : "org_id",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "org_code",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "org_name",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "business_unit",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "facility_type_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "facility_type_name",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address_line_1",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address_line_2",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address_line_3",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address_line_4",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "city",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "state",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "province",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "country",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "postal_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "lat",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "lon",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "FileName",
+                "dataType" : {
+                  "type" : "String"
+                }
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "z7riMF6jUQ",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "4df38d5c0f60"
+    },
+    "n9H90NGioM" : {
+      "id" : "n9H90NGioM",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "sales_fulfillment_csv",
+        "x" : 120,
+        "y" : 1880,
+        "phase" : 0,
+        "comment" : "Outbound shipments - replaces 10 split files"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/DS__outbound_shipments.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : "Sales order fulfillment data capturing shipment details including quantities, pricing, transportation methods, and delivery dates for order processing and logistics tracking.",
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "Arrow",
+              "fields" : [ {
+                "name" : "sales_order_bigint_key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "nativeType" : "String"
+              }, {
+                "name" : "sales_fulfillment_line_bigint_key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "nativeType" : "String"
+              }, {
+                "name" : "inventory_organization_bigint_key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "nativeType" : "String"
+              }, {
+                "name" : "customer_site_bigint_key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "nativeType" : "String"
+              }, {
+                "name" : "item_bigint_key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "nativeType" : "String"
+              }, {
+                "name" : "ship_date",
+                "dataType" : {
+                  "type" : "date32"
+                },
+                "nativeType" : "Date"
+              }, {
+                "name" : "quantity_units",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "nativeType" : "String"
+              }, {
+                "name" : "quantity_weight",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "nativeType" : "String"
+              }, {
+                "name" : "transportation_cost",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "nativeType" : "String"
+              }, {
+                "name" : "unit_selling_price",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "nativeType" : "String"
+              }, {
+                "name" : "shipment_method",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "nativeType" : "String"
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "gkme3DmJ0D",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "0AgoM5ylHc" : {
+      "id" : "0AgoM5ylHc",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "supply_chain_parameters_xlsx",
+        "x" : 100,
+        "y" : 720,
+        "phase" : 0,
+        "comment" : "Model parameters configuration"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/MT_parameters.xlsx"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "xlsx",
+          "category" : "file",
+          "properties" : {
+            "allowUndefinedRows" : true,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "FilterValue" : null,
+            "description" : "Model parameters - zones, rates, constraints",
+            "inferenceDataSamplingLimit" : null,
+            "ignoreCellFormatting" : null,
+            "enableSchemaMerging" : null,
+            "cellRange" : null,
+            "dateFormatRef" : null,
+            "allNullRowsPeekLimit" : 100,
+            "FilterOption" : null,
+            "outputSheetColumnName" : null,
+            "sheetNames" : null,
+            "skipUndefinedRows" : null,
+            "schema" : {
+              "providerType" : "Arrow",
+              "fields" : [ {
+                "name" : "parameter_key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Unique identifier for the parameter"
+              }, {
+                "name" : "parameter_name",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Name of the parameter"
+              }, {
+                "name" : "value",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Parameter value (text)"
+              }, {
+                "name" : "value_numeric",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Parameter value (numeric)"
+              }, {
+                "name" : "units",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Units of measurement"
+              }, {
+                "name" : "category",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Parameter category"
+              }, {
+                "name" : "supplier_key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Associated supplier key"
+              }, {
+                "name" : "supplier_type",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Type of supplier"
+              }, {
+                "name" : "site_type",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Type of site this parameter applies to"
+              }, {
+                "name" : "product_group",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Product group this parameter applies to"
+              }, {
+                "name" : "source_zone",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Source zone for the parameter"
+              }, {
+                "name" : "destination_zone",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Destination zone for the parameter"
+              }, {
+                "name" : "time_period_start",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Start of time period when parameter is effective"
+              }, {
+                "name" : "time_period_end",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "End of time period when parameter is effective"
+              }, {
+                "name" : "effective_date",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Date when parameter becomes effective"
+              }, {
+                "name" : "expiration_date",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Date when parameter expires"
+              }, {
+                "name" : "priority",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Priority level of the parameter"
+              }, {
+                "name" : "source",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Data source for this parameter"
+              }, {
+                "name" : "business_sme",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Business subject matter expert owner"
+              }, {
+                "name" : "last_reviewed",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Date of last review"
+              }, {
+                "name" : "notes",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Additional notes"
+              } ]
+            },
+            "ReadMethod" : "SingleSheetData",
+            "timeFormatRef" : null,
+            "allowIncompleteRows" : true,
+            "sheetName" : null,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "allowAllNullRows" : null,
+            "fileNameColumnName" : null,
+            "defaultColumnPrefix" : null,
+            "timestampFormatRef" : null,
+            "password" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "bLrWfJquw8",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "4df38d5c0f60"
+    },
+    "final##shbIkNKR" : {
+      "id" : "final##shbIkNKR",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "full_network_model_ai_migration__product_inventory_logistics",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "full_network_model_ai_migration__product_inventory_logistics"
+      },
+      "visualMetaInfo" : {
+        "lastNodeProcessIds" : [ "final##shbIkNKR" ],
+        "skipIfZeroRows" : false,
+        "visualProcessIds" : [ "final##shbIkNKR", "products_transfo##lXdEX4kJ", "products_deduped##OX9mDVAh", "products_with_gr##GagCpDIM", "products_with_co##sJMgPCeO", "product_base_pro##ejECciKN", "inbound_weighted##zjoH9IO5", "outbound_freight##f1Xxw4VD", "product_base_fil##eIpht17u", "inbound_weighted##WiRWh5oN", "outbound_freight##pD8xiYlp", "product_base##ysdZRXG5", "product_master_csv_8xgBYxz8gH", "inbound_weighted##vLrNDK2h", "purchase_order_supply_chain_csv_VbeurFRoe2", "outbound_freight##bFkyQl4P", "sales_fulfillment_csv_gkme3DmJ0D" ],
+        "type" : "table",
+        "isTemporaryTable" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "TLPozDuY",
+          "slug" : "in_0"
+        }, {
+          "id" : "nBwoWMAT",
+          "slug" : "in_1"
+        }, {
+          "id" : "e3xjqVFP",
+          "slug" : "in_2"
+        } ],
+        "outputs" : [ {
+          "id" : "bQpc5Plr",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "bbb10376d997"
+    },
+    "jRjgAA7ehZ" : {
+      "id" : "jRjgAA7ehZ",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "transfer_order_logistics_csv",
+        "x" : 100,
+        "y" : 1120,
+        "phase" : 0,
+        "comment" : "Transfer records between sites"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "includeFileNameColumn" : false,
+            "includeSheetNameColumn" : true,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/new_DS__new_transfers.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : null,
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "ProphecyManaged",
+              "fields" : [ {
+                "name" : "transfer_order_line_bigint_key",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "hash_diff",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "fact_date",
+                "dataType" : {
+                  "type" : "Date"
+                }
+              }, {
+                "name" : "source_organization_code",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "destination_organization_code",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "item_bigint_key",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "item_id",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "shipped_quantity",
+                "dataType" : {
+                  "type" : "Decimal"
+                }
+              }, {
+                "name" : "uom_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "mode_of_transport",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "gross_weight",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "units_per_pallet",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pallets",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "freight_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "QD80kIxPYZ",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "4df38d5c0f60"
+    },
+    "NlDMlounTz7NRopBblhLx$$uai9oNC7Pt2u8XGBKV9qG" : {
+      "id" : "NlDMlounTz7NRopBblhLx$$uai9oNC7Pt2u8XGBKV9qG",
+      "component" : "Comment",
+      "metadata" : {
+        "label" : "Comment_1",
+        "x" : 280,
+        "y" : 1120,
+        "height" : 45,
+        "width" : 220,
+        "phase" : 0
+      },
+      "properties" : {
+        "comment" : ""
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ]
+      }
+    },
+    "26ba7d29ca1d" : {
+      "id" : "26ba7d29ca1d",
+      "component" : "Comment",
+      "metadata" : {
+        "label" : "pipeline_description",
+        "x" : 3500,
+        "y" : 1020,
+        "phase" : 0
+      },
+      "properties" : {
+        "comment" : "Milwaukee Tool Full Network Model - Part 1 Migration from Alteryx. Contains 319 transformation tools across 3 containers (Sites, Production, Products). Each container produces one output table.",
+        "connectedNodes" : [ "final##hwasYXVe", "final##L2wOuRdp", "final##shbIkNKR" ]
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "4df38d5c0f60" : {
+      "id" : "4df38d5c0f60",
+      "component" : "VisualGroup",
+      "metadata" : {
+        "label" : "data_sources_group",
+        "x" : 20,
+        "y" : 20,
+        "height" : 1680,
+        "width" : 280,
+        "phase" : 0
+      },
+      "properties" : {
+        "isCollapsed" : false,
+        "actualDimensions" : null
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "oMgsJcDtiZ" : {
+      "id" : "oMgsJcDtiZ",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "customer_site_locations_csv",
+        "x" : 100,
+        "y" : 520,
+        "phase" : 0,
+        "comment" : "Customer site locations"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "includeFileNameColumn" : false,
+            "includeSheetNameColumn" : true,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/DS customer_site_v2.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : null,
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "ProphecyManaged",
+              "fields" : [ {
+                "name" : "customer_site_id",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "customer_site_base_id",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "account_number",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "account_name",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "mkedg1",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "mkedg2",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "mkedg3",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "mkedg4",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "mkedg5",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "site_number",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "location_name",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address1",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address2",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address3",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address4",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "city",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "state",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "province",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "country",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "postal_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "lat",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "lon",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "latlon_source",
+                "dataType" : {
+                  "type" : "String"
+                }
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "1CtAVN87XI",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "4df38d5c0f60"
+    },
+    "mxk53CTTVJ" : {
+      "id" : "mxk53CTTVJ",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "supplier_locations_csv",
+        "x" : 100,
+        "y" : 920,
+        "phase" : 0,
+        "comment" : "Suppliers master - names, locations, site codes"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "moveFilesToDestinationFolder" : false,
+            "includeFileNameColumn" : false,
+            "includeSheetNameColumn" : true,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/new_DS__Suppliers.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : null,
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "ProphecyManaged",
+              "fields" : [ {
+                "name" : "supplier_site_bigint_key",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "supplier_name",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "supplier_number",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "supplier_site_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address1",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address2",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address3",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "address4",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "city",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "state",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "province",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "country",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "postal_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "latitude",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "longitude",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "supplier_type",
+                "dataType" : {
+                  "type" : "String"
+                }
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "PN02QySItD",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "4df38d5c0f60"
+    },
+    "TRAt0f2S1i" : {
+      "id" : "TRAt0f2S1i",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "purchase_order_supply_chain_csv",
+        "x" : 100,
+        "y" : 1320,
+        "phase" : 0,
+        "comment" : "Inbound shipments - purchase orders, suppliers, delivery metrics"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "includeFileNameColumn" : false,
+            "includeSheetNameColumn" : true,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/DS__v6_Inbound_Shipments.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : null,
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "ProphecyManaged",
+              "fields" : [ {
+                "name" : "order_line_bigint_key",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "purchase_order_number",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "purchase_order_line_number",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "order_date",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "delivery_date",
+                "dataType" : {
+                  "type" : "Date"
+                }
+              }, {
+                "name" : "first_delivery_date",
+                "dataType" : {
+                  "type" : "Date"
+                }
+              }, {
+                "name" : "partner_item_number",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "origin_supplier_name",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "origin_supplier_number",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "origin_supplier_site_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "origin_supplier_mfg",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "supplier_name",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "supplier_number",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "supplier_country",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "origin_supplier_loading_port_actual",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "origin_supplier_loading_port",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "origin_supplier_country",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "item_country_of_origin",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "transport_mode",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "port_source",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "inventory_organization_bigint_key",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "receiving_org_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "receiving_org_name",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "item_bigint_key",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "item_id",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "item_type",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "quantity_units",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "quantity_weight",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "quantity_pallets",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "quantity_containers",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "mfg_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "receipt_cost",
+                "dataType" : {
+                  "type" : "Decimal"
+                }
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "VbeurFRoe2",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "4df38d5c0f60"
+    },
+    "supplier_ports_p##qf0M2SGY" : {
+      "id" : "supplier_ports_p##qf0M2SGY",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "full_network_model_ai_migration__origin_loading_ports",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "full_network_model_ai_migration__origin_loading_ports"
+      },
+      "visualMetaInfo" : {
+        "lastNodeProcessIds" : [ "origin_loading_ports_IH8agfp6" ],
+        "skipIfZeroRows" : false,
+        "visualProcessIds" : [ "origin_loading_ports_IH8agfp6", "supplier_ports_p##qf0M2SGY", "supplier_ports_f##GDX0iW81", "supplier_ports_f##y924ok2l", "purchase_order_supply_chain_csv_VbeurFRoe2" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "x3k19LVU",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "IH8agfp6",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "final##L2wOuRdp" : {
+      "id" : "final##L2wOuRdp",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "full_network_model_ai_migration__supply_cost_analysis",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "full_network_model_ai_migration__supply_cost_analysis"
+      },
+      "visualMetaInfo" : {
+        "lastNodeProcessIds" : [ "final##L2wOuRdp" ],
+        "skipIfZeroRows" : false,
+        "visualProcessIds" : [ "final##L2wOuRdp", "production_trans##PkYpqTU2", "production_final##Bee8XaFW", "production_combi##cPCizYv0", "warehouse_produc##x9s95NJF", "supplier_product##HZRjW3K5", "production_activ##kb4YzZEf", "supplier_product##jpMuOJmw", "supplier_locations_csv_PN02QySItD", "product_master_csv_8xgBYxz8gH", "production_with_##PFWf8Yk8", "supplier_product##EH0nXbkR", "site_product_bas##MlDgFqhq", "inbound_volumes_##JjX4SRhU", "outbound_volumes##vVz8KenV", "transfer_volumes##nbGmEzYE", "supplier_product##Lh6RqupW", "sites_formatted##R1ulFpYd", "products_unique_##TZgg7j5Z", "inbound_volumes_##t0Osrg2q", "outbound_volumes##CqhXgx6h", "transfer_volumes##WJmc0xTi", "supplier_product##Z64u4meO", "purchase_order_supply_chain_csv_VbeurFRoe2", "sites_mt_only##WpNA5ZbZ", "products_unique_##uwIpBWaz", "inbound_volumes_##Z2cSVaHX", "purchase_order_supply_chain_csv_VbeurFRoe2", "outbound_volumes##ilvusjmH", "sales_fulfillment_csv_gkme3DmJ0D", "transfer_volumes##MBrSe2dT", "transfer_order_logistics_csv_QD80kIxPYZ", "sites_deduped##QcQe9G3K", "organization_facilities_locations_csv_z7riMF6jUQ", "products_unique_##iEco4XDz", "product_master_csv_8xgBYxz8gH" ],
+        "type" : "table",
+        "isTemporaryTable" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "i6PgBS1C",
+          "slug" : "in_0"
+        }, {
+          "id" : "F3ufgvuT",
+          "slug" : "in_1"
+        }, {
+          "id" : "b4eOptMJ",
+          "slug" : "in_2"
+        }, {
+          "id" : "oG7rysrN",
+          "slug" : "in_3"
+        }, {
+          "id" : "re9GxkiK",
+          "slug" : "in_4"
+        }, {
+          "id" : "OBv0pwNk",
+          "slug" : "in_5"
+        }, {
+          "id" : "eKatgTAw",
+          "slug" : "in_6"
+        }, {
+          "id" : "VGda8CNQ",
+          "slug" : "in_7"
+        } ],
+        "outputs" : [ {
+          "id" : "tD7fUbFB",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "461fff03d12e"
+    },
+    "s6cpU9I82A" : {
+      "id" : "s6cpU9I82A",
+      "component" : "Visualize",
+      "metadata" : {
+        "label" : "viz_production_output",
+        "x" : 260,
+        "y" : 120,
+        "phase" : 0,
+        "comment" : "Exposes Production output for Analysis dashboards"
+      },
+      "properties" : { },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ed55OCd0I2",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ]
+      },
+      "parent" : "461fff03d12e"
+    },
+    "9iUhumiJs5" : {
+      "id" : "9iUhumiJs5",
+      "component" : "Visualize",
+      "metadata" : {
+        "label" : "products_output_viz",
+        "x" : 260,
+        "y" : 120,
+        "phase" : 0,
+        "comment" : "Exposes Products output for Analysis dashboards"
+      },
+      "properties" : { },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "kaJbv01x8a",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ]
+      },
+      "parent" : "bbb10376d997"
+    },
+    "bbb10376d997" : {
+      "id" : "bbb10376d997",
+      "component" : "VisualGroup",
+      "metadata" : {
+        "label" : "products_container",
+        "x" : 2600,
+        "y" : 2660,
+        "height" : 280,
+        "width" : 400,
+        "phase" : 0
+      },
+      "properties" : {
+        "isCollapsed" : false,
+        "actualDimensions" : null
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "QhjcWaKm4Y" : {
+      "id" : "QhjcWaKm4Y",
+      "component" : "Visualize",
+      "metadata" : {
+        "label" : "visualize_sites_output",
+        "x" : 260,
+        "y" : 160,
+        "phase" : 0,
+        "comment" : "Exposes Sites output for Analysis dashboards"
+      },
+      "properties" : { },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "CiV6DGlKib",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ]
+      },
+      "parent" : "74ee5af3737d"
+    },
+    "74ee5af3737d" : {
+      "id" : "74ee5af3737d",
+      "component" : "VisualGroup",
+      "metadata" : {
+        "label" : "sites_container",
+        "x" : 3340,
+        "y" : 660,
+        "height" : 315,
+        "width" : 400,
+        "phase" : 0
+      },
+      "properties" : {
+        "isCollapsed" : false,
+        "actualDimensions" : null
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "d1aLIviiW2" : {
+      "id" : "d1aLIviiW2",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "country_continent_mapping_xlsx",
+        "x" : 100,
+        "y" : 120,
+        "phase" : 0,
+        "comment" : "Country-continent geographic mapping"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "includeFileNameColumn" : true,
+            "includeSheetNameColumn" : false,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/Country-continent Mapping.xlsx"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "xlsx",
+          "category" : "file",
+          "properties" : {
+            "allowUndefinedRows" : true,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "FilterValue" : null,
+            "description" : "Country to continent mapping for geographic grouping",
+            "inferenceDataSamplingLimit" : null,
+            "ignoreCellFormatting" : null,
+            "enableSchemaMerging" : null,
+            "cellRange" : null,
+            "dateFormatRef" : null,
+            "allNullRowsPeekLimit" : 100,
+            "FilterOption" : null,
+            "outputSheetColumnName" : null,
+            "sheetNames" : null,
+            "skipUndefinedRows" : null,
+            "schema" : {
+              "providerType" : "Arrow",
+              "fields" : [ {
+                "name" : "Country Code",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Country code identifier"
+              }, {
+                "name" : "Continent",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Continent name"
+              } ]
+            },
+            "ReadMethod" : "SingleSheetData",
+            "timeFormatRef" : null,
+            "allowIncompleteRows" : true,
+            "sheetName" : null,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "allowAllNullRows" : null,
+            "fileNameColumnName" : null,
+            "defaultColumnPrefix" : null,
+            "timestampFormatRef" : null,
+            "password" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Z4EYHre0EH",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "4df38d5c0f60"
+    },
+    "461fff03d12e" : {
+      "id" : "461fff03d12e",
+      "component" : "VisualGroup",
+      "metadata" : {
+        "label" : "production_container",
+        "x" : 3900,
+        "y" : 2060,
+        "height" : 280,
+        "width" : 400,
+        "phase" : 0
+      },
+      "properties" : {
+        "isCollapsed" : false,
+        "actualDimensions" : null
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "XPyCyHbFDl" : {
+      "id" : "XPyCyHbFDl",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "product_master_csv",
+        "x" : 100,
+        "y" : 1520,
+        "phase" : 0,
+        "comment" : "Product master - items, weights, volumes, costs"
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "includeFileNameColumn" : false,
+            "includeSheetNameColumn" : true,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/new_DS__Product_Master.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : null,
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "ProphecyManaged",
+              "fields" : [ {
+                "name" : "item_bigint_key",
+                "dataType" : {
+                  "type" : "BigInt"
+                }
+              }, {
+                "name" : "item_id",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "selling_item_number",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "country_of_origin",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "item_class",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "item_description",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pl0_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pl0_description",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pl1_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pl1_description",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pl2_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pl2_description",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pl3_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pl3_description",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pl4_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "pl4_description",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "global_planning_abc_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "npd_launch_date",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "discontinued_date",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "item_status",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "unit_volume",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "unit_weight",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "units_per_case",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "units_per_pallet",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "units_per_container",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "active_estimated_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "applied_standard_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "direct_labor_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "direct_material_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "duty_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "fixed_overhead_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "freight_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "import_fee_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "purchase_burden_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "standard_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "variable_overhead_cost",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "special_handling_code",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "has_lithium_ion",
+                "dataType" : {
+                  "type" : "Boolean"
+                }
+              }, {
+                "name" : "battery_size",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "battery_watt_hours",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "partner_item_number",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "transition_activel",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "transition_activeg",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "tskul_start_date",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "tskul_end_date",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "tskug_start_date",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "tskug_end_date",
+                "dataType" : {
+                  "type" : "String"
+                }
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "8xgBYxz8gH",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "4df38d5c0f60"
+    },
+    "final##hwasYXVe" : {
+      "id" : "final##hwasYXVe",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "full_network_model_ai_migration__facility_operations_inventory",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "full_network_model_ai_migration__facility_operations_inventory"
+      },
+      "visualMetaInfo" : {
+        "lastNodeProcessIds" : [ "final##hwasYXVe" ],
+        "skipIfZeroRows" : false,
+        "visualProcessIds" : [ "final##hwasYXVe", "sites_transform##FlwU5m2S", "sites_final_dedu##OmtuJBX7", "sites_with_param##eG0GdLWa", "supply_chain_parameters_xlsx_bLrWfJquw8", "all_sites_union##xfl5hxrG", "st_sites_with_co##HtKZRyHt", "country_continent_mapping_xlsx_Z4EYHre0EH", "supplier_sites_f##gawDD70y", "customer_sites_f##JMQ87g6u", "outbound_custome##qKFwliWs", "ports_formatted##dCJxNaHg", "st_sites_formatt##NjElAoyj", "suppliers_dedupe##Cxm0IGqp", "supplier_locations_csv_PN02QySItD", "customer_sites_d##EfZNSgLq", "customer_site_locations_csv_1CtAVN87XI", "outbound_custome##BHVss4fa", "customer_site_locations_csv_1CtAVN87XI", "inbound_ports_de##yVQF8K4p", "st_sites_deduped##CyNyeWbG", "organization_facilities_locations_csv_z7riMF6jUQ", "outbound_custome##lzQBm2Rx", "inbound_ports_se##aW4JbahH", "outbound_custome##hR52I4Tg", "inbound_ports_se##p9nbXD4f", "outbound_custome##Nx2Pqwv1", "sales_fulfillment_csv_gkme3DmJ0D", "inbound_ports_se##pEK3bq9H", "purchase_order_supply_chain_csv_VbeurFRoe2" ],
+        "type" : "table",
+        "isTemporaryTable" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "vSWx0uyp",
+          "slug" : "in_0"
+        }, {
+          "id" : "uV3tphQQ",
+          "slug" : "in_1"
+        }, {
+          "id" : "RGSaeC7N",
+          "slug" : "in_2"
+        }, {
+          "id" : "tr0L7cXr",
+          "slug" : "in_3"
+        }, {
+          "id" : "PQW4qF5b",
+          "slug" : "in_4"
+        }, {
+          "id" : "F5LQqXZV",
+          "slug" : "in_5"
+        }, {
+          "id" : "NS1cl9Ah",
+          "slug" : "in_6"
+        }, {
+          "id" : "W1r5COTX",
+          "slug" : "in_7"
+        } ],
+        "outputs" : [ {
+          "id" : "OjqLk1st",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "74ee5af3737d"
+    }
+  },
+  "connections" : [ {
+    "id" : "z7riMF6jUQ_to_bB6KQay2Uu##gAqYWb6d",
+    "source" : "U2ac1r4Xcv",
+    "sourcePort" : "z7riMF6jUQ",
+    "target" : "final##hwasYXVe",
+    "targetPort" : "vSWx0uyp"
+  }, {
+    "id" : "Z4EYHre0EH_to_PsiDxGsbxh##S5XkN0dI",
+    "source" : "d1aLIviiW2",
+    "sourcePort" : "Z4EYHre0EH",
+    "target" : "final##hwasYXVe",
+    "targetPort" : "uV3tphQQ"
+  }, {
+    "id" : "gkme3DmJ0D_to_7SkpvWJPpJ##qtgWJFNQ",
+    "source" : "n9H90NGioM",
+    "sourcePort" : "gkme3DmJ0D",
+    "target" : "final##hwasYXVe",
+    "targetPort" : "RGSaeC7N"
+  }, {
+    "id" : "VbeurFRoe2_to_XXByMbgrR5##fCfGSGIZ",
+    "source" : "TRAt0f2S1i",
+    "sourcePort" : "VbeurFRoe2",
+    "target" : "final##hwasYXVe",
+    "targetPort" : "tr0L7cXr"
+  }, {
+    "id" : "1CtAVN87XI_to_bCIY4KXPYh##vCtbfzXS",
+    "source" : "oMgsJcDtiZ",
+    "sourcePort" : "1CtAVN87XI",
+    "target" : "final##hwasYXVe",
+    "targetPort" : "PQW4qF5b"
+  }, {
+    "id" : "1CtAVN87XI_to_bCIY4KXPYh##iHDSJCSO",
+    "source" : "oMgsJcDtiZ",
+    "sourcePort" : "1CtAVN87XI",
+    "target" : "final##hwasYXVe",
+    "targetPort" : "F5LQqXZV"
+  }, {
+    "id" : "PN02QySItD_to_WIBDCtlppE##Grusiru8",
+    "source" : "mxk53CTTVJ",
+    "sourcePort" : "PN02QySItD",
+    "target" : "final##hwasYXVe",
+    "targetPort" : "NS1cl9Ah"
+  }, {
+    "id" : "bLrWfJquw8_to_fU7yx29Osn##AKrheyk8",
+    "source" : "0AgoM5ylHc",
+    "sourcePort" : "bLrWfJquw8",
+    "target" : "final##hwasYXVe",
+    "targetPort" : "W1r5COTX"
+  }, {
+    "id" : "VbeurFRoe2_to_PfGFTwFdwg##a5Grt6d6",
+    "source" : "TRAt0f2S1i",
+    "sourcePort" : "VbeurFRoe2",
+    "target" : "final##shbIkNKR",
+    "targetPort" : "TLPozDuY"
+  }, {
+    "id" : "8xgBYxz8gH_to_iJpILrSd5L##SLAHXIJW",
+    "source" : "XPyCyHbFDl",
+    "sourcePort" : "8xgBYxz8gH",
+    "target" : "final##shbIkNKR",
+    "targetPort" : "nBwoWMAT"
+  }, {
+    "id" : "gkme3DmJ0D_to_PVvKqJKsf3##vQ20fuie",
+    "source" : "n9H90NGioM",
+    "sourcePort" : "gkme3DmJ0D",
+    "target" : "final##shbIkNKR",
+    "targetPort" : "e3xjqVFP"
+  }, {
+    "id" : "VbeurFRoe2_to_h0YSOPeIm4##SwZAyyrt",
+    "source" : "TRAt0f2S1i",
+    "sourcePort" : "VbeurFRoe2",
+    "target" : "final##L2wOuRdp",
+    "targetPort" : "i6PgBS1C"
+  }, {
+    "id" : "PN02QySItD_to_DnhmfWBEx5##wmbYyZeG",
+    "source" : "mxk53CTTVJ",
+    "sourcePort" : "PN02QySItD",
+    "target" : "final##L2wOuRdp",
+    "targetPort" : "F3ufgvuT"
+  }, {
+    "id" : "8xgBYxz8gH_to_YfUHIsOrJX##uwFaicXj",
+    "source" : "XPyCyHbFDl",
+    "sourcePort" : "8xgBYxz8gH",
+    "target" : "final##L2wOuRdp",
+    "targetPort" : "b4eOptMJ"
+  }, {
+    "id" : "8xgBYxz8gH_to_YfUHIsOrJX##O0s8wMaP",
+    "source" : "XPyCyHbFDl",
+    "sourcePort" : "8xgBYxz8gH",
+    "target" : "final##L2wOuRdp",
+    "targetPort" : "oG7rysrN"
+  }, {
+    "id" : "QD80kIxPYZ_to_Xn4rbC6OYF##pKDm9kDA",
+    "source" : "jRjgAA7ehZ",
+    "sourcePort" : "QD80kIxPYZ",
+    "target" : "final##L2wOuRdp",
+    "targetPort" : "re9GxkiK"
+  }, {
+    "id" : "z7riMF6jUQ_to_X9PzGFQ5PA##wO3di5MD",
+    "source" : "U2ac1r4Xcv",
+    "sourcePort" : "z7riMF6jUQ",
+    "target" : "final##L2wOuRdp",
+    "targetPort" : "OBv0pwNk"
+  }, {
+    "id" : "VbeurFRoe2_to_h0YSOPeIm4##wU0SCGb3",
+    "source" : "TRAt0f2S1i",
+    "sourcePort" : "VbeurFRoe2",
+    "target" : "final##L2wOuRdp",
+    "targetPort" : "eKatgTAw"
+  }, {
+    "id" : "gkme3DmJ0D_to_zHxOGIR8fO##JBeMFnl1",
+    "source" : "n9H90NGioM",
+    "sourcePort" : "gkme3DmJ0D",
+    "target" : "final##L2wOuRdp",
+    "targetPort" : "VGda8CNQ"
+  }, {
+    "id" : "VbeurFRoe2_to_q6YqKpx81j##YZWBvl7C",
+    "source" : "TRAt0f2S1i",
+    "sourcePort" : "VbeurFRoe2",
+    "target" : "supplier_ports_p##qf0M2SGY",
+    "targetPort" : "x3k19LVU"
+  }, {
+    "id" : "conn_products_transfo##lXdEX4kJ_kaJbv01x8a",
+    "source" : "final##shbIkNKR",
+    "sourcePort" : "bQpc5Plr",
+    "target" : "9iUhumiJs5",
+    "targetPort" : "kaJbv01x8a",
+    "isWireless" : false
+  }, {
+    "id" : "conn_production_trans##PkYpqTU2_ed55OCd0I2",
+    "source" : "final##L2wOuRdp",
+    "sourcePort" : "tD7fUbFB",
+    "target" : "s6cpU9I82A",
+    "targetPort" : "ed55OCd0I2",
+    "isWireless" : false
+  }, {
+    "id" : "conn_sites_transform##FlwU5m2S_CiV6DGlKib",
+    "source" : "final##hwasYXVe",
+    "sourcePort" : "OjqLk1st",
+    "target" : "QhjcWaKm4Y",
+    "targetPort" : "CiV6DGlKib",
+    "isWireless" : false
+  } ],
+  "component" : "Pipeline"
+}

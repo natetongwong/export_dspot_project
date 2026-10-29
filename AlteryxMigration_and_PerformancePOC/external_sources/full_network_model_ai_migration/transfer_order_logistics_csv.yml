@@ -1,0 +1,44 @@
+providerType: "ProphecyManaged"
+fields:
+- name: "transfer_order_line_bigint_key"
+  dataType:
+    type: "BigInt"
+- name: "hash_diff"
+  dataType:
+    type: "String"
+- name: "fact_date"
+  dataType:
+    type: "Date"
+- name: "source_organization_code"
+  dataType:
+    type: "BigInt"
+- name: "destination_organization_code"
+  dataType:
+    type: "BigInt"
+- name: "item_bigint_key"
+  dataType:
+    type: "BigInt"
+- name: "item_id"
+  dataType:
+    type: "String"
+- name: "shipped_quantity"
+  dataType:
+    type: "Decimal"
+- name: "uom_code"
+  dataType:
+    type: "String"
+- name: "mode_of_transport"
+  dataType:
+    type: "String"
+- name: "gross_weight"
+  dataType:
+    type: "String"
+- name: "units_per_pallet"
+  dataType:
+    type: "String"
+- name: "pallets"
+  dataType:
+    type: "String"
+- name: "freight_cost"
+  dataType:
+    type: "String"

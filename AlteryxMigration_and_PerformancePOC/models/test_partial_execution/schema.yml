@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "test_partial_execution__aggregate_step"
+  tags:
+  - "prophecy_temp"

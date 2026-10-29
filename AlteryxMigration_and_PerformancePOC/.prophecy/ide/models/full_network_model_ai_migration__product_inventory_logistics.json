@@ -1,0 +1,1076 @@
+{
+  "id" : "full_network_model_ai_migration__product_inventory_logistics",
+  "metainfo" : {
+    "label" : "full_network_model_ai_migration__product_inventory_logistics",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"products_output\"",
+        "materialized" : "table",
+        "database" : "\"ProphecyCompute\"",
+        "schema" : "\"main\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "products_transfo##lXdEX4kJ" : {
+      "id" : "products_transfo##lXdEX4kJ",
+      "component" : "OrderBy",
+      "metadata" : {
+        "label" : "sorted_products",
+        "x" : 2400,
+        "y" : 2780,
+        "phase" : 0,
+        "leadingComment" : "Step 9: Final ordering"
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : "\"Name\""
+          },
+          "sortType" : "asc"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "iATAPEhi",
+          "slug" : "products_deduped"
+        } ],
+        "outputs" : [ {
+          "id" : "bQpc5Plr",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "inbound_weighted##zjoH9IO5" : {
+      "id" : "inbound_weighted##zjoH9IO5",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "weighted_product_costs",
+        "x" : 1300,
+        "y" : 2860,
+        "phase" : 0
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "item_id"
+          },
+          "alias" : "\"Product\"",
+          "_row_id" : "1265077405"
+        }, {
+          "expression" : {
+            "expression" : "SUM(TRY_CAST(quantity_units AS DOUBLE) * COALESCE(TRY_CAST(mfg_cost AS DOUBLE), 0))"
+          },
+          "alias" : "total_cost_weighted",
+          "_row_id" : "877362207"
+        }, {
+          "expression" : {
+            "expression" : "SUM(TRY_CAST(quantity_units AS DOUBLE))"
+          },
+          "alias" : "total_inbound_quantity",
+          "_row_id" : "916886140"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN SUM(TRY_CAST(quantity_units AS DOUBLE)) > 0\n    THEN SUM(TRY_CAST(quantity_units AS DOUBLE) * COALESCE(TRY_CAST(mfg_cost AS DOUBLE), 0))\n    / SUM(TRY_CAST(quantity_units AS DOUBLE))\n  ELSE 0\nEND"
+          },
+          "alias" : "weighted_avg_cost",
+          "_row_id" : "1613635356"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "item_id"
+          },
+          "_row_id" : "1016498472"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "fjKbBQ5f",
+          "slug" : "inbound_weighted_costs_filter_001"
+        } ],
+        "outputs" : [ {
+          "id" : "hcHPhkLm",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "final##shbIkNKR" : {
+      "id" : "final##shbIkNKR",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "product_inventory_logistics",
+        "phase" : 0,
+        "comment" : "Writes processed product data to the products_output table in overwrite mode.."
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM sorted_products\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "WztFeQ6p",
+          "slug" : "sorted_products"
+        } ],
+        "outputs" : [ {
+          "id" : "DbtLkX59",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "parent" : "products_container"
+    },
+    "purchase_order_supply_chain_csv_VbeurFRoe2" : {
+      "id" : "purchase_order_supply_chain_csv_VbeurFRoe2",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "purchase_order_supply_chain_csv"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_7",
+          "id" : "output_port_7",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ prophecy_tmp_source('full_network_model_ai_migration', 'purchase_order_supply_chain_csv') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_7",
+          "slug" : "input_port_7"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_7",
+          "slug" : "output_port_7"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "product_base_pro##ejECciKN" : {
+      "id" : "product_base_pro##ejECciKN",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "product_specifications",
+        "x" : 1300,
+        "y" : 2460,
+        "phase" : 0,
+        "leadingComment" : "Step 3: Project base product columns"
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "\"Name\""
+          },
+          "_row_id" : "1412847380"
+        }, {
+          "expression" : {
+            "expression" : "'Y'"
+          },
+          "alias" : "\"Active\"",
+          "_row_id" : "1841004041"
+        }, {
+          "expression" : {
+            "expression" : "\"Weight\""
+          },
+          "_row_id" : "1535542179"
+        }, {
+          "expression" : {
+            "expression" : "\"Shipment Volume\""
+          },
+          "_row_id" : "1850044032"
+        }, {
+          "expression" : {
+            "expression" : "\"Warehouse Volume\""
+          },
+          "_row_id" : "1622285628"
+        }, {
+          "expression" : {
+            "expression" : "\"Adjusted Volume\""
+          },
+          "_row_id" : "1559542659"
+        }, {
+          "expression" : {
+            "expression" : "\"Freight Class\""
+          },
+          "_row_id" : "1487175853"
+        }, {
+          "expression" : {
+            "expression" : "\"Value\""
+          },
+          "_row_id" : "642995666"
+        }, {
+          "expression" : {
+            "expression" : "\"Max Shelf Life\""
+          },
+          "_row_id" : "1640197115"
+        }, {
+          "expression" : {
+            "expression" : "\"Grouping 1\""
+          },
+          "_row_id" : "1710298918"
+        }, {
+          "expression" : {
+            "expression" : "\"Grouping 2\""
+          },
+          "_row_id" : "955854852"
+        }, {
+          "expression" : {
+            "expression" : "\"Grouping 3\""
+          },
+          "_row_id" : "743723859"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "xK3VVFQx",
+          "slug" : "product_base_filtered"
+        } ],
+        "outputs" : [ {
+          "id" : "lu2lgb7X",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "outbound_freight##pD8xiYlp" : {
+      "id" : "outbound_freight##pD8xiYlp",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "valid_freight_metrics",
+        "x" : 1100,
+        "y" : 3100,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "item_bigint_key IS NOT NULL AND quantity_units IS NOT NULL"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pufcHT7Q",
+          "slug" : "outbound_freight_metrics_from_000"
+        } ],
+        "outputs" : [ {
+          "id" : "s4nb5WU9",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "product_base_fil##eIpht17u" : {
+      "id" : "product_base_fil##eIpht17u",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "sellable_products",
+        "x" : 1100,
+        "y" : 2460,
+        "phase" : 0,
+        "leadingComment" : "Step 2: Filter valid products"
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "selling_item_number IS NOT NULL"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "UDkfFOnA",
+          "slug" : "product_base"
+        } ],
+        "outputs" : [ {
+          "id" : "N0F31cBz",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "products_with_co##sJMgPCeO" : {
+      "id" : "products_with_co##sJMgPCeO",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "product_metrics_enriched",
+        "x" : 1560,
+        "y" : 2780,
+        "phase" : 0,
+        "leadingComment" : "Step 6: Join product base with weighted costs"
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "iwc",
+          "expression" : {
+            "expression" : "pb.\"Name\" = iwc.\"Product\""
+          },
+          "joinType" : "LEFT"
+        }, {
+          "alias" : "ofm",
+          "expression" : {
+            "expression" : "pb.\"Name\" = ofm.\"Product\""
+          },
+          "joinType" : "LEFT"
+        } ],
+        "allowSelection" : false,
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "pb.\"Name\""
+          },
+          "_row_id" : "1972160201"
+        }, {
+          "expression" : {
+            "expression" : "pb.\"Active\""
+          },
+          "_row_id" : "1400121818"
+        }, {
+          "expression" : {
+            "expression" : "pb.\"Weight\""
+          },
+          "_row_id" : "52774746"
+        }, {
+          "expression" : {
+            "expression" : "pb.\"Shipment Volume\""
+          },
+          "_row_id" : "1438267130"
+        }, {
+          "expression" : {
+            "expression" : "pb.\"Warehouse Volume\""
+          },
+          "_row_id" : "347942231"
+        }, {
+          "expression" : {
+            "expression" : "pb.\"Adjusted Volume\""
+          },
+          "_row_id" : "1777525336"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(ofm.avg_freight_cost, pb.\"Freight Class\")"
+          },
+          "alias" : "\"Freight Class\"",
+          "_row_id" : "691297501"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(iwc.weighted_avg_cost, pb.\"Value\")"
+          },
+          "alias" : "\"Value\"",
+          "_row_id" : "1978075638"
+        }, {
+          "expression" : {
+            "expression" : "pb.\"Max Shelf Life\""
+          },
+          "_row_id" : "24300542"
+        }, {
+          "expression" : {
+            "expression" : "pb.\"Grouping 1\""
+          },
+          "_row_id" : "154221967"
+        }, {
+          "expression" : {
+            "expression" : "pb.\"Grouping 2\""
+          },
+          "_row_id" : "711640000"
+        }, {
+          "expression" : {
+            "expression" : "pb.\"Grouping 3\""
+          },
+          "_row_id" : "2131381124"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ ],
+        "headAlias" : "pb"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Olpk8YBI",
+          "slug" : "pb"
+        }, {
+          "id" : "g51PMzU3",
+          "slug" : "iwc"
+        }, {
+          "id" : "YmOGDFpL",
+          "slug" : "ofm"
+        } ],
+        "outputs" : [ {
+          "id" : "XoPARXcf",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "inbound_weighted##vLrNDK2h" : {
+      "id" : "inbound_weighted##vLrNDK2h",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "inbound_shipments",
+        "x" : 900,
+        "y" : 2860,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "item_id"
+          },
+          "_row_id" : "1478092636"
+        }, {
+          "expression" : {
+            "expression" : "quantity_units"
+          },
+          "_row_id" : "1534753813"
+        }, {
+          "expression" : {
+            "expression" : "mfg_cost"
+          },
+          "_row_id" : "1931646515"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "TLPozDuY",
+          "slug" : "inbound_shipments_source"
+        } ],
+        "outputs" : [ {
+          "id" : "HpAiS8BD",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "outbound_freight##bFkyQl4P" : {
+      "id" : "outbound_freight##bFkyQl4P",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "outbound_shipments",
+        "x" : 900,
+        "y" : 3100,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "item_bigint_key"
+          },
+          "_row_id" : "1552325948"
+        }, {
+          "expression" : {
+            "expression" : "shipment_method"
+          },
+          "_row_id" : "1740825646"
+        }, {
+          "expression" : {
+            "expression" : "quantity_units"
+          },
+          "_row_id" : "195943226"
+        }, {
+          "expression" : {
+            "expression" : "transportation_cost"
+          },
+          "_row_id" : "1423554484"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "e3xjqVFP",
+          "slug" : "outbound_shipments_source"
+        } ],
+        "outputs" : [ {
+          "id" : "tDElNRQq",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "products_with_gr##GagCpDIM" : {
+      "id" : "products_with_gr##GagCpDIM",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "product_catalog",
+        "x" : 1840,
+        "y" : 2780,
+        "phase" : 0,
+        "comment" : "Standardizes product catalog data by extracting key attributes and preparing empty fields for future categorization.",
+        "leadingComment" : "Step 7: Add remaining grouping columns (Alteryx Select tool 450)",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "\"Name\""
+          },
+          "_row_id" : "1378924695"
+        }, {
+          "expression" : {
+            "expression" : "\"Active\""
+          },
+          "_row_id" : "1081455567"
+        }, {
+          "expression" : {
+            "expression" : "\"Weight\""
+          },
+          "_row_id" : "1980558588"
+        }, {
+          "expression" : {
+            "expression" : "\"Shipment Volume\""
+          },
+          "_row_id" : "131127257"
+        }, {
+          "expression" : {
+            "expression" : "\"Warehouse Volume\""
+          },
+          "_row_id" : "768641704"
+        }, {
+          "expression" : {
+            "expression" : "\"Adjusted Volume\""
+          },
+          "_row_id" : "922698176"
+        }, {
+          "expression" : {
+            "expression" : "TRY_CAST(\"Freight Class\" AS VARCHAR)"
+          },
+          "alias" : "\"Freight Class\"",
+          "_row_id" : "853589295"
+        }, {
+          "expression" : {
+            "expression" : "\"Value\""
+          },
+          "_row_id" : "1758833434"
+        }, {
+          "expression" : {
+            "expression" : "\"Max Shelf Life\""
+          },
+          "_row_id" : "331951073"
+        }, {
+          "expression" : {
+            "expression" : "\"Grouping 1\""
+          },
+          "_row_id" : "1780534488"
+        }, {
+          "expression" : {
+            "expression" : "\"Grouping 2\""
+          },
+          "_row_id" : "1492509052"
+        }, {
+          "expression" : {
+            "expression" : "TRY_CAST(\"Grouping 3\" AS VARCHAR)"
+          },
+          "alias" : "\"Grouping 3\"",
+          "_row_id" : "960626380"
+        }, {
+          "expression" : {
+            "expression" : "CAST(NULL AS VARCHAR)"
+          },
+          "alias" : "\"Grouping 4\"",
+          "_row_id" : "1583542843"
+        }, {
+          "expression" : {
+            "expression" : "CAST(NULL AS VARCHAR)"
+          },
+          "alias" : "\"Grouping 5\"",
+          "_row_id" : "379093773"
+        }, {
+          "expression" : {
+            "expression" : "CAST(NULL AS VARCHAR)"
+          },
+          "alias" : "\"Grouping 6\"",
+          "_row_id" : "319867829"
+        }, {
+          "expression" : {
+            "expression" : "CAST(NULL AS VARCHAR)"
+          },
+          "alias" : "\"Grouping 7\"",
+          "_row_id" : "229087107"
+        }, {
+          "expression" : {
+            "expression" : "CAST(NULL AS VARCHAR)"
+          },
+          "alias" : "\"Grouping 8\"",
+          "_row_id" : "145540347"
+        }, {
+          "expression" : {
+            "expression" : "CAST(NULL AS VARCHAR)"
+          },
+          "alias" : "\"Grouping 9\"",
+          "_row_id" : "223300113"
+        }, {
+          "expression" : {
+            "expression" : "CAST(NULL AS VARCHAR)"
+          },
+          "alias" : "\"Grouping 10\"",
+          "_row_id" : "1736280325"
+        }, {
+          "expression" : {
+            "expression" : "CAST(NULL AS VARCHAR)"
+          },
+          "alias" : "\"Notes\"",
+          "_row_id" : "1867088031"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "UQQSSKaJ",
+          "slug" : "products_with_costs"
+        } ],
+        "outputs" : [ {
+          "id" : "Kp7wm4zW",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "products_deduped##OX9mDVAh" : {
+      "id" : "products_deduped##OX9mDVAh",
+      "component" : "Deduplicate",
+      "metadata" : {
+        "label" : "products_deduplicated",
+        "x" : 2180,
+        "y" : 2780,
+        "phase" : 0,
+        "leadingComment" : "Step 8: Deduplicate products (Alteryx Unique tools)"
+      },
+      "properties" : {
+        "dedupColumns" : [ {
+          "expression" : {
+            "expression" : "\"Name\""
+          },
+          "_row_id" : "1285215527"
+        } ],
+        "dedupType" : "first",
+        "columnsSelector" : [ ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : {
+              "expression" : "\"Name\""
+            },
+            "_row_id" : "2115785676"
+          }
+        } ],
+        "useOrderBy" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "px0ziN8h",
+          "slug" : "products_with_groupings"
+        } ],
+        "outputs" : [ {
+          "id" : "pOD53cFo",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "sales_fulfillment_csv_gkme3DmJ0D" : {
+      "id" : "sales_fulfillment_csv_gkme3DmJ0D",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "sales_fulfillment_csv"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_0",
+          "id" : "output_port_0",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ prophecy_tmp_source('full_network_model_ai_migration', 'sales_fulfillment_csv') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "product_master_csv_8xgBYxz8gH" : {
+      "id" : "product_master_csv_8xgBYxz8gH",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "product_master_csv"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_4",
+          "id" : "output_port_4",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ prophecy_tmp_source('full_network_model_ai_migration', 'product_master_csv') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_4",
+          "slug" : "input_port_4"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_4",
+          "slug" : "output_port_4"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "outbound_freight##f1Xxw4VD" : {
+      "id" : "outbound_freight##f1Xxw4VD",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "outbound_freight_analytics",
+        "x" : 1300,
+        "y" : 3100,
+        "phase" : 0
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "item_bigint_key"
+          },
+          "alias" : "\"Product\"",
+          "_row_id" : "1470192180"
+        }, {
+          "expression" : {
+            "expression" : "SUM(COALESCE(TRY_CAST(quantity_units AS DOUBLE), 0))"
+          },
+          "alias" : "total_outbound_quantity",
+          "_row_id" : "1947237183"
+        }, {
+          "expression" : {
+            "expression" : "AVG(COALESCE(TRY_CAST(transportation_cost AS DOUBLE), 0))"
+          },
+          "alias" : "avg_freight_cost",
+          "_row_id" : "198176953"
+        }, {
+          "expression" : {
+            "expression" : "COUNT(DISTINCT shipment_method)"
+          },
+          "alias" : "carrier_count",
+          "_row_id" : "257055014"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "item_bigint_key"
+          },
+          "_row_id" : "1993181451"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "otzczV7K",
+          "slug" : "outbound_freight_metrics_filter_001"
+        } ],
+        "outputs" : [ {
+          "id" : "dUlmnJjn",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "product_base##ysdZRXG5" : {
+      "id" : "product_base##ysdZRXG5",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "product_master_enriched",
+        "x" : 900,
+        "y" : 2460,
+        "phase" : 0,
+        "leadingComment" : "Step 1: Transform product master base (Alteryx Reformat + Formula tools)"
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "{{ var('max_shelf_life') }}"
+          },
+          "alias" : "\"Max Shelf Life\"",
+          "_row_id" : "127450037"
+        }, {
+          "expression" : {
+            "expression" : "country_of_origin"
+          },
+          "alias" : "\"Grouping 2\"",
+          "_row_id" : "860754034"
+        }, {
+          "expression" : {
+            "expression" : "standard_cost"
+          },
+          "_row_id" : "352452422"
+        }, {
+          "expression" : {
+            "expression" : "unit_volume"
+          },
+          "_row_id" : "2085881844"
+        }, {
+          "expression" : {
+            "expression" : "selling_item_number"
+          },
+          "alias" : "\"Name\"",
+          "_row_id" : "824239617"
+        }, {
+          "expression" : {
+            "expression" : "item_class"
+          },
+          "alias" : "\"Grouping 1\"",
+          "_row_id" : "2115312387"
+        }, {
+          "expression" : {
+            "expression" : "unit_weight"
+          },
+          "_row_id" : "40939573"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Grouping 3\"",
+          "_row_id" : "665873206"
+        }, {
+          "expression" : {
+            "expression" : "NULL"
+          },
+          "alias" : "\"Freight Class\"",
+          "_row_id" : "1988723676"
+        }, {
+          "expression" : {
+            "expression" : "selling_item_number"
+          },
+          "_row_id" : "1346193688"
+        }, {
+          "expression" : {
+            "expression" : "'Y'"
+          },
+          "alias" : "\"Active\"",
+          "_row_id" : "1332047598"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(TRY_CAST(unit_weight AS DOUBLE), 0)"
+          },
+          "alias" : "\"Weight\"",
+          "_row_id" : "1959107662"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN COALESCE(TRY_CAST(unit_volume AS DOUBLE), 0) > 0\n    THEN 1.0 / TRY_CAST(unit_volume AS DOUBLE)\n  ELSE 0\nEND"
+          },
+          "alias" : "\"Shipment Volume\"",
+          "_row_id" : "1435276544"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(TRY_CAST(unit_volume AS DOUBLE), 0)"
+          },
+          "alias" : "\"Warehouse Volume\"",
+          "_row_id" : "28311822"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN COALESCE(TRY_CAST(unit_volume AS DOUBLE), 0) > 0\n    THEN 1.0 / TRY_CAST(unit_volume AS DOUBLE)\n  ELSE 0\nEND"
+          },
+          "alias" : "\"Adjusted Volume\"",
+          "_row_id" : "1146240162"
+        }, {
+          "expression" : {
+            "expression" : "COALESCE(TRY_CAST(standard_cost AS DOUBLE), 0)"
+          },
+          "alias" : "\"Value\"",
+          "_row_id" : "1724119698"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "nBwoWMAT",
+          "slug" : "product_master_source"
+        } ],
+        "outputs" : [ {
+          "id" : "FgMhveQ8",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "inbound_weighted##WiRWh5oN" : {
+      "id" : "inbound_weighted##WiRWh5oN",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "valid_inbound_costs",
+        "x" : 1100,
+        "y" : 2860,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "expression" : "item_id IS NOT NULL AND quantity_units IS NOT NULL"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "GkTWr2Rc",
+          "slug" : "inbound_weighted_costs_from_000"
+        } ],
+        "outputs" : [ {
+          "id" : "gbLybXuT",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "lu3xU99r",
+    "source" : "products_transfo##lXdEX4kJ",
+    "sourcePort" : "bQpc5Plr",
+    "target" : "final##shbIkNKR",
+    "targetPort" : "WztFeQ6p",
+    "isWireless" : false
+  }, {
+    "id" : "Xo6YsdpD",
+    "source" : "products_deduped##OX9mDVAh",
+    "sourcePort" : "pOD53cFo",
+    "target" : "products_transfo##lXdEX4kJ",
+    "targetPort" : "iATAPEhi",
+    "isWireless" : false
+  }, {
+    "id" : "zaIMVBdB",
+    "source" : "products_with_gr##GagCpDIM",
+    "sourcePort" : "Kp7wm4zW",
+    "target" : "products_deduped##OX9mDVAh",
+    "targetPort" : "px0ziN8h",
+    "isWireless" : false
+  }, {
+    "id" : "BkVhuLMF",
+    "source" : "products_with_co##sJMgPCeO",
+    "sourcePort" : "XoPARXcf",
+    "target" : "products_with_gr##GagCpDIM",
+    "targetPort" : "UQQSSKaJ",
+    "isWireless" : false
+  }, {
+    "id" : "XMBhKRe5",
+    "source" : "product_base_pro##ejECciKN",
+    "sourcePort" : "lu2lgb7X",
+    "target" : "products_with_co##sJMgPCeO",
+    "targetPort" : "Olpk8YBI",
+    "isWireless" : false
+  }, {
+    "id" : "r9zjAHPm",
+    "source" : "inbound_weighted##zjoH9IO5",
+    "sourcePort" : "hcHPhkLm",
+    "target" : "products_with_co##sJMgPCeO",
+    "targetPort" : "g51PMzU3",
+    "isWireless" : false
+  }, {
+    "id" : "moTnKzOw",
+    "source" : "outbound_freight##f1Xxw4VD",
+    "sourcePort" : "dUlmnJjn",
+    "target" : "products_with_co##sJMgPCeO",
+    "targetPort" : "YmOGDFpL",
+    "isWireless" : false
+  }, {
+    "id" : "oj4Jsd8Y",
+    "source" : "product_base_fil##eIpht17u",
+    "sourcePort" : "N0F31cBz",
+    "target" : "product_base_pro##ejECciKN",
+    "targetPort" : "xK3VVFQx",
+    "isWireless" : false
+  }, {
+    "id" : "rBO2ReWE",
+    "source" : "inbound_weighted##WiRWh5oN",
+    "sourcePort" : "gbLybXuT",
+    "target" : "inbound_weighted##zjoH9IO5",
+    "targetPort" : "fjKbBQ5f",
+    "isWireless" : false
+  }, {
+    "id" : "ag9cEGRi",
+    "source" : "outbound_freight##pD8xiYlp",
+    "sourcePort" : "s4nb5WU9",
+    "target" : "outbound_freight##f1Xxw4VD",
+    "targetPort" : "otzczV7K",
+    "isWireless" : false
+  }, {
+    "id" : "tFTrIPKG",
+    "source" : "product_base##ysdZRXG5",
+    "sourcePort" : "FgMhveQ8",
+    "target" : "product_base_fil##eIpht17u",
+    "targetPort" : "UDkfFOnA",
+    "isWireless" : false
+  }, {
+    "id" : "Dz4mleTl",
+    "source" : "inbound_weighted##vLrNDK2h",
+    "sourcePort" : "HpAiS8BD",
+    "target" : "inbound_weighted##WiRWh5oN",
+    "targetPort" : "GkTWr2Rc",
+    "isWireless" : false
+  }, {
+    "id" : "PKzn9Y3E",
+    "source" : "outbound_freight##bFkyQl4P",
+    "sourcePort" : "tDElNRQq",
+    "target" : "outbound_freight##pD8xiYlp",
+    "targetPort" : "pufcHT7Q",
+    "isWireless" : false
+  }, {
+    "id" : "8xgBYxz8gH_to_iJpILrSd5L##SLAHXIJW",
+    "source" : "product_master_csv_8xgBYxz8gH",
+    "sourcePort" : "output_port_4",
+    "target" : "product_base##ysdZRXG5",
+    "targetPort" : "nBwoWMAT",
+    "isWireless" : false
+  }, {
+    "id" : "VbeurFRoe2_to_PfGFTwFdwg##a5Grt6d6",
+    "source" : "purchase_order_supply_chain_csv_VbeurFRoe2",
+    "sourcePort" : "output_port_7",
+    "target" : "inbound_weighted##vLrNDK2h",
+    "targetPort" : "TLPozDuY",
+    "isWireless" : false
+  }, {
+    "id" : "gkme3DmJ0D_to_PVvKqJKsf3##vQ20fuie",
+    "source" : "sales_fulfillment_csv_gkme3DmJ0D",
+    "sourcePort" : "output_port_0",
+    "target" : "outbound_freight##bFkyQl4P",
+    "targetPort" : "e3xjqVFP",
+    "isWireless" : false
+  } ],
+  "component" : "Model"
+}

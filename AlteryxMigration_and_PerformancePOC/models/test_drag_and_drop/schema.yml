@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "test_drag_and_drop__avg_demand"
+  tags:
+  - "prophecy_temp"

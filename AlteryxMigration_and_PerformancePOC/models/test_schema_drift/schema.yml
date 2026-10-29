@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "test_schema_drift__aggregate_sales"
+  tags:
+  - "prophecy_temp"

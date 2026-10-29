@@ -1,0 +1,26 @@
+version: 1
+files:
+- path: "attachment/weighted average standard cost (1).json"
+  codec: "gzip"
+  rawSize: 63416
+  contentType: "application/json"
+  encoding: "raw"
+  sha256: "aebc7862703fa5fa18f4095743816d4f3b3bdf6e643ee36685727a052d4f327e"
+- path: "attachment/Book1.xlsx"
+  codec: "none"
+  rawSize: 101650
+  contentType: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+  encoding: "raw"
+  sha256: "7302b2149eb9c5734c6d56988e2f275c498d1f9d7ff809df7b89c26c8fb55072"
+- path: "attachment/BASELINE FULL NETWORK MODEL MT - Part 1.json"
+  codec: "gzip"
+  rawSize: 445343
+  contentType: "application/json"
+  encoding: "raw"
+  sha256: "fd57572bc90d8fc852dc3e7bb428f3de85aca093947dc5753891888e61be8a96"
+- path: "attachment/Foresta_Sites_1139_25-10-2026_0-43-43_084.csv"
+  codec: "gzip"
+  rawSize: 437114
+  contentType: "text/csv"
+  encoding: "raw"
+  sha256: "aed9cebef0c6444faffb25be7d5b7e47d1113033747a4bb3796231f076059ec3"

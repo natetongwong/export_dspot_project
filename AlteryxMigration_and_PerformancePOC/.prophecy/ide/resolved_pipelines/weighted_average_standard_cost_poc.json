@@ -1,0 +1,669 @@
+{
+  "id" : "weighted_average_standard_cost_poc",
+  "metainfo" : {
+    "label" : "weighted_average_standard_cost_poc",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "holding_cost_rate",
+          "kind" : {
+            "type" : "double",
+            "value" : "0.14"
+          }
+        }, {
+          "name" : "filter_year_start",
+          "kind" : {
+            "type" : "int",
+            "value" : "2024"
+          }
+        }, {
+          "name" : "filter_year_end",
+          "kind" : {
+            "type" : "int",
+            "value" : "2025"
+          }
+        } ]
+      }
+    },
+    "isTranspiledPipeline" : false,
+    "processesVsModelFiles" : {
+      "weighted_avg_calc_final_projection_002_V49w9VB8" : "models/weighted_average_standard_cost_poc/weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002.sql",
+      "wa_numerator_den##GivlZpmL" : "models/weighted_average_standard_cost_poc/weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002.sql",
+      "wa_shipments_agg##jcdxdLOV" : "models/weighted_average_standard_cost_poc/weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002.sql",
+      "wa_joined##GjfUwwnu" : "models/weighted_average_standard_cost_poc/weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002.sql",
+      "weighted_avg_cal##O2HKjflm" : "models/weighted_average_standard_cost_poc/weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002.sql",
+      "wa_product_maste##H1BO29yL" : "models/weighted_average_standard_cost_poc/weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002.sql",
+      "wa_aggregated##oGH8UB6y" : "models/weighted_average_standard_cost_poc/weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002.sql",
+      "product_master_KqsMtDVeLe" : "models/weighted_average_standard_cost_poc/weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002.sql",
+      "weighted_avg_cal##P2VQm6Cf" : "models/weighted_average_standard_cost_poc/weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002.sql",
+      "wa_weighted_aver##PtBkytw3" : "models/weighted_average_standard_cost_poc/weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002.sql",
+      "inbound_shipments_tbwugQSkyi" : "models/weighted_average_standard_cost_poc/weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002.sql",
+      "wa_shipments_fil##bRZ8ZsUC" : "models/weighted_average_standard_cost_poc/weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002.sql",
+      "wa_finished_good##gqswkxd6" : "models/weighted_average_standard_cost_poc/weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002.sql",
+      "wa_shipments_pos##iyc8ugWG" : "models/weighted_average_standard_cost_poc/weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002.sql",
+      "weighted_avg_cal##PLnBT0Vf" : "models/weighted_average_standard_cost_poc/weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002.sql",
+      "wa_shipments_sel##kXgwAAp0" : "models/weighted_average_standard_cost_poc/weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002.sql"
+    }
+  },
+  "processes" : {
+    "CBsKTXIBH4ICEFeNlaQzk$$F0YosSkyjmikJDn0zVIsA" : {
+      "id" : "CBsKTXIBH4ICEFeNlaQzk$$F0YosSkyjmikJDn0zVIsA",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "foresta_products_1039_26_10_2026_20_14_34_932",
+        "x" : -560,
+        "y" : -980,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "foresta_products_1039_26_10_2026_20_14_34_932",
+          "sourceName" : "ProphecyCompute_main",
+          "sourceType" : "Table"
+        },
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "dI2WZrrZhs",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "g3az3pQsih",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "weighted_avg_cal##P2VQm6Cf" : {
+      "id" : "weighted_avg_cal##P2VQm6Cf",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "weighted_average_standard_cost_poc__weighted_avg_calc_final_projection_002"
+      },
+      "visualMetaInfo" : {
+        "lastNodeProcessIds" : [ "weighted_avg_calc_final_projection_002_V49w9VB8" ],
+        "skipIfZeroRows" : false,
+        "visualProcessIds" : [ "weighted_avg_calc_final_projection_002_V49w9VB8", "weighted_avg_cal##P2VQm6Cf", "weighted_avg_cal##PLnBT0Vf", "weighted_avg_cal##O2HKjflm", "wa_weighted_aver##PtBkytw3", "wa_aggregated##oGH8UB6y", "wa_numerator_den##GivlZpmL", "wa_joined##GjfUwwnu", "wa_shipments_agg##jcdxdLOV", "wa_finished_good##gqswkxd6", "wa_shipments_pos##iyc8ugWG", "wa_product_maste##H1BO29yL", "product_master_KqsMtDVeLe", "wa_shipments_fil##bRZ8ZsUC", "wa_shipments_sel##kXgwAAp0", "inbound_shipments_tbwugQSkyi" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "a9Uvo8u0",
+          "slug" : "in_0"
+        }, {
+          "id" : "xssY4o2J",
+          "slug" : "in_1"
+        } ],
+        "outputs" : [ {
+          "id" : "V49w9VB8",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "yeb7gQtdAJoivldy_Ranj$$9B2vVXjYO2xtLgKMCgSqu" : {
+      "id" : "yeb7gQtdAJoivldy_Ranj$$9B2vVXjYO2xtLgKMCgSqu",
+      "component" : "OrchestrationTarget",
+      "kind" : "PostgresTarget",
+      "metadata" : {
+        "label" : "product_inventory_postgres",
+        "x" : -420,
+        "y" : -980,
+        "phase" : 0,
+        "comment" : "Writes product inventory data to a PostgreSQL database table by overwriting existing records."
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "postgres",
+          "properties" : {
+            "id" : "postgres_test_write"
+          },
+          "type" : "connector"
+        },
+        "format" : {
+          "kind" : "postgres",
+          "category" : "table",
+          "properties" : {
+            "postSql" : null,
+            "preSql" : null,
+            "schema" : null,
+            "writeMode" : "overwrite"
+          }
+        },
+        "properties" : {
+          "tableFullName" : {
+            "name" : {
+              "type" : "concat_operation",
+              "properties" : {
+                "elements" : [ {
+                  "type" : "literal",
+                  "properties" : {
+                    "value" : "i_products"
+                  }
+                } ]
+              }
+            },
+            "schema" : {
+              "type" : "concat_operation",
+              "properties" : {
+                "elements" : [ {
+                  "type" : "literal",
+                  "properties" : {
+                    "value" : "s0h7e"
+                  }
+                } ]
+              }
+            }
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "U3oj3m7K9C",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "pxNCYvThtq" : {
+      "id" : "pxNCYvThtq",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "inbound_shipments",
+        "x" : -640,
+        "y" : -600,
+        "phase" : 0,
+        "comment" : "Ingests global supply chain procurement records including purchase orders, supplier details, and delivery metrics from SharePoint."
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "includeFileNameColumn" : false,
+            "includeSheetNameColumn" : true,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/DS__v6_Inbound_Shipments.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : "Supply chain procurement records capturing purchase orders, supplier details, item information, and delivery metrics across global sourcing operations.",
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "Arrow",
+              "fields" : [ {
+                "name" : "order_line_bigint_key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Unique identifier for each line item within an order.",
+                "nativeType" : "String"
+              }, {
+                "name" : "purchase_order_number",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Unique number assigned to the purchase order.",
+                "nativeType" : "String"
+              }, {
+                "name" : "purchase_order_line_number",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Sequential line number identifying each item within the purchase order.",
+                "nativeType" : "String"
+              }, {
+                "name" : "order_date",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Date when the purchase order was placed.",
+                "nativeType" : "String"
+              }, {
+                "name" : "delivery_date",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Date when the ordered items were delivered to the destination.",
+                "nativeType" : "String"
+              }, {
+                "name" : "first_delivery_date",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Date of the initial delivery for the purchase order.",
+                "nativeType" : "String"
+              }, {
+                "name" : "partner_item_number",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Item number assigned by the partner or external supplier for the product.",
+                "nativeType" : "String"
+              }, {
+                "name" : "origin_supplier_name",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Name of the original supplier or manufacturer from whom the item was sourced.",
+                "nativeType" : "String"
+              }, {
+                "name" : "origin_supplier_number",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Unique identifier assigned to the original supplier or manufacturer.",
+                "nativeType" : "String"
+              }, {
+                "name" : "origin_supplier_site_code",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Location or facility code of the original supplier's site where the item was produced or sourced.",
+                "nativeType" : "String"
+              }, {
+                "name" : "origin_supplier_mfg",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Manufacturing facility or plant code of the original supplier where the item was produced.",
+                "nativeType" : "String"
+              }, {
+                "name" : "supplier_name",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Name of the current supplier providing the item.",
+                "nativeType" : "String"
+              }, {
+                "name" : "supplier_number",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Unique identifier assigned to the current supplier.",
+                "nativeType" : "String"
+              }, {
+                "name" : "supplier_country",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Country where the current supplier is located.",
+                "nativeType" : "String"
+              }, {
+                "name" : "origin_supplier_loading_port_actual",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Actual port from which the item was physically loaded for shipment by the original supplier.",
+                "nativeType" : "String"
+              }, {
+                "name" : "origin_supplier_loading_port",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Planned port from which the supplier ships the item.",
+                "nativeType" : "String"
+              }, {
+                "name" : "origin_supplier_country",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Country where the supplier is located.",
+                "nativeType" : "String"
+              }, {
+                "name" : "item_country_of_origin",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Country where the item was manufactured or produced.",
+                "nativeType" : "String"
+              }, {
+                "name" : "transport_mode",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Method of transportation used to deliver the item; Examples include air, sea, rail, or truck.",
+                "nativeType" : "String"
+              }, {
+                "name" : "port_source",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Primary port used as the source for item shipment and logistics operations.",
+                "nativeType" : "String"
+              }, {
+                "name" : "inventory_organization_bigint_key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Unique identifier for the organization managing the inventory.",
+                "nativeType" : "String"
+              }, {
+                "name" : "receiving_org_code",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Code assigned to the organization receiving the inventory shipment.",
+                "nativeType" : "String"
+              }, {
+                "name" : "receiving_org_name",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Name of the organization receiving the inventory shipment.",
+                "nativeType" : "String"
+              }, {
+                "name" : "item_bigint_key",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Unique identifier for the item in the inventory system.",
+                "nativeType" : "String"
+              }, {
+                "name" : "item_id",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Business identifier for the item being tracked in inventory.",
+                "nativeType" : "String"
+              }, {
+                "name" : "item_type",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Category or classification of the item; Indicates the type of product or material.",
+                "nativeType" : "String"
+              }, {
+                "name" : "quantity_units",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Number of individual units of the item; Represents the count of smallest measurable quantity.",
+                "nativeType" : "String"
+              }, {
+                "name" : "quantity_weight",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Total weight of the item; Measured in standard weight units.",
+                "nativeType" : "String"
+              }, {
+                "name" : "quantity_pallets",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Number of pallets used to store or transport the item; Represents bulk quantity at pallet level.",
+                "nativeType" : "String"
+              }, {
+                "name" : "quantity_containers",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "Number of containers holding the item; Represents intermediate quantity between units and pallets.",
+                "nativeType" : "String"
+              }, {
+                "name" : "mfg_cost",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "The manufacturing cost per unit of the product.",
+                "nativeType" : "String"
+              }, {
+                "name" : "receipt_cost",
+                "dataType" : {
+                  "type" : "utf8"
+                },
+                "description" : "The cost incurred at the time of receipt or delivery of the product.",
+                "nativeType" : "String"
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "tbwugQSkyi",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "6mkfYcZ6EP" : {
+      "id" : "6mkfYcZ6EP",
+      "component" : "OrchestrationSource",
+      "kind" : "SharepointSource",
+      "metadata" : {
+        "label" : "product_master",
+        "x" : -180,
+        "y" : -220,
+        "phase" : 0,
+        "comment" : "Imports product master data from SharePoint containing item details and cost breakdowns."
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "sharepoint",
+          "properties" : {
+            "id" : "sharepoint_1"
+          },
+          "type" : "connector"
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "includeFileNameColumn" : false,
+            "includeSheetNameColumn" : true,
+            "fileLoadingType" : "filepath"
+          },
+          "filePath" : "/Shared Documents/Milwaukee_Tools_Full_Implementation/Raw Data/new_DS__Product_Master.csv"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "format" : {
+          "kind" : "csv",
+          "category" : "file",
+          "properties" : {
+            "masterSchemaFilePath" : null,
+            "allowLazyQuotes" : false,
+            "appendRecordIdColumn" : null,
+            "skipTopRows" : null,
+            "allowEmptyColumnNames" : true,
+            "description" : null,
+            "separator" : ",",
+            "inferenceDataSamplingLimit" : null,
+            "nullValue" : "",
+            "enableSchemaMerging" : false,
+            "encoding" : "UTF-8",
+            "enforceSchema" : null,
+            "schema" : {
+              "providerType" : "Arrow",
+              "fields" : [ {
+                "name" : "item_bigint_key",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "item_id",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "selling_item_number",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "country_of_origin",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "item_class",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "item_description",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "unit_volume",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "unit_weight",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "units_per_case",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "units_per_pallet",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "units_per_container",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "active_estimated_cost",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "applied_standard_cost",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "direct_labor_cost",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "direct_material_cost",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "duty_cost",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "fixed_overhead_cost",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "freight_cost",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "import_fee_cost",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "purchase_burden_cost",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "standard_cost",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              }, {
+                "name" : "variable_overhead_cost",
+                "dataType" : {
+                  "type" : "utf8"
+                }
+              } ]
+            },
+            "comment" : null,
+            "allowReadingIncompleteRows" : false,
+            "header" : true,
+            "recordIdColumnName" : null,
+            "defaultColumnPrefix" : null
+          }
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "KqsMtDVeLe",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "g3az3pQsih_to_U3oj3m7K9C",
+    "source" : "CBsKTXIBH4ICEFeNlaQzk$$F0YosSkyjmikJDn0zVIsA",
+    "sourcePort" : "g3az3pQsih",
+    "target" : "yeb7gQtdAJoivldy_Ranj$$9B2vVXjYO2xtLgKMCgSqu",
+    "targetPort" : "U3oj3m7K9C"
+  }, {
+    "id" : "tbwugQSkyi_to_BAGNEhqzFI##MKea2MBl",
+    "source" : "pxNCYvThtq",
+    "sourcePort" : "tbwugQSkyi",
+    "target" : "weighted_avg_cal##P2VQm6Cf",
+    "targetPort" : "a9Uvo8u0"
+  }, {
+    "id" : "KqsMtDVeLe_to_kOXVVbz0kN##nKjuBo0n",
+    "source" : "6mkfYcZ6EP",
+    "sourcePort" : "KqsMtDVeLe",
+    "target" : "weighted_avg_cal##P2VQm6Cf",
+    "targetPort" : "xssY4o2J"
+  } ],
+  "component" : "Pipeline"
+}

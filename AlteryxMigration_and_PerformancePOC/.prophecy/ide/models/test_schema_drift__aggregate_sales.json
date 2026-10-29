@@ -1,0 +1,202 @@
+{
+  "id" : "test_schema_drift__aggregate_sales",
+  "metainfo" : {
+    "label" : "test_schema_drift__aggregate_sales",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"ProphecyCompute\"",
+        "schema" : "\"schema\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "aggregate_sales_nrhHXlHw" : {
+      "id" : "aggregate_sales_nrhHXlHw",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "aggregate_sales"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM aggregate_sales\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "aggregate_sales##Y9QROlqi" : {
+      "id" : "aggregate_sales##Y9QROlqi",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "aggregate_sales",
+        "x" : 420,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "\"Product\""
+          },
+          "_row_id" : "800656961"
+        }, {
+          "expression" : {
+            "expression" : "SUM(\"Quantity\")"
+          },
+          "alias" : "\"Total_Quantity\"",
+          "_row_id" : "1784985355"
+        }, {
+          "expression" : {
+            "expression" : "SUM(\"Line_Total\")"
+          },
+          "alias" : "\"Total_Sales\"",
+          "_row_id" : "487372179"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "\"Product\""
+          },
+          "_row_id" : "1761421244"
+        } ],
+        "mode" : "simple"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ykE7rTrV",
+          "slug" : "reformat_calc"
+        } ],
+        "outputs" : [ {
+          "id" : "nrhHXlHw",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "reformat_calc##PlTle5Dd" : {
+      "id" : "reformat_calc##PlTle5Dd",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "reformat_calc",
+        "x" : 220,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "\"Product\""
+          },
+          "_row_id" : "55655764"
+        }, {
+          "expression" : {
+            "expression" : "\"Quantity\""
+          },
+          "_row_id" : "531772820"
+        }, {
+          "expression" : {
+            "expression" : "\"Unit_Price\""
+          },
+          "_row_id" : "53300085"
+        }, {
+          "expression" : {
+            "expression" : "\"Quantity\" * \"Unit_Price\""
+          },
+          "alias" : "\"Line_Total\"",
+          "_row_id" : "882097134"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "e3JbEVG2",
+          "slug" : "sales_source"
+        } ],
+        "outputs" : [ {
+          "id" : "xYeqqhXE",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "vky5efRXoj" : {
+      "id" : "vky5efRXoj",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "sales_source",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "schema_drift_test",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "VcXZSZD9co",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_aggregate_sales##Y9QROlqi_nrhHXlHw_aggregate_sales_nrhHXlHw",
+    "source" : "aggregate_sales##Y9QROlqi",
+    "sourcePort" : "nrhHXlHw",
+    "target" : "aggregate_sales_nrhHXlHw",
+    "targetPort" : "input_port_0",
+    "isWireless" : false
+  }, {
+    "id" : "FfbbpK0z",
+    "source" : "reformat_calc##PlTle5Dd",
+    "sourcePort" : "xYeqqhXE",
+    "target" : "aggregate_sales##Y9QROlqi",
+    "targetPort" : "ykE7rTrV",
+    "isWireless" : false
+  }, {
+    "id" : "VcXZSZD9co_to_3fOMeBboZB##xexDsPmE",
+    "source" : "vky5efRXoj",
+    "sourcePort" : "VcXZSZD9co",
+    "target" : "reformat_calc##PlTle5Dd",
+    "targetPort" : "e3JbEVG2",
+    "isWireless" : false
+  } ],
+  "component" : "Model"
+}

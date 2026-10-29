@@ -1,0 +1,15 @@
+---
+version: 2
+models:
+- name: "full_network_model_ai_migration__facility_operations_inventory"
+  tags:
+  - "prophecy_temp"
+- name: "full_network_model_ai_migration__origin_loading_ports"
+  tags:
+  - "prophecy_temp"
+- name: "full_network_model_ai_migration__product_inventory_logistics"
+  tags:
+  - "prophecy_temp"
+- name: "full_network_model_ai_migration__supply_cost_analysis"
+  tags:
+  - "prophecy_temp"

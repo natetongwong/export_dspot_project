@@ -1,0 +1,170 @@
+{
+  "id" : "test_filter_in_out",
+  "metainfo" : {
+    "label" : "test_filter_in_out",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "isTranspiledPipeline" : false,
+    "processesVsModelFiles" : {
+      "filter_low_sales##Qlk1X0pP" : "models/test_filter_in_out/test_filter_in_out__filter_low_sales.sql",
+      "filter_low_sales_fzVBCk2e" : "models/test_filter_in_out/test_filter_in_out__filter_low_sales.sql",
+      "3yUyljetsr" : "models/test_filter_in_out/test_filter_in_out__filter_high_sales.sql",
+      "filter_high_sales_zWyrNVnx" : "models/test_filter_in_out/test_filter_in_out__filter_high_sales.sql",
+      "filter_high_sale##mq3RYNNp" : "models/test_filter_in_out/test_filter_in_out__filter_high_sales.sql"
+    }
+  },
+  "processes" : {
+    "filter_low_sales##Qlk1X0pP" : {
+      "id" : "filter_low_sales##Qlk1X0pP",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "filter_low_sales",
+        "x" : 220,
+        "y" : 20,
+        "phase" : 0,
+        "dataPreview" : true,
+        "showRecordsCount" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "IGrS4ew6##Sales" ],
+        "condition" : {
+          "expression" : "\"Sales\" <= 100"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "IGrS4ew6",
+          "slug" : "low_source_data"
+        } ],
+        "outputs" : [ {
+          "id" : "fzVBCk2e",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "Czqchxo3LR" : {
+      "id" : "Czqchxo3LR",
+      "component" : "Visualize",
+      "metadata" : {
+        "label" : "viz_high_sales",
+        "x" : 380,
+        "y" : 220,
+        "phase" : 0
+      },
+      "properties" : { },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "10nyKGA54i",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ]
+      }
+    },
+    "3yUyljetsr" : {
+      "id" : "3yUyljetsr",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "filter_test_data",
+        "x" : 20,
+        "y" : 120,
+        "phase" : 0,
+        "dataPreview" : true,
+        "showRecordsCount" : true
+      },
+      "properties" : {
+        "table" : {
+          "name" : "filter_test_data",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "UJNFcwd7Ee",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "upBht8Mago" : {
+      "id" : "upBht8Mago",
+      "component" : "Visualize",
+      "metadata" : {
+        "label" : "viz_low_sales",
+        "x" : 380,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : { },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "nVB4KfRnba",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ]
+      }
+    },
+    "filter_high_sale##mq3RYNNp" : {
+      "id" : "filter_high_sale##mq3RYNNp",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "filter_high_sales",
+        "x" : 220,
+        "y" : 220,
+        "phase" : 0,
+        "dataPreview" : true,
+        "showRecordsCount" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "k1D9gKT0##Sales" ],
+        "condition" : {
+          "expression" : "\"Sales\" > 100"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "k1D9gKT0",
+          "slug" : "high_source_data"
+        } ],
+        "outputs" : [ {
+          "id" : "zWyrNVnx",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "UJNFcwd7Ee_to_OhH7BXBmPq##wut0Lkm3",
+    "source" : "3yUyljetsr",
+    "sourcePort" : "UJNFcwd7Ee",
+    "target" : "filter_high_sale##mq3RYNNp",
+    "targetPort" : "k1D9gKT0"
+  }, {
+    "id" : "0bZsbRJftN_to_10nyKGA54i",
+    "source" : "filter_high_sale##mq3RYNNp",
+    "sourcePort" : "zWyrNVnx",
+    "target" : "Czqchxo3LR",
+    "targetPort" : "10nyKGA54i"
+  }, {
+    "id" : "UJNFcwd7Ee_to_uc8zuayPRz##TL0VuUAo",
+    "source" : "3yUyljetsr",
+    "sourcePort" : "UJNFcwd7Ee",
+    "target" : "filter_low_sales##Qlk1X0pP",
+    "targetPort" : "IGrS4ew6"
+  }, {
+    "id" : "YJbWHRtdgd_to_nVB4KfRnba",
+    "source" : "filter_low_sales##Qlk1X0pP",
+    "sourcePort" : "fzVBCk2e",
+    "target" : "upBht8Mago",
+    "targetPort" : "nVB4KfRnba"
+  } ],
+  "component" : "Pipeline"
+}
